@@ -1,0 +1,1 @@
+# Smart meters module initialization
