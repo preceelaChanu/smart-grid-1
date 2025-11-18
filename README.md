@@ -27,33 +27,12 @@ graph TD
 
 The framework is managed by four distinct executable programs, ensuring a strict separation of concerns and cryptographic keys.
 
-Program
+Program | Logical Node Type | Role & Key Access | Primary Action(s)
+--- --- --- ---
+keygen | KGC (Key Generation Center) | Trusted Authority. Generates all keys based on config.json and distributes them via disk. | Generates PK, SK, and RLK once at setup.
 
-Logical Node Type
-
-Role & Key Access
-
-Primary Action(s)
-
-keygen
-
-KGC (Key Generation Center)
-
-Trusted Authority. Generates all keys based on config.json and distributes them via disk.
-
-Generates PK, SK, and RLK once at setup.
-
-client
-
-Smart Meter
-
-Data Producer. Uses the Public Key (PK) to encrypt sensitive usage data.
-
-1. Encrypts real-number data (CKKS).
-
-
-
-2. Saves unique ciphertext to a file.
+client | Smart Meter | Data Producer. Uses the Public Key (PK) to encrypt sensitive usage data. | 1. Encrypts real-number data (CKKS).
+                                                                                                  2. Saves unique ciphertext to a file.
 
 aggregator
 
