@@ -28,39 +28,11 @@ graph TD
 The framework is managed by four distinct executable programs, ensuring a strict separation of concerns and cryptographic keys.
 
 | Program | Logical Node Type | Role & Key Access | Primary Action(s) |
---- --- --- ---
+|---------|-------------------|-------------------|-------------------|
 | keygen | KGC (Key Generation Center) | Trusted Authority. Generates all keys based on config.json and distributes them via disk. | Generates PK, SK, and RLK once at setup. |
-
-| client | Smart Meter | Data Producer. Uses the Public Key (PK) to encrypt sensitive usage data. | 1. Encrypts real-number data (CKKS).
-                                                                                                  2. Saves unique ciphertext to a file. |
-
-| aggregator | Middleware / Fog Node | Blind Processor. Uses PK and Relinearization Keys (RLK) for computation. Crucially, does not have the Secret Key. |
-
-1. Loads all client ciphertexts.
-
-
-
-2. Performs Homomorphic Aggregation.
-
-
-
-3. Saves the single aggregated result. |
-
-| control_center | 
-
-Analytics Center | 
-
-Final Manager / Decryptor. Only node with the Secret Key (SK). |
-
-1. Loads the final aggregated ciphertext.
-
-
-
-2. Decrypts it to reveal the total sum.
-
-
-
-3. Decodes the result for verification. |
+| client | Smart Meter | Data Producer. Uses the Public Key (PK) to encrypt sensitive usage data. | 1. Encrypts real-number data (CKKS).<br>2. Saves unique ciphertext to a file. |
+| aggregator | Middleware / Fog Node | Blind Processor. Uses PK and Relinearization Keys (RLK) for computation. Crucially, does not have the Secret Key. | 1. Loads all client ciphertexts.<br>2. Performs Homomorphic Aggregation.<br>3. Saves the single aggregated result. |
+| control_center | Analytics Center | Final Manager / Decryptor. Only node with the Secret Key (SK). | 1. Loads the final aggregated ciphertext.<br>2. Decrypts it to reveal the total sum.<br>3. Decodes the result for verification. |
 
 # Security Guarantee: 
 
