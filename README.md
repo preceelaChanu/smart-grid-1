@@ -1,144 +1,210 @@
-# Privacy-Preserving Smart Grid Analytics Framework
+Privacy-Preserving Smart Grid Analytics Framework
 
-  
+# Overview
 
-## Overview
+This project is a real-time framework designed to benchmark the performance and feasibility of Post-Quantum Homomorphic Encryption (HE) algorithms within a Smart Grid environment. It simulates a realistic, privacy-preserving 3-tier architecture where Smart Meters (Clients) encrypt their real-number energy consumption data (e.g., 1.234 kWh) before sending it to an Aggregator for processing, and finally to a Control Center for result decryption.
 
-This project is a real-time framework designed to benchmark the performance of **Homomorphic Encryption (HE)** algorithms within a Smart Grid environment. It simulates a realistic privacy-preserving architecture where Smart Meters (Clients) encrypt their real-number energy consumption data (e.g., `1.234 kWh`) before sending it to an Analytics Center (Server).
+The system utilizes the CKKS (Cheon-Kim-Kim-Song) scheme from the Microsoft SEAL library. CKKS is a "levelled" HE scheme that supports approximate arithmetic on encrypted real numbers, making it ideal for smart grid analytics such as aggregation, weighted averages, and billing calculations without revealing individual user data.
 
-The system utilizes the **CKKS (Cheon-Kim-Kim-Song) scheme** from the Microsoft SEAL library. CKKS is a post-quantum, "levelled" HE scheme that supports approximate arithmetic on encrypted real numbers, making it ideal for smart grid analytics (averages, weighted sums, etc.).
+# System Architecture
 
-## System Architecture
+The project simulates a secure data flow model common in privacy-preserving smart grid literature (e.g., Zhou et al., Wagh et al.):
 
-The project follows a trusted initialization, untrusted network model:
-
-```mermaid
 graph TD
     KGC[Key Generation Center] -- Generates Keys --> Keys[(Key Storage)]
     Keys -- Public Key --> Client[Smart Meter (Client)]
-    Keys -- Public Key + Relin Keys --> Server[Analytics Server]
-    Keys -- Secret Key --> Client
-    Client -- Encrypts Data (double) --> Data[(Encrypted Data Files)]
-    Data -- Loads Ciphertexts --> Server
-    Server -- Computes (Analytics) --> Result[Encrypted Result]
-```
+    Keys -- Public Key + Relin Keys --> Agg[Aggregator Node]
+    Keys -- Secret Key --> Control[Control Center]
+    
+    Client -- 1. Encrypts Data --> Data[(Encrypted Data Files)]
+    Data -- 2. Loads Ciphertexts --> Agg
+    Agg -- 3. Homomorphic Aggregation --> AggResult[Aggregated Ciphertext]
+    AggResult -- 4. Sends Result --> Control
+    Control -- 5. Decrypts Result --> Final[Plaintext Total]
 
-1.  **KeyGen (KGC):** Generates Public, Private, and Relinearization keys based on security configurations.
-2.  **Client (Smart Meter):** Simulates a smart meter. Reads real-world data (e.g., from the London Smart Meter dataset), encrypts the `double` value using the Public Key, and serializes the ciphertext.
-3.  **Server (Analytics Center):** Loads encrypted data from multiple clients, performs homomorphic computation (e.g., aggregation, multiplication), and verifies the result without ever decrypting individual user inputs.
 
-## Project Structure
+# Functional Architecture: Role of Each Node
 
-```text
+The framework is managed by four distinct executable programs, ensuring a strict separation of concerns and cryptographic keys.
+
+Program
+
+Logical Node Type
+
+Role & Key Access
+
+Primary Action(s)
+
+keygen
+
+KGC (Key Generation Center)
+
+Trusted Authority. Generates all keys based on config.json and distributes them via disk.
+
+Generates PK, SK, and RLK once at setup.
+
+client
+
+Smart Meter
+
+Data Producer. Uses the Public Key (PK) to encrypt sensitive usage data.
+
+1. Encrypts real-number data (CKKS).
+
+
+
+2. Saves unique ciphertext to a file.
+
+aggregator
+
+Middleware / Fog Node
+
+Blind Processor. Uses PK and Relinearization Keys (RLK) for computation. Crucially, does not have the Secret Key.
+
+1. Loads all client ciphertexts.
+
+
+
+2. Performs Homomorphic Aggregation.
+
+
+
+3. Saves the single aggregated result.
+
+control_center
+
+Analytics Center
+
+Final Manager / Decryptor. Only node with the Secret Key (SK).
+
+1. Loads the final aggregated ciphertext.
+
+
+
+2. Decrypts it to reveal the total sum.
+
+
+
+3. Decodes the result for verification.
+
+# Security Guarantee: 
+
+The privacy of the system rests on the fact that the Aggregator, which performs the computations on all user data, does not possess the Secret Key. It operates entirely on encrypted data.
+
+# Project Structure
+
 smart_grid_benchmark/
 ├── CMakeLists.txt       # Master build configuration
 ├── config.json          # Central configuration for security & simulation settings
-├── run_test.sh          # Automated test harness script
+├── run_test.sh          # Automated test harness script (Orchestrator)
 ├── include/             # External headers (nlohmann/json)
 ├── keygen/
 │   └── keygen.cpp       # Source code for Key Generation Center (CKKS)
 ├── client/
 │   └── client.cpp       # Source code for Smart Meter Simulator (CKKS)
-├── server/
-│   └── server.cpp       # Source code for Analytics Server (CKKS)
+├── aggregator/
+│   └── aggregator.cpp   # Source code for Aggregator Node (CKKS)
+├── control_center/
+│   └── control_center.cpp # Source code for Control Center (CKKS)
 ├── keys/                # Storage for generated keys (PK, SK, RLK)
 └── data/                # Storage for encrypted smart meter data
-```
 
-## Prerequisites
+
+# Prerequisites
 
 Before running the framework, ensure your system has the following installed:
 
-  * **OS:** Ubuntu Linux (20.04 or 22.04 recommended)
-  * **Compiler:** `g++` (supporting C++17)
-  * **Build System:** `cmake` (version 3.16+)
-  * **Utilities:** `git`, `jq` (for JSON parsing in scripts)
+OS: Ubuntu Linux (20.04 or 22.04 recommended)
 
-<!-- end list -->
+Compiler: g++ (supporting C++17)
 
-```bash
+Build System: cmake (version 3.16+)
+
+Utilities: git, jq (for JSON parsing in scripts)
+
 sudo apt update
 sudo apt install build-essential g++ cmake git jq
-```
 
-## Installation
 
-### 1\. Clone the Repository
+🔧 Installation
 
-```bash
+1. Clone the Repository
+
 mkdir smart_grid_benchmark
 cd smart_grid_benchmark
-# (If you are using git, clone here. Otherwise, create the folders manually)
-```
+## (If you are using git, clone here. Otherwise, create the folders manually)
 
-### 2\. Install Microsoft SEAL (v4.0.0)
+
+2. Install Microsoft SEAL (v4.0.0)
 
 The project relies on the Microsoft SEAL library.
 
-```bash
-# Clone and build SEAL inside the project or externally
-git clone https://github.com/microsoft/SEAL.git
+## Clone and build SEAL inside the project or externally
+git clone [https://github.com/microsoft/SEAL.git](https://github.com/microsoft/SEAL.git)
 cd SEAL
 git checkout v4.0.0
 cmake -S . -B build -DSEAL_THROW_ON_TRANSPARENT_CIPHERTEXT=OFF
 cmake --build build
 sudo cmake --install build
 cd ..
-```
 
-### 3\. Install JSON Helper
 
-The project uses `nlohmann/json` for configuration parsing.
+3. Install JSON Helper
 
-```bash
+The project uses nlohmann/json for configuration parsing.
+
 mkdir -p include
-wget -O include/json.hpp https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp
-```
+wget -O include/json.hpp [https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp](https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp)
 
-### 4\. Build the Framework
 
-```bash
+4. Build the Framework
+
 mkdir build
 cd build
 cmake ..
 make
 cd ..
-```
 
-## Usage
+
+# Usage
 
 You can run the components individually or use the automated test harness.
 
-### Option A: Automated Test Harness (Recommended)
+Option A: Automated Test Harness (Recommended)
 
-The `run_test.sh` script orchestrates the entire flow: it runs KeyGen once, simulates `N` clients (defined in config), and then runs the Server to aggregate the results.
+The run_test.sh script acts as the Utility Orchestrator. It manages the entire lifecycle: cleaning old data, generating new keys, simulating N clients, running the aggregator, and verifying the result.
 
-```bash
 chmod +x run_test.sh
 ./run_test.sh
-```
 
-### Option B: Manual Execution
 
-1.  **Generate Keys:**
-    ```bash
-    ./build/keygen
-    ```
-2.  **Run Clients:** (Replace `1` with the Client ID)
-    ```bash
-    ./build/client 1
-    ./build/client 2
-    ```
-3.  **Run Server:**
-    ```bash
-    ./build/server
-    ```
+Option B: Manual Execution
 
-## Configuration (`config.json`)
+Generate Keys:
 
-All experiment variables are controlled via `config.json`. You do not need to recompile the code to change these settings.
+./build/keygen
 
-```json
+
+Run Clients: (Replace 1 with the Client ID)
+
+./build/client 1
+./build/client 2
+
+
+Run Aggregator:
+
+./build/aggregator
+
+
+Run Control Center:
+
+./build/control_center
+
+
+# Configuration (config.json)
+
+All experiment variables are controlled via config.json. You do not need to recompile the code to change these settings.
+
 {
   "comment_security": "poly_modulus_degree: 8192 (fast), 16384 (strong), 32768 (paranoid)",
   "poly_modulus_degree": 8192,
@@ -155,32 +221,41 @@ All experiment variables are controlled via `config.json`. You do not need to re
   "relin_keys_file": "keys/relin_keys.seal",
   "data_path_prefix": "data/ct_client_"
 }
-```
 
-  * **poly\_modulus\_degree:** Higher values (e.g., 16384) increase security and precision, but also increase computation time and ciphertext size.
-  * **ckks\_scale\_bits:** Controls the precision of the real numbers.
-  * **num\_clients:** Controls how many distinct client simulations the test harness runs.
 
-## Performance Metrics
+poly_modulus_degree: The main security parameter. Higher values (e.g., 16384) increase security and precision but increase computation time and ciphertext size.
 
-The framework automatically logs the following metrics to the console for every run:
+ckks_scale_bits: Controls the precision of the real-number arithmetic.
 
-  * **Key Generation Time:** Time taken to generate PK, SK, and RLK.
-  * **Encryption Time:** Time taken for the client to encode and encrypt a single `double`.
-  * **Serialization Overhead:** Time taken to save the ciphertext to disk.
-  * **Ciphertext Size:** The storage footprint of the encrypted data (simulating bandwidth).
-  * **Computation Time:** Time taken by the server to aggregate all client data (e.g., `add`, `multiply`).
-  * **Deserialization Overhead:** Time taken by the server to load the ciphertexts.
-  * **Decryption Time:** Time taken to decrypt the final result.
-  * **Precision Error:** The difference between the expected plaintext result and the decrypted (approximate) result.
+num_clients: Controls how many distinct client simulations the test harness runs.
 
-## Data Source
+# Performance Metrics
 
-The simulation supports real-world data integration. It is designed to encrypt `double` (real number) values, making it perfect for the `kWh` readings from the **Smart Meters in London** dataset.
+The framework automatically logs the following metrics to the console for every run, allowing for rigorous performance analysis:
 
-  * **Source:** [Kaggle - Smart Meters in London](https://www.kaggle.com/datasets/jeanmidev/smart-meters-in-london)
+Key Generation Time: Time taken by KGC to generate keys.
 
-## License
+Encryption Time: Time taken by a Client to encode and encrypt a single double.
+
+Serialization Overhead: Time taken to save the ciphertext to disk.
+
+Ciphertext Size: The storage footprint of the encrypted data (simulating bandwidth).
+
+Aggregation Time: Time taken by the Aggregator to sum all client data.
+
+Deserialization Overhead: Time taken by the Aggregator to load the ciphertexts.
+
+Decryption Time: Time taken by the Control Center to decrypt the final result.
+
+Precision Error: The difference between the expected plaintext result and the decrypted (approximate) result.
+
+# Data Source
+
+The simulation supports real-world data integration. It is designed to encrypt double (real number) values, making it compatible with the kWh readings from the Smart Meters in London dataset.
+
+Source: Kaggle - Smart Meters in London
+
+# License
 
 This project is built for academic research and benchmarking purposes.
-Uses **Microsoft SEAL** (MIT License).
+Uses Microsoft SEAL (MIT License).
