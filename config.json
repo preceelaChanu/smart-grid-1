@@ -23,11 +23,19 @@
   "aggregator": {
     "certificate": "keys/aggregator.cert",
     "connect_timeout": 30,
-    "data_timeout": 60
+    "data_timeout": 60,
+    "max_parallel_connections": 50,
+    "connection_retry_attempts": 3,
+    "retry_delay_ms": 1000
   },
   "smart_meters": {
     "certificate_prefix": "keys/smart_meter_",
-    "connect_timeout": 30
+    "connect_timeout": 30,
+    "base_port": 9000,
+    "port_range": 5000,
+    "max_concurrent_connections": 10,
+    "server_timeout": 300,
+    "data_collection_timeout": 60
   },
   "key_distribution_center": {
     "host": "127.0.0.1", 

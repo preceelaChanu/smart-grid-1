@@ -55,7 +55,7 @@ add_executable(certgen certgen/certgen.cpp)
 
 # Link Microsoft SEAL library to all targets
 target_link_libraries(keygen Microsoft.SEAL::seal)
-target_link_libraries(client Microsoft.SEAL::seal)
+target_link_libraries(client Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(aggregator Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(control_center Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(certgen network_utils)

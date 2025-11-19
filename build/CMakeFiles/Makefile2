@@ -140,7 +140,7 @@ CMakeFiles/keygen.dir/clean:
 # Target rules for target CMakeFiles/client.dir
 
 # All Build rule for target.
-CMakeFiles/client.dir/all:
+CMakeFiles/client.dir/all: CMakeFiles/network_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=5,6 "Built target client"
@@ -148,7 +148,7 @@ CMakeFiles/client.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 0
 .PHONY : CMakeFiles/client.dir/rule

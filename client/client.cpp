@@ -3,24 +3,42 @@
 #include <fstream>
 #include <random>
 #include <iomanip>
+#include <thread>
+#include <signal.h>
+#include <sstream>
 #include "seal/seal.h"
 #include "json.hpp"
+#include "network_utils.h"
 
 using namespace std;
 using namespace seal;
 using json = nlohmann::json;
 
+// Global flag for graceful shutdown
+volatile bool running = true;
+
+void signal_handler(int signal) {
+    if (signal == SIGINT || signal == SIGTERM) {
+        cout << "\nReceived shutdown signal. Gracefully shutting down smart meter..." << endl;
+        running = false;
+    }
+}
+
 int main(int argc, char* argv[]) {
     if (argc != 2) {
-        cerr << "Usage: " << argv[0] << " <client_id>" << endl;
+        cerr << "Usage: " << argv[0] << " <meter_id>" << endl;
         cerr << "Example: " << argv[0] << " 1" << endl;
         return 1;
     }
     
-    int client_id = stoi(argv[1]);
+    // Setup signal handlers for graceful shutdown
+    signal(SIGINT, signal_handler);
+    signal(SIGTERM, signal_handler);
+    
+    int meter_id = stoi(argv[1]);
     auto start_time = chrono::high_resolution_clock::now();
     
-    cout << "=== Smart Meter Client " << client_id << " ===" << endl;
+    cout << "=== Smart Meter Server " << meter_id << " ===" << endl;
     cout << "Loading configuration..." << endl;
     
     // Load configuration
@@ -38,7 +56,15 @@ int main(int argc, char* argv[]) {
     size_t poly_modulus_degree = config["poly_modulus_degree"];
     int ckks_scale_bits = config["ckks_scale_bits"];
     string public_key_file = config["public_key_file"];
-    string data_path_prefix = config["data_path_prefix"];
+    string cert_prefix = config["smart_meters"]["certificate_prefix"];
+    uint16_t base_port = config["smart_meters"]["base_port"];
+    int server_timeout = config["smart_meters"]["server_timeout"];
+    
+    // Calculate port for this meter
+    uint16_t meter_port = base_port + meter_id;
+    string cert_file = cert_prefix + to_string(meter_id) + ".cert";
+    
+    cout << "Meter ID: " << meter_id << ", Port: " << meter_port << endl;
     
     // Set up CKKS encryption parameters (must match keygen)
     EncryptionParameters parms(scheme_type::ckks);
@@ -73,6 +99,15 @@ int main(int argc, char* argv[]) {
     
     cout << "Encryptor and encoder initialized (scale: 2^" << ckks_scale_bits << ")" << endl;
     
+    // Load smart meter certificate
+    NodeCertificate meter_cert;
+    if (!NetworkUtils::load_certificate(cert_file, meter_cert)) {
+        cerr << "Error: Could not load smart meter certificate: " << cert_file << endl;
+        return 1;
+    }
+    
+    cout << "Loaded smart meter certificate: " << meter_cert.node_id << endl;
+    
     // Generate realistic smart meter data (energy consumption in kWh)
     random_device rd;
     mt19937 gen(rd());
@@ -96,41 +131,93 @@ int main(int argc, char* argv[]) {
     
     auto encrypt_end = chrono::high_resolution_clock::now();
     
-    // Save encrypted data to file
-    string output_filename = data_path_prefix + to_string(client_id) + ".seal";
+    // Serialize encrypted data for network transmission
+    stringstream encrypted_stream;
+    encrypted.save(encrypted_stream);
+    string serialized_data = encrypted_stream.str();
     
-    auto save_start = chrono::high_resolution_clock::now();
+    cout << "Encrypted data size: " << serialized_data.size() << " bytes" << endl;
     
-    ofstream data_file(output_filename, ios::binary);
-    if (!data_file.is_open()) {
-        cerr << "Error: Could not create data file " << output_filename << endl;
+    // Start TCP server for this smart meter
+    cout << "Starting smart meter server on port " << meter_port << "..." << endl;
+    int server_sockfd = NetworkUtils::create_server_socket(meter_port);
+    if (server_sockfd < 0) {
+        cerr << "Error: Failed to create smart meter server on port " << meter_port << endl;
         return 1;
     }
     
-    encrypted.save(data_file);
-    data_file.close();
+    NetworkUtils::set_socket_timeout(server_sockfd, server_timeout);
+    cout << "✓ Smart meter server listening on port " << meter_port << endl;
+    cout << "Waiting for aggregator connection..." << endl;
     
-    auto save_end = chrono::high_resolution_clock::now();
+    while (running) {
+        // Accept connection from aggregator
+        struct sockaddr_in client_addr;
+        socklen_t client_len = sizeof(client_addr);
+        
+        int client_sockfd = accept(server_sockfd, (struct sockaddr*)&client_addr, &client_len);
+        if (client_sockfd < 0) {
+            if (running) {
+                cerr << "Error accepting connection (may be timeout): " << NetworkUtils::get_last_error() << endl;
+            }
+            continue;
+        }
+        
+        char client_ip[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, INET_ADDRSTRLEN);
+        cout << "✓ Accepted connection from aggregator: " << client_ip << ":" << ntohs(client_addr.sin_port) << endl;
+        
+        // Authenticate the aggregator
+        SecureConnection secure_conn(client_sockfd);
+        cout << "Authenticating aggregator..." << endl;
+        
+        if (!secure_conn.authenticate_as_server(meter_cert)) {
+            cerr << "Error: Aggregator authentication failed" << endl;
+            continue;
+        }
+        
+        cout << "✓ Aggregator authenticated: " << secure_conn.get_peer_certificate().node_id << endl;
+        
+        auto network_start = chrono::high_resolution_clock::now();
+        
+        // Send encrypted data to aggregator
+        cout << "Transmitting encrypted energy data..." << endl;
+        if (!secure_conn.send_secure_data(serialized_data.data(), serialized_data.size())) {
+            cerr << "Error: Failed to send encrypted data to aggregator" << endl;
+            continue;
+        }
+        
+        auto network_end = chrono::high_resolution_clock::now();
+        
+        cout << "✓ Data transmission successful!" << endl;
+        
+        // Close this connection and wait for next aggregator request
+        secure_conn.close();
+        
+        auto session_duration = chrono::duration_cast<chrono::milliseconds>(network_end - network_start);
+        cout << "Session completed in " << session_duration.count() << " ms" << endl;
+        
+        // For this demo, serve one request and exit
+        // In production, the meter would continue serving requests
+        break;
+    }
+    
+    close(server_sockfd);
+    
     auto end_time = chrono::high_resolution_clock::now();
-    
-    // Calculate ciphertext size
-    ifstream size_file(output_filename, ios::binary | ios::ate);
-    streampos file_size = size_file.tellg();
-    size_file.close();
     
     // Performance metrics
     auto encrypt_duration = chrono::duration_cast<chrono::microseconds>(encrypt_end - encrypt_start);
-    auto save_duration = chrono::duration_cast<chrono::microseconds>(save_end - save_start);
     auto total_duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     
-    cout << "=== Client " << client_id << " Encryption Complete ===" << endl;
+    cout << "=== Smart Meter Server " << meter_id << " Complete ===" << endl;
     cout << "Original data: " << energy_consumption << " kWh" << endl;
     cout << "Encryption time: " << encrypt_duration.count() << " μs" << endl;
-    cout << "Serialization time: " << save_duration.count() << " μs" << endl;
-    cout << "Ciphertext size: " << file_size << " bytes" << endl;
+    cout << "Encrypted data size: " << serialized_data.size() << " bytes" << endl;
     cout << "Total execution time: " << total_duration.count() << " ms" << endl;
-    cout << "Encrypted data saved to: " << output_filename << endl;
-    cout << "Data ready for aggregation (no secret key exposure)" << endl;
+    cout << "Smart meter served data via TCP/IP on port " << meter_port << endl;
+    cout << "PRIVACY PRESERVED: Data encrypted before network transmission" << endl;
+    cout << "NETWORK READY: Realistic smart meter simulation complete" << endl;
     
     return 0;
 }
