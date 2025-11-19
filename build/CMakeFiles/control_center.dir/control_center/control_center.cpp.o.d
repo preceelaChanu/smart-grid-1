@@ -495,4 +495,5 @@ CMakeFiles/control_center.dir/control_center/control_center.cpp.o: \
  /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
  /usr/include/openssl/asn1err.h /usr/include/openssl/objectserr.h \
  /usr/include/openssl/rand.h /usr/include/openssl/randerr.h \
- /usr/include/openssl/sha.h
+ /usr/include/openssl/sha.h /workspaces/smart-grid-1/include/kdc_client.h \
+ /workspaces/smart-grid-1/include/network_utils.h

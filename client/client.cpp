@@ -9,6 +9,7 @@
 #include "seal/seal.h"
 #include "json.hpp"
 #include "network_utils.h"
+#include "kdc_client.h"
 
 using namespace std;
 using namespace seal;
@@ -80,26 +81,7 @@ int main(int argc, char* argv[]) {
     
     cout << "SEAL context initialized" << endl;
     
-    // Load public key
-    cout << "Loading public key..." << endl;
-    ifstream pk_file(public_key_file, ios::binary);
-    if (!pk_file.is_open()) {
-        cerr << "Error: Could not open public key file. Run keygen first." << endl;
-        return 1;
-    }
-    
-    PublicKey public_key;
-    public_key.load(context, pk_file);
-    pk_file.close();
-    
-    // Initialize encryptor and encoder
-    Encryptor encryptor(context, public_key);
-    CKKSEncoder encoder(context);
-    double scale = pow(2.0, ckks_scale_bits);
-    
-    cout << "Encryptor and encoder initialized (scale: 2^" << ckks_scale_bits << ")" << endl;
-    
-    // Load smart meter certificate
+    // Load smart meter certificate first (needed for KDC authentication)
     NodeCertificate meter_cert;
     if (!NetworkUtils::load_certificate(cert_file, meter_cert)) {
         cerr << "Error: Could not load smart meter certificate: " << cert_file << endl;
@@ -107,6 +89,42 @@ int main(int argc, char* argv[]) {
     }
     
     cout << "Loaded smart meter certificate: " << meter_cert.node_id << endl;
+    
+    // Request keys from KDC
+    cout << "Requesting cryptographic keys from KDC..." << endl;
+    string kdc_host = config["key_distribution_center"]["host"];
+    uint16_t kdc_port = config["key_distribution_center"]["port"];
+    
+    KDCClient kdc_client(kdc_host, kdc_port, meter_cert);
+    
+    PublicKey public_key;
+    RelinKeys relin_keys;
+    auto context_ptr = make_shared<SEALContext>(context);
+    
+    if (!kdc_client.request_public_keys(context_ptr, public_key, relin_keys)) {
+        cerr << "Error: Failed to obtain keys from KDC. Falling back to file-based keys..." << endl;
+        
+        // Fallback to file-based key loading
+        cout << "Loading public key from file..." << endl;
+        ifstream pk_file(public_key_file, ios::binary);
+        if (!pk_file.is_open()) {
+            cerr << "Error: Could not open public key file and KDC request failed." << endl;
+            return 1;
+        }
+        
+        public_key.load(context, pk_file);
+        pk_file.close();
+        cout << "Loaded public key from file (fallback mode)" << endl;
+    } else {
+        cout << "✓ Successfully obtained keys from KDC" << endl;
+    }
+    
+    // Initialize encryptor and encoder
+    Encryptor encryptor(context, public_key);
+    CKKSEncoder encoder(context);
+    double scale = pow(2.0, ckks_scale_bits);
+    
+    cout << "Encryptor and encoder initialized (scale: 2^" << ckks_scale_bits << ")" << endl;
     
     // Generate realistic smart meter data (energy consumption in kWh)
     random_device rd;

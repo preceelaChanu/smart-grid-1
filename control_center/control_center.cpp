@@ -8,6 +8,7 @@
 #include "seal/seal.h"
 #include "json.hpp"
 #include "network_utils.h"
+#include "kdc_client.h"
 
 using namespace std;
 using namespace seal;
@@ -69,26 +70,7 @@ int main() {
     
     cout << "SEAL context initialized" << endl;
     
-    // Load secret key
-    cout << "Loading secret key..." << endl;
-    ifstream sk_file(secret_key_file, ios::binary);
-    if (!sk_file.is_open()) {
-        cerr << "Error: Could not open secret key file. Run keygen first." << endl;
-        return 1;
-    }
-    
-    SecretKey secret_key;
-    secret_key.load(context, sk_file);
-    sk_file.close();
-    
-    // Initialize decryptor and decoder
-    Decryptor decryptor(context, secret_key);
-    CKKSEncoder encoder(context);
-    
-    cout << "Decryptor and decoder initialized" << endl;
-    cout << "SECURITY NOTE: This is the only node with access to the secret key" << endl;
-    
-    // Load Control Center certificate
+    // Load Control Center certificate first (needed for KDC authentication)
     NodeCertificate cc_cert;
     if (!NetworkUtils::load_certificate(cc_cert_file, cc_cert)) {
         cerr << "Error: Could not load control center certificate: " << cc_cert_file << endl;
@@ -96,6 +78,43 @@ int main() {
     }
     
     cout << "Loaded control center certificate: " << cc_cert.node_id << endl;
+    
+    // Request keys from KDC
+    cout << "Requesting cryptographic keys from KDC..." << endl;
+    string kdc_host = config["key_distribution_center"]["host"];
+    uint16_t kdc_port = config["key_distribution_center"]["port"];
+    
+    KDCClient kdc_client(kdc_host, kdc_port, cc_cert);
+    
+    PublicKey public_key;
+    RelinKeys relin_keys;
+    SecretKey secret_key;
+    auto context_ptr = make_shared<SEALContext>(context);
+    
+    if (!kdc_client.request_all_keys(context_ptr, public_key, relin_keys, secret_key)) {
+        cerr << "Error: Failed to obtain keys from KDC. Falling back to file-based keys..." << endl;
+        
+        // Fallback to file-based key loading
+        cout << "Loading secret key..." << endl;
+        ifstream sk_file(secret_key_file, ios::binary);
+        if (!sk_file.is_open()) {
+            cerr << "Error: Could not open secret key file and KDC request failed." << endl;
+            return 1;
+        }
+        
+        secret_key.load(context, sk_file);
+        sk_file.close();
+        cout << "Loaded secret key from file (fallback mode)" << endl;
+    } else {
+        cout << "✓ Successfully obtained all keys from KDC" << endl;
+    }
+    
+    // Initialize decryptor and decoder
+    Decryptor decryptor(context, secret_key);
+    CKKSEncoder encoder(context);
+    
+    cout << "Decryptor and decoder initialized" << endl;
+    cout << "SECURITY NOTE: This is the only node with access to the secret key" << endl;
     
     // Start TCP server
     cout << "Starting TCP server on " << cc_host << ":" << cc_port << endl;

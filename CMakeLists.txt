@@ -46,18 +46,25 @@ include_directories(${CMAKE_SOURCE_DIR}/network)
 add_library(network_utils network/network_utils.cpp)
 target_link_libraries(network_utils OpenSSL::SSL OpenSSL::Crypto)
 
+# Add KDC client library
+add_library(kdc_client kdc/kdc_client.cpp)
+target_link_libraries(kdc_client Microsoft.SEAL::seal network_utils OpenSSL::SSL OpenSSL::Crypto)
+target_include_directories(kdc_client PUBLIC ${CMAKE_SOURCE_DIR}/include)
+
 # Add executable targets
 add_executable(keygen keygen/keygen.cpp)
 add_executable(client client/client.cpp)
 add_executable(aggregator aggregator/aggregator.cpp)
 add_executable(control_center control_center/control_center.cpp)
 add_executable(certgen certgen/certgen.cpp)
+add_executable(kdc kdc/kdc.cpp)
 
 # Link Microsoft SEAL library to all targets
 target_link_libraries(keygen Microsoft.SEAL::seal)
-target_link_libraries(client Microsoft.SEAL::seal network_utils Threads::Threads)
-target_link_libraries(aggregator Microsoft.SEAL::seal network_utils Threads::Threads)
-target_link_libraries(control_center Microsoft.SEAL::seal network_utils Threads::Threads)
+target_link_libraries(client Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
+target_link_libraries(aggregator Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
+target_link_libraries(control_center Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
+target_link_libraries(kdc Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(certgen network_utils)
 
 # Set compiler flags for performance and debugging

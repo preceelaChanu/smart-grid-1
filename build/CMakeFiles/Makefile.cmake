@@ -54,9 +54,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/network_utils.dir/DependInfo.cmake"
+  "CMakeFiles/kdc_client.dir/DependInfo.cmake"
   "CMakeFiles/keygen.dir/DependInfo.cmake"
   "CMakeFiles/client.dir/DependInfo.cmake"
   "CMakeFiles/aggregator.dir/DependInfo.cmake"
   "CMakeFiles/control_center.dir/DependInfo.cmake"
   "CMakeFiles/certgen.dir/DependInfo.cmake"
+  "CMakeFiles/kdc.dir/DependInfo.cmake"
   )

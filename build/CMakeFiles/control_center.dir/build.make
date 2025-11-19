@@ -94,6 +94,9 @@ control_center: CMakeFiles/control_center.dir/control_center/control_center.cpp.
 control_center: CMakeFiles/control_center.dir/build.make
 control_center: /usr/local/lib/libseal-4.0.a
 control_center: libnetwork_utils.a
+control_center: libkdc_client.a
+control_center: /usr/local/lib/libseal-4.0.a
+control_center: libnetwork_utils.a
 control_center: /usr/lib/x86_64-linux-gnu/libssl.so
 control_center: /usr/lib/x86_64-linux-gnu/libcrypto.so
 control_center: CMakeFiles/control_center.dir/link.txt

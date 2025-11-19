@@ -94,6 +94,9 @@ aggregator: CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o
 aggregator: CMakeFiles/aggregator.dir/build.make
 aggregator: /usr/local/lib/libseal-4.0.a
 aggregator: libnetwork_utils.a
+aggregator: libkdc_client.a
+aggregator: /usr/local/lib/libseal-4.0.a
+aggregator: libnetwork_utils.a
 aggregator: /usr/lib/x86_64-linux-gnu/libssl.so
 aggregator: /usr/lib/x86_64-linux-gnu/libcrypto.so
 aggregator: CMakeFiles/aggregator.dir/link.txt

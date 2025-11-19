@@ -393,6 +393,54 @@ void SecureConnection::close() {
     authenticated_ = false;
 }
 
+bool SecureConnection::authenticate_as_kdc_server() {
+    // Receive authentication request
+    NetworkMessageHeader header;
+    vector<uint8_t> payload;
+    if (!NetworkUtils::receive_message(sockfd_, header, payload) || 
+        header.msg_type != MessageType::AUTH_REQUEST ||
+        payload.size() != sizeof(AuthRequestPayload)) {
+        return false;
+    }
+    
+    AuthRequestPayload* auth_req = reinterpret_cast<AuthRequestPayload*>(payload.data());
+    peer_certificate_ = auth_req->certificate;
+    
+    // Validate client certificate - KDC accepts all valid node types
+    AuthResponsePayload auth_resp;
+    memset(&auth_resp, 0, sizeof(auth_resp));
+    
+    if (!peer_certificate_.is_valid()) {
+        auth_resp.status = AuthStatus::EXPIRED_CERTIFICATE;
+        strcpy(auth_resp.error_message, "Client certificate expired");
+    } else if (peer_certificate_.node_type != NodeType::SMART_METER && 
+               peer_certificate_.node_type != NodeType::AGGREGATOR && 
+               peer_certificate_.node_type != NodeType::CONTROL_CENTER) {
+        auth_resp.status = AuthStatus::UNKNOWN_NODE;
+        strcpy(auth_resp.error_message, "Invalid node type for KDC service");
+    } else {
+        // Authentication successful
+        auth_resp.status = AuthStatus::SUCCESS;
+        NetworkUtils::generate_random_bytes(auth_resp.session_token, sizeof(auth_resp.session_token));
+        memcpy(session_token_, auth_resp.session_token, sizeof(session_token_));
+        authenticated_ = true;
+        strcpy(auth_resp.error_message, "Authentication successful");
+    }
+    
+    auth_resp.server_timestamp = chrono::duration_cast<chrono::seconds>(
+        chrono::system_clock::now().time_since_epoch()).count();
+    
+    bool sent = NetworkUtils::send_message(sockfd_, MessageType::AUTH_RESPONSE, &auth_resp, sizeof(auth_resp));
+    
+    if (authenticated_) {
+        NetworkUtils::log_network_event("INFO", "KDC authentication successful for node: " + string(peer_certificate_.node_id));
+    } else {
+        NetworkUtils::log_network_event("ERROR", "KDC authentication failed: " + string(auth_resp.error_message));
+    }
+    
+    return authenticated_ && sent;
+}
+
 bool NetworkUtils::load_certificate(const string& cert_file, NodeCertificate& cert) {
     FILE* file = fopen(cert_file.c_str(), "rb");
     if (!file) return false;

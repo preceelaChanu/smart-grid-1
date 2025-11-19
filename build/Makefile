@@ -130,6 +130,19 @@ network_utils/fast:
 .PHONY : network_utils/fast
 
 #=============================================================================
+# Target rules for targets named kdc_client
+
+# Build rule for target.
+kdc_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kdc_client
+.PHONY : kdc_client
+
+# fast build rule for target.
+kdc_client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc_client.dir/build.make CMakeFiles/kdc_client.dir/build
+.PHONY : kdc_client/fast
+
+#=============================================================================
 # Target rules for targets named keygen
 
 # Build rule for target.
@@ -193,6 +206,19 @@ certgen: cmake_check_build_system
 certgen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/certgen.dir/build.make CMakeFiles/certgen.dir/build
 .PHONY : certgen/fast
+
+#=============================================================================
+# Target rules for targets named kdc
+
+# Build rule for target.
+kdc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kdc
+.PHONY : kdc
+
+# fast build rule for target.
+kdc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc.dir/build.make CMakeFiles/kdc.dir/build
+.PHONY : kdc/fast
 
 aggregator/aggregator.o: aggregator/aggregator.cpp.o
 .PHONY : aggregator/aggregator.o
@@ -290,6 +316,54 @@ control_center/control_center.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center.dir/build.make CMakeFiles/control_center.dir/control_center/control_center.cpp.s
 .PHONY : control_center/control_center.cpp.s
 
+kdc/kdc.o: kdc/kdc.cpp.o
+.PHONY : kdc/kdc.o
+
+# target to build an object file
+kdc/kdc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc.dir/build.make CMakeFiles/kdc.dir/kdc/kdc.cpp.o
+.PHONY : kdc/kdc.cpp.o
+
+kdc/kdc.i: kdc/kdc.cpp.i
+.PHONY : kdc/kdc.i
+
+# target to preprocess a source file
+kdc/kdc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc.dir/build.make CMakeFiles/kdc.dir/kdc/kdc.cpp.i
+.PHONY : kdc/kdc.cpp.i
+
+kdc/kdc.s: kdc/kdc.cpp.s
+.PHONY : kdc/kdc.s
+
+# target to generate assembly for a file
+kdc/kdc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc.dir/build.make CMakeFiles/kdc.dir/kdc/kdc.cpp.s
+.PHONY : kdc/kdc.cpp.s
+
+kdc/kdc_client.o: kdc/kdc_client.cpp.o
+.PHONY : kdc/kdc_client.o
+
+# target to build an object file
+kdc/kdc_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc_client.dir/build.make CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o
+.PHONY : kdc/kdc_client.cpp.o
+
+kdc/kdc_client.i: kdc/kdc_client.cpp.i
+.PHONY : kdc/kdc_client.i
+
+# target to preprocess a source file
+kdc/kdc_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc_client.dir/build.make CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.i
+.PHONY : kdc/kdc_client.cpp.i
+
+kdc/kdc_client.s: kdc/kdc_client.cpp.s
+.PHONY : kdc/kdc_client.s
+
+# target to generate assembly for a file
+kdc/kdc_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc_client.dir/build.make CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.s
+.PHONY : kdc/kdc_client.cpp.s
+
 keygen/keygen.o: keygen/keygen.cpp.o
 .PHONY : keygen/keygen.o
 
@@ -350,6 +424,8 @@ help:
 	@echo "... certgen"
 	@echo "... client"
 	@echo "... control_center"
+	@echo "... kdc"
+	@echo "... kdc_client"
 	@echo "... keygen"
 	@echo "... network_utils"
 	@echo "... aggregator/aggregator.o"
@@ -364,6 +440,12 @@ help:
 	@echo "... control_center/control_center.o"
 	@echo "... control_center/control_center.i"
 	@echo "... control_center/control_center.s"
+	@echo "... kdc/kdc.o"
+	@echo "... kdc/kdc.i"
+	@echo "... kdc/kdc.s"
+	@echo "... kdc/kdc_client.o"
+	@echo "... kdc/kdc_client.i"
+	@echo "... kdc/kdc_client.s"
 	@echo "... keygen/keygen.o"
 	@echo "... keygen/keygen.i"
 	@echo "... keygen/keygen.s"

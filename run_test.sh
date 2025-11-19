@@ -43,7 +43,7 @@ echo "  CKKS scale bits: $SCALE_BITS"
 echo ""
 
 # Check if binaries exist
-BINARIES=("build/keygen" "build/client" "build/aggregator" "build/control_center" "build/certgen")
+BINARIES=("build/keygen" "build/client" "build/aggregator" "build/control_center" "build/certgen" "build/kdc")
 for binary in "${BINARIES[@]}"; do
     if [ ! -f "$binary" ]; then
         echo "Error: $binary not found"
@@ -62,6 +62,13 @@ cleanup_processes() {
         kill $CONTROL_CENTER_PID 2>/dev/null || true
         wait $CONTROL_CENTER_PID 2>/dev/null || true
         echo "Control center stopped"
+    fi
+    
+    # Kill KDC server
+    if [ ! -z "$KDC_PID" ]; then
+        kill $KDC_PID 2>/dev/null || true
+        wait $KDC_PID 2>/dev/null || true
+        echo "KDC server stopped"
     fi
     
     # Kill all smart meter servers
@@ -114,8 +121,30 @@ echo ""
 
 # Step 3: Key Generation
 echo "=========================================="
-echo "STEP 2: Cryptographic Key Generation (KGC)"
+echo "STEP 2: Starting Key Distribution Center"
 echo "=========================================="
+echo "Starting KDC as background service..."
+./build/kdc &
+KDC_PID=$!
+
+echo "KDC PID: $KDC_PID"
+echo "Waiting for KDC to initialize..."
+sleep 3  # Give time for KDC to start
+
+# Check if KDC is still running
+if ! kill -0 $KDC_PID 2>/dev/null; then
+    echo "Error: KDC failed to start"
+    exit 1
+fi
+
+echo "✓ KDC server is running"
+echo ""
+
+# Step 4: Key Generation (Fallback - KDC can generate keys dynamically)
+echo "=========================================="
+echo "STEP 3: Cryptographic Key Generation (Fallback)"
+echo "=========================================="
+echo "Note: KDC can generate keys on-demand, but creating fallback keys..."
 KEYGEN_START=$(date +%s.%N)
 ./build/keygen
 KEYGEN_END=$(date +%s.%N)
@@ -127,7 +156,7 @@ echo ""
 
 # Step 4: Start Smart Meter Servers
 echo "=========================================="
-echo "STEP 3: Starting Smart Meter Servers"
+echo "STEP 4: Starting Smart Meter Servers"
 echo "=========================================="
 echo "Starting $NUM_CLIENTS smart meter servers..."
 
@@ -180,7 +209,7 @@ echo ""
 
 # Step 5: Start Control Center (Background Server)
 echo "=========================================="
-echo "STEP 4: Starting Control Center Server"
+echo "STEP 5: Starting Control Center Server"
 echo "=========================================="
 echo "Starting Control Center as background TCP server..."
 ./build/control_center &
@@ -201,7 +230,7 @@ echo ""
 
 # Step 6: Network Aggregation
 echo "=========================================="
-echo "STEP 5: Distributed Data Collection & Aggregation"
+echo "STEP 6: Distributed Data Collection & Aggregation"
 echo "=========================================="
 echo "Smart meters are now running and waiting for connections..."
 echo "Starting aggregator to collect data from all smart meters..."

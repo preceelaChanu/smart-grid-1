@@ -151,6 +151,9 @@ public:
     bool authenticate_as_client(const NodeCertificate& client_cert);
     bool authenticate_as_server(const NodeCertificate& server_cert);
     
+    // KDC-specific authentication (accepts all node types)
+    bool authenticate_as_kdc_server();
+    
     // Secure data transfer
     bool send_secure_data(const void* data, size_t size);
     bool receive_secure_data(vector<uint8_t>& data);
@@ -161,6 +164,9 @@ public:
     
     // Connection management
     void close();
+    
+    // Allow KDC access to internals
+    friend class KeyDistributionCenter;
 };
 
 #endif // NETWORK_UTILS_H

@@ -94,6 +94,9 @@ client: CMakeFiles/client.dir/client/client.cpp.o
 client: CMakeFiles/client.dir/build.make
 client: /usr/local/lib/libseal-4.0.a
 client: libnetwork_utils.a
+client: libkdc_client.a
+client: /usr/local/lib/libseal-4.0.a
+client: libnetwork_utils.a
 client: /usr/lib/x86_64-linux-gnu/libssl.so
 client: /usr/lib/x86_64-linux-gnu/libcrypto.so
 client: CMakeFiles/client.dir/link.txt
