@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find required packages
 find_package(Microsoft.SEAL QUIET)
+find_package(OpenSSL REQUIRED)
+find_package(Threads REQUIRED)
 
 # If SEAL not found via CMake, try manual discovery
 if(NOT Microsoft.SEAL_FOUND)
@@ -38,18 +40,25 @@ endif()
 
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/network)
+
+# Add network utilities library
+add_library(network_utils network/network_utils.cpp)
+target_link_libraries(network_utils OpenSSL::SSL OpenSSL::Crypto)
 
 # Add executable targets
 add_executable(keygen keygen/keygen.cpp)
 add_executable(client client/client.cpp)
 add_executable(aggregator aggregator/aggregator.cpp)
 add_executable(control_center control_center/control_center.cpp)
+add_executable(certgen certgen/certgen.cpp)
 
 # Link Microsoft SEAL library to all targets
 target_link_libraries(keygen Microsoft.SEAL::seal)
 target_link_libraries(client Microsoft.SEAL::seal)
-target_link_libraries(aggregator Microsoft.SEAL::seal)
-target_link_libraries(control_center Microsoft.SEAL::seal)
+target_link_libraries(aggregator Microsoft.SEAL::seal network_utils Threads::Threads)
+target_link_libraries(control_center Microsoft.SEAL::seal network_utils Threads::Threads)
+target_link_libraries(certgen network_utils)
 
 # Set compiler flags for performance and debugging
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra")

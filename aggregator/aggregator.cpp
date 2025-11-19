@@ -4,6 +4,7 @@
 #include <filesystem>
 #include "seal/seal.h"
 #include "json.hpp"
+#include "network_utils.h"
 
 using namespace std;
 using namespace seal;
@@ -147,32 +148,79 @@ int main() {
     
     auto aggregate_end = chrono::high_resolution_clock::now();
     
-    // Save aggregated result
-    cout << "Saving aggregated result..." << endl;
-    ofstream result_file("data/aggregated_result.seal", ios::binary);
-    if (!result_file.is_open()) {
-        cerr << "Error: Could not create aggregated result file" << endl;
+    // Serialize aggregated result for network transmission
+    cout << "Serializing aggregated result for network transmission..." << endl;
+    stringstream result_stream;
+    aggregated_result.save(result_stream);
+    string serialized_result = result_stream.str();
+    
+    cout << "Serialized result size: " << serialized_result.size() << " bytes" << endl;
+    
+    // Load network configuration
+    string cc_host = config["control_center"]["host"];
+    uint16_t cc_port = config["control_center"]["port"];
+    string agg_cert_file = config["aggregator"]["certificate"];
+    
+    cout << "Connecting to Control Center at " << cc_host << ":" << cc_port << endl;
+    
+    // Load aggregator certificate
+    NodeCertificate agg_cert;
+    if (!NetworkUtils::load_certificate(agg_cert_file, agg_cert)) {
+        cerr << "Error: Could not load aggregator certificate: " << agg_cert_file << endl;
         return 1;
     }
     
-    aggregated_result.save(result_file);
-    result_file.close();
+    cout << "Loaded aggregator certificate: " << agg_cert.node_id << endl;
+    
+    // Establish secure connection to Control Center
+    auto network_start = chrono::high_resolution_clock::now();
+    
+    int sockfd = NetworkUtils::create_client_socket(cc_host, cc_port);
+    if (sockfd < 0) {
+        cerr << "Error: Failed to connect to Control Center" << endl;
+        return 1;
+    }
+    
+    NetworkUtils::set_socket_timeout(sockfd, config["aggregator"]["connect_timeout"]);
+    
+    SecureConnection secure_conn(sockfd);
+    
+    cout << "Authenticating with Control Center..." << endl;
+    if (!secure_conn.authenticate_as_client(agg_cert)) {
+        cerr << "Error: Failed to authenticate with Control Center" << endl;
+        return 1;
+    }
+    
+    cout << "✓ Authentication successful!" << endl;
+    
+    // Send aggregated encrypted data securely
+    cout << "Transmitting encrypted aggregated data..." << endl;
+    if (!secure_conn.send_secure_data(serialized_result.data(), serialized_result.size())) {
+        cerr << "Error: Failed to send aggregated data" << endl;
+        return 1;
+    }
+    
+    cout << "✓ Data transmission successful!" << endl;
+    
+    auto network_end = chrono::high_resolution_clock::now();
     
     auto end_time = chrono::high_resolution_clock::now();
     
     // Performance metrics
     auto load_duration = chrono::duration_cast<chrono::milliseconds>(load_end - load_start);
     auto aggregate_duration = chrono::duration_cast<chrono::milliseconds>(aggregate_end - aggregate_start);
+    auto network_duration = chrono::duration_cast<chrono::milliseconds>(network_end - network_start);
     auto total_duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     
     cout << "=== Aggregation Complete ===" << endl;
     cout << "Clients processed: " << client_ciphertexts.size() << endl;
     cout << "Deserialization time: " << load_duration.count() << " ms" << endl;
     cout << "Homomorphic aggregation time: " << aggregate_duration.count() << " ms" << endl;
+    cout << "Network transmission time: " << network_duration.count() << " ms" << endl;
     cout << "Total execution time: " << total_duration.count() << " ms" << endl;
-    cout << "Aggregated result saved to: data/aggregated_result.seal" << endl;
-    cout << "Ready for decryption by control center" << endl;
+    cout << "Data transmitted securely to Control Center via TCP/IP" << endl;
     cout << "PRIVACY PRESERVED: Aggregator never saw plaintext data!" << endl;
+    cout << "NETWORK SECURITY: Authenticated connection with certificate validation" << endl;
     
     return 0;
 }

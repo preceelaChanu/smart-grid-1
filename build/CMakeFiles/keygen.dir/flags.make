@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/smart-grid-1/include -isystem /usr/local/include/SEAL-4.0
+CXX_INCLUDES = -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0
 
 CXX_FLAGS =  -O3 -Wall -Wextra -std=gnu++17
 

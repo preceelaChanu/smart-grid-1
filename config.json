@@ -12,5 +12,26 @@
   "public_key_file": "keys/public_key.seal",
   "secret_key_file": "keys/secret_key.seal",
   "relin_keys_file": "keys/relin_keys.seal",
-  "data_path_prefix": "data/ct_client_"
+  "data_path_prefix": "data/ct_client_",
+
+  "comment_network": "Network configuration for TCP/IP communication.",
+  "control_center": {
+    "host": "127.0.0.1",
+    "port": 8443,
+    "certificate": "keys/control_center.cert"
+  },
+  "aggregator": {
+    "certificate": "keys/aggregator.cert",
+    "connect_timeout": 30,
+    "data_timeout": 60
+  },
+  "smart_meters": {
+    "certificate_prefix": "keys/smart_meter_",
+    "connect_timeout": 30
+  },
+  "key_distribution_center": {
+    "host": "127.0.0.1", 
+    "port": 8444,
+    "certificate": "keys/kdc.cert"
+  }
 }

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named network_utils
+
+# Build rule for target.
+network_utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 network_utils
+.PHONY : network_utils
+
+# fast build rule for target.
+network_utils/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/build
+.PHONY : network_utils/fast
+
+#=============================================================================
 # Target rules for targets named keygen
 
 # Build rule for target.
@@ -168,6 +181,19 @@ control_center/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center.dir/build.make CMakeFiles/control_center.dir/build
 .PHONY : control_center/fast
 
+#=============================================================================
+# Target rules for targets named certgen
+
+# Build rule for target.
+certgen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 certgen
+.PHONY : certgen
+
+# fast build rule for target.
+certgen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/certgen.dir/build.make CMakeFiles/certgen.dir/build
+.PHONY : certgen/fast
+
 aggregator/aggregator.o: aggregator/aggregator.cpp.o
 .PHONY : aggregator/aggregator.o
 
@@ -191,6 +217,30 @@ aggregator/aggregator.s: aggregator/aggregator.cpp.s
 aggregator/aggregator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator.dir/build.make CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.s
 .PHONY : aggregator/aggregator.cpp.s
+
+certgen/certgen.o: certgen/certgen.cpp.o
+.PHONY : certgen/certgen.o
+
+# target to build an object file
+certgen/certgen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/certgen.dir/build.make CMakeFiles/certgen.dir/certgen/certgen.cpp.o
+.PHONY : certgen/certgen.cpp.o
+
+certgen/certgen.i: certgen/certgen.cpp.i
+.PHONY : certgen/certgen.i
+
+# target to preprocess a source file
+certgen/certgen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/certgen.dir/build.make CMakeFiles/certgen.dir/certgen/certgen.cpp.i
+.PHONY : certgen/certgen.cpp.i
+
+certgen/certgen.s: certgen/certgen.cpp.s
+.PHONY : certgen/certgen.s
+
+# target to generate assembly for a file
+certgen/certgen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/certgen.dir/build.make CMakeFiles/certgen.dir/certgen/certgen.cpp.s
+.PHONY : certgen/certgen.cpp.s
 
 client/client.o: client/client.cpp.o
 .PHONY : client/client.o
@@ -264,6 +314,30 @@ keygen/keygen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/keygen.dir/build.make CMakeFiles/keygen.dir/keygen/keygen.cpp.s
 .PHONY : keygen/keygen.cpp.s
 
+network/network_utils.o: network/network_utils.cpp.o
+.PHONY : network/network_utils.o
+
+# target to build an object file
+network/network_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/network/network_utils.cpp.o
+.PHONY : network/network_utils.cpp.o
+
+network/network_utils.i: network/network_utils.cpp.i
+.PHONY : network/network_utils.i
+
+# target to preprocess a source file
+network/network_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/network/network_utils.cpp.i
+.PHONY : network/network_utils.cpp.i
+
+network/network_utils.s: network/network_utils.cpp.s
+.PHONY : network/network_utils.s
+
+# target to generate assembly for a file
+network/network_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/network/network_utils.cpp.s
+.PHONY : network/network_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,12 +347,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... aggregator"
+	@echo "... certgen"
 	@echo "... client"
 	@echo "... control_center"
 	@echo "... keygen"
+	@echo "... network_utils"
 	@echo "... aggregator/aggregator.o"
 	@echo "... aggregator/aggregator.i"
 	@echo "... aggregator/aggregator.s"
+	@echo "... certgen/certgen.o"
+	@echo "... certgen/certgen.i"
+	@echo "... certgen/certgen.s"
 	@echo "... client/client.o"
 	@echo "... client/client.i"
 	@echo "... client/client.s"
@@ -288,6 +367,9 @@ help:
 	@echo "... keygen/keygen.o"
 	@echo "... keygen/keygen.i"
 	@echo "... keygen/keygen.s"
+	@echo "... network/network_utils.o"
+	@echo "... network/network_utils.i"
+	@echo "... network/network_utils.s"
 .PHONY : help
 
 

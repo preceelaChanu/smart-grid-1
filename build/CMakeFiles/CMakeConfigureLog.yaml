@@ -529,3 +529,43 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:11 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l"
+      binary: "/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ed4d2/fast
+        gmake[1]: Entering directory '/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ed4d2.dir/build.make CMakeFiles/cmTC_ed4d2.dir/build
+        gmake[2]: Entering directory '/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l'
+        Building C object CMakeFiles/cmTC_ed4d2.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ed4d2.dir/src.c.o -c /workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l/src.c
+        Linking C executable cmTC_ed4d2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed4d2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_ed4d2.dir/src.c.o -o cmTC_ed4d2 
+        gmake[2]: Leaving directory '/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l'
+        gmake[1]: Leaving directory '/workspaces/smart-grid-1/build/CMakeFiles/CMakeScratch/TryCompile-okyx5l'
+        
+      exitCode: 0
+...

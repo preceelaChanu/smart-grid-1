@@ -93,6 +93,9 @@ aggregator_EXTERNAL_OBJECTS =
 aggregator: CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o
 aggregator: CMakeFiles/aggregator.dir/build.make
 aggregator: /usr/local/lib/libseal-4.0.a
+aggregator: libnetwork_utils.a
+aggregator: /usr/lib/x86_64-linux-gnu/libssl.so
+aggregator: /usr/lib/x86_64-linux-gnu/libcrypto.so
 aggregator: CMakeFiles/aggregator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable aggregator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aggregator.dir/link.txt --verbose=$(VERBOSE)
