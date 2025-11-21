@@ -1,0 +1,25 @@
+=== Continuous Smart Meter Server 5 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-005
+Requesting public keys from KDC...
+[2025-11-21 06:11:50] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-11-21 06:11:50] NETWORK INFO: Server socket created and listening on port 9005
+✓ Smart meter server ready on port 9005
+Data transmission interval: 300 seconds
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9005
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Data generation thread stopped
+Smart meter 5 shutdown complete

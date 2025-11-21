@@ -4,6 +4,7 @@
 #include <cstring>
 #include <errno.h>
 #include <sys/select.h>
+#include <fcntl.h>
 #include <openssl/evp.h>
 #include <openssl/err.h>
 
@@ -457,4 +458,25 @@ bool NetworkUtils::save_certificate(const string& cert_file, const NodeCertifica
     bool success = fwrite(&cert, sizeof(cert), 1, file) == 1;
     fclose(file);
     return success;
+}
+
+bool NetworkUtils::set_socket_nonblocking(int sockfd, bool nonblocking) {
+    int flags = fcntl(sockfd, F_GETFL, 0);
+    if (flags == -1) {
+        log_network_event("ERROR", "Failed to get socket flags");
+        return false;
+    }
+    
+    if (nonblocking) {
+        flags |= O_NONBLOCK;
+    } else {
+        flags &= ~O_NONBLOCK;
+    }
+    
+    if (fcntl(sockfd, F_SETFL, flags) == -1) {
+        log_network_event("ERROR", "Failed to set socket flags");
+        return false;
+    }
+    
+    return true;
 }

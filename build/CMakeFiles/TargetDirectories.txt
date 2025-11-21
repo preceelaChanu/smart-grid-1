@@ -6,5 +6,8 @@
 /workspaces/smart-grid-1/build/CMakeFiles/control_center.dir
 /workspaces/smart-grid-1/build/CMakeFiles/certgen.dir
 /workspaces/smart-grid-1/build/CMakeFiles/kdc.dir
+/workspaces/smart-grid-1/build/CMakeFiles/client_continuous.dir
+/workspaces/smart-grid-1/build/CMakeFiles/aggregator_continuous.dir
+/workspaces/smart-grid-1/build/CMakeFiles/control_center_continuous.dir
 /workspaces/smart-grid-1/build/CMakeFiles/edit_cache.dir
 /workspaces/smart-grid-1/build/CMakeFiles/rebuild_cache.dir

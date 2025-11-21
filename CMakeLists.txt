@@ -59,6 +59,11 @@ add_executable(control_center control_center/control_center.cpp)
 add_executable(certgen certgen/certgen.cpp)
 add_executable(kdc kdc/kdc.cpp)
 
+# Add continuous operation targets
+add_executable(client_continuous client/client_continuous.cpp)
+add_executable(aggregator_continuous aggregator/aggregator_continuous.cpp)
+add_executable(control_center_continuous control_center/control_center_continuous.cpp)
+
 # Link Microsoft SEAL library to all targets
 target_link_libraries(keygen Microsoft.SEAL::seal)
 target_link_libraries(client Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
@@ -66,6 +71,11 @@ target_link_libraries(aggregator Microsoft.SEAL::seal network_utils kdc_client T
 target_link_libraries(control_center Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
 target_link_libraries(kdc Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(certgen network_utils)
+
+# Link continuous operation targets
+target_link_libraries(client_continuous Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
+target_link_libraries(aggregator_continuous Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
+target_link_libraries(control_center_continuous Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
 
 # Set compiler flags for performance and debugging
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra")

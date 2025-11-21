@@ -1,0 +1,95 @@
+=== Continuous Control Center ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: control-center-001
+Requesting all keys from KDC...
+[2025-11-21 06:11:41] NETWORK INFO: Connected to server 127.0.0.1:8444
+[2025-11-21 06:11:41] NETWORK INFO: Client authentication successful
+✓ Authenticated with KDC server
+Error: Failed to receive key response
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded secret key from fallback file
+Cryptographic components initialized
+SECURITY NOTE: This is the only node with access to the secret key
+[2025-11-21 06:11:41] NETWORK INFO: Server socket created and listening on port 8443
+✓ Control Center server ready on 127.0.0.1:8443
+Starting continuous control center operation...
+Press Ctrl+C to stop gracefully
+Network server thread started on port 8443
+Analytics thread started
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:12:11
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:12:41
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:13:11
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:13:41
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:14:11
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:14:41
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:15:11
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:15:41
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:16:11
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+Received shutdown signal. Gracefully shutting down control center...
+Network server thread stopped
+
+Received shutdown signal. Gracefully shutting down control center...
+
+=== Control Center Status ===
+Current time: 2025-11-21 06:16:41
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================

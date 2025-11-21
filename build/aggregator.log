@@ -1,0 +1,84 @@
+=== Continuous Aggregator Node ===
+Initializing for continuous operation...
+Target smart meters: 10
+Aggregation interval: 15 minutes
+SEAL context initialized
+Loaded certificate: aggregator-001
+Requesting public keys from KDC...
+[2025-11-21 06:11:43] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+✓ Continuous aggregator ready
+Starting continuous aggregator operation...
+Press Ctrl+C to stop gracefully
+Aggregation thread started
+Analytics thread started
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:12:13
+Connected meters: 10
+Next aggregation in: 15 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:12:43
+Connected meters: 10
+Next aggregation in: 14 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:13:13
+Connected meters: 10
+Next aggregation in: 14 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:13:43
+Connected meters: 10
+Next aggregation in: 13 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:14:13
+Connected meters: 10
+Next aggregation in: 13 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:14:43
+Connected meters: 10
+Next aggregation in: 12 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:15:13
+Connected meters: 10
+Next aggregation in: 12 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:15:43
+Connected meters: 10
+Next aggregation in: 11 minutes
+Data points collected: 0 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-11-21 06:16:13
+Connected meters: 10
+Next aggregation in: 11 minutes
+Data points collected: 0 hours
+=========================
+
+Received shutdown signal. Gracefully shutting down aggregator...
+
+Received shutdown signal. Gracefully shutting down aggregator...
