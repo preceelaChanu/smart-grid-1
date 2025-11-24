@@ -3,23 +3,23 @@ Initializing for continuous operation...
 SEAL context initialized
 Loaded certificate: smart-meter-005
 Requesting public keys from KDC...
-[2025-11-21 06:11:50] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+[2025-11-24 09:12:05] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
 Error: Failed to connect to KDC at 127.0.0.1:8444
 Error: Failed to send key request to KDC
 Failed to obtain keys from KDC, falling back to file keys
 Loaded keys from fallback files
 Cryptographic components initialized
-[2025-11-21 06:11:50] NETWORK INFO: Server socket created and listening on port 9005
+[2025-11-24 09:12:05] NETWORK INFO: Server socket created and listening on port 9005
 ✓ Smart meter server ready on port 9005
 Data transmission interval: 300 seconds
 Starting continuous smart meter operation...
 Press Ctrl+C to stop gracefully
 Data generation thread started
 Network server thread started on port 9005
-
-Received shutdown signal. Gracefully shutting down smart meter...
-Network server thread stopped
-
-Received shutdown signal. Gracefully shutting down smart meter...
-Data generation thread stopped
-Smart meter 5 shutdown complete
+[2025-11-24 09:17:05] Meter 5: Generated 1.632 kWh (encrypted: 334346 bytes)
+[2025-11-24 09:22:05] Meter 5: Generated 4.290 kWh (encrypted: 334070 bytes)
+[2025-11-24 09:26:59] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334070 bytes to aggregator-001
+Session completed with aggregator-001
+[2025-11-24 09:27:05] Meter 5: Generated 1.235 kWh (encrypted: 334374 bytes)

@@ -3,8 +3,8 @@ Initializing for continuous operation...
 SEAL context initialized
 Loaded certificate: control-center-001
 Requesting all keys from KDC...
-[2025-11-21 06:11:41] NETWORK INFO: Connected to server 127.0.0.1:8444
-[2025-11-21 06:11:41] NETWORK INFO: Client authentication successful
+[2025-11-24 09:11:57] NETWORK INFO: Connected to server 127.0.0.1:8444
+[2025-11-24 09:11:57] NETWORK INFO: Client authentication successful
 ✓ Authenticated with KDC server
 Error: Failed to receive key response
 Error: Failed to send key request to KDC
@@ -12,7 +12,7 @@ Failed to obtain keys from KDC, falling back to file keys
 Loaded secret key from fallback file
 Cryptographic components initialized
 SECURITY NOTE: This is the only node with access to the secret key
-[2025-11-21 06:11:41] NETWORK INFO: Server socket created and listening on port 8443
+[2025-11-24 09:11:57] NETWORK INFO: Server socket created and listening on port 8443
 ✓ Control Center server ready on 127.0.0.1:8443
 Starting continuous control center operation...
 Press Ctrl+C to stop gracefully
@@ -20,76 +20,248 @@ Network server thread started on port 8443
 Analytics thread started
 
 === Control Center Status ===
-Current time: 2025-11-21 06:12:11
+Current time: 2025-11-24 09:12:27
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:12:41
+Current time: 2025-11-24 09:12:57
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:13:11
+Current time: 2025-11-24 09:13:27
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:13:41
+Current time: 2025-11-24 09:13:57
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:14:11
+Current time: 2025-11-24 09:14:27
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:14:41
+Current time: 2025-11-24 09:14:57
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:15:11
+Current time: 2025-11-24 09:15:27
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:15:41
+Current time: 2025-11-24 09:15:57
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
 === Control Center Status ===
-Current time: 2025-11-21 06:16:11
+Current time: 2025-11-24 09:16:27
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
 =============================
 
-Received shutdown signal. Gracefully shutting down control center...
-Network server thread stopped
-
-Received shutdown signal. Gracefully shutting down control center...
-
 === Control Center Status ===
-Current time: 2025-11-21 06:16:41
+Current time: 2025-11-24 09:16:57
 Server: 127.0.0.1:8443
 Recent readings: 0
 Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:17:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:17:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:18:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:18:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:19:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:19:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:20:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:20:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:21:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:21:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:22:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:22:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:23:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:23:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:24:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:24:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:25:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:25:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:26:27
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:26:57
+Server: 127.0.0.1:8443
+Recent readings: 0
+Hourly data points: 0 hours
+=============================
+[2025-11-24 09:26:59] NETWORK INFO: Server authentication successful for node: aggregator-001
+[09:26:59] ✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Received 25 bytes of encrypted data
+✓ Processed: 31.96 kWh total (3.20 kWh avg) from 10 meters
+Session completed with aggregator-001
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:27:27
+Server: 127.0.0.1:8443
+Recent readings: 1
+Hourly data points: 1 hours
+Latest consumption: 31.96 kWh
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:27:57
+Server: 127.0.0.1:8443
+Recent readings: 1
+Hourly data points: 1 hours
+Latest consumption: 31.96 kWh
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:28:27
+Server: 127.0.0.1:8443
+Recent readings: 1
+Hourly data points: 1 hours
+Latest consumption: 31.96 kWh
+=============================
+
+=== Control Center Status ===
+Current time: 2025-11-24 09:28:57
+Server: 127.0.0.1:8443
+Recent readings: 1
+Hourly data points: 1 hours
+Latest consumption: 31.96 kWh
 =============================
