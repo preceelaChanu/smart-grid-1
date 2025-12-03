@@ -11,6 +11,7 @@
 #include "json.hpp"
 #include "network_utils.h"
 #include "kdc_client.h"
+#include "performance_metrics.h"
 
 using namespace std;
 using namespace seal;
@@ -63,7 +64,7 @@ public:
         meter_id_(meter_id),
         rng_(chrono::steady_clock::now().time_since_epoch().count()),
         energy_dist_(0.5, 5.0),  // Energy consumption between 0.5 and 5.0 kWh
-        transmission_interval_(300)  // Send data every 5 minutes (300 seconds)
+        transmission_interval_(20)  // Send data every 20 seconds (simulating 5 minutes)
     {
         port_ = 9000 + meter_id_;
     }
@@ -134,7 +135,22 @@ public:
         }
         
         cout << "✓ Smart meter server ready on port " << port_ << endl;
-        cout << "Data transmission interval: " << transmission_interval_.count() << " seconds" << endl;
+        cout << "Data transmission interval: " << transmission_interval_.count() << " seconds (15x accelerated - simulates 5min)" << endl;
+        
+        // Initialize performance metrics logging
+        PerformanceMetrics::initializeCSVFiles();
+        
+        // Log initial security metrics
+        PerformanceMetrics::SecurityMetrics sec_metrics;
+        sec_metrics.algorithm = "CKKS";
+        sec_metrics.key_size_bits = poly_modulus_degree * 40;  // Approximate
+        sec_metrics.poly_modulus_degree = poly_modulus_degree;
+        sec_metrics.security_level_bits = PerformanceMetrics::estimateSecurityLevel(poly_modulus_degree);
+        sec_metrics.quantum_resistant = true;
+        sec_metrics.attack_model = "IND-CPA";
+        sec_metrics.ciphertext_expansion = 100;  // Will be updated with actual data
+        sec_metrics.timestamp = PerformanceMetrics::getCurrentTimestamp();
+        PerformanceMetrics::logSecurityMetrics(sec_metrics);
         
         last_transmission_ = chrono::steady_clock::now();
         
@@ -211,8 +227,8 @@ private:
                 data_ready = true;
             }
             
-            // Check every 10 seconds
-            this_thread::sleep_for(chrono::seconds(10));
+            // Check every 2 seconds (faster checking for 20-second cycles)
+            this_thread::sleep_for(chrono::seconds(2));
         }
         
         cout << "Data generation thread stopped" << endl;
@@ -244,6 +260,9 @@ private:
         current_energy_value_ += variation(rng_);
         current_energy_value_ = max(0.1, current_energy_value_);  // Minimum 0.1 kWh
         
+        // Measure encryption performance
+        auto encryption_start = chrono::high_resolution_clock::now();
+        
         // Encrypt the data
         vector<double> values = {current_energy_value_};
         Plaintext plain;
@@ -252,17 +271,35 @@ private:
         Ciphertext encrypted;
         encryptor_->encrypt(plain, encrypted);
         
+        auto encryption_end = chrono::high_resolution_clock::now();
+        auto duration_ns = chrono::duration_cast<chrono::nanoseconds>(encryption_end - encryption_start);
+        double encryption_time = duration_ns.count() / 1000000.0;  // Convert nanoseconds to milliseconds
+        
         // Serialize to bytes
         stringstream stream;
         encrypted.save(stream);
         string serialized = stream.str();
         current_encrypted_data_ = vector<uint8_t>(serialized.begin(), serialized.end());
         
-        // Log the data generation (remove unused timestamp variable)
+        // Log encryption performance metrics
+        PerformanceMetrics::EncryptionMetrics enc_metrics;
+        enc_metrics.algorithm = "CKKS";
+        enc_metrics.poly_modulus_degree = context_->key_context_data()->parms().poly_modulus_degree();
+        enc_metrics.scale_bits = static_cast<int>(log2(scale_));
+        enc_metrics.plaintext_size_bytes = sizeof(double);  // Single double value
+        enc_metrics.ciphertext_size_bytes = current_encrypted_data_.size();
+        enc_metrics.encryption_time_ms = encryption_time;
+        enc_metrics.communication_overhead = static_cast<double>(current_encrypted_data_.size()) / sizeof(double);
+        enc_metrics.security_level_bits = PerformanceMetrics::estimateSecurityLevel(enc_metrics.poly_modulus_degree);
+        enc_metrics.timestamp = PerformanceMetrics::getCurrentTimestamp();
+        enc_metrics.meter_id = meter_id_;
+        PerformanceMetrics::logEncryptionMetrics(enc_metrics);
+        
+        // Log the data generation with encryption timing
         cout << "[" << put_time(localtime(&time_t), "%Y-%m-%d %H:%M:%S") << "] "
              << "Meter " << meter_id_ << ": Generated " << fixed << setprecision(3) 
              << current_energy_value_ << " kWh (encrypted: " << current_encrypted_data_.size() 
-             << " bytes)" << endl;
+             << " bytes, " << fixed << setprecision(3) << encryption_time << " ms)" << endl;
     }
     
     void network_server_loop() {
@@ -316,8 +353,28 @@ private:
         {
             lock_guard<mutex> lock(data_mutex_);
             if (!current_encrypted_data_.empty()) {
-                if (secure_conn.send_secure_data(current_encrypted_data_.data(), current_encrypted_data_.size())) {
-                    cout << "✓ Sent " << current_encrypted_data_.size() << " bytes to " << aggregator_id << endl;
+                auto network_start = chrono::high_resolution_clock::now();
+                bool success = secure_conn.send_secure_data(current_encrypted_data_.data(), current_encrypted_data_.size());
+                auto network_end = chrono::high_resolution_clock::now();
+                
+                double latency_ms = chrono::duration_cast<chrono::microseconds>(network_end - network_start).count() / 1000.0;
+                double throughput_mbps = (current_encrypted_data_.size() * 8.0) / (latency_ms * 1000.0);  // Mbps calculation
+                
+                // Log network performance
+                PerformanceMetrics::NetworkMetrics net_metrics;
+                net_metrics.node_type = "smart_meter";
+                net_metrics.operation = "send_encrypted_data";
+                net_metrics.data_size_bytes = current_encrypted_data_.size();
+                net_metrics.latency_ms = latency_ms;
+                net_metrics.throughput_mbps = throughput_mbps;
+                net_metrics.success = success;
+                net_metrics.error_type = success ? "none" : "transmission_failed";
+                net_metrics.timestamp = PerformanceMetrics::getCurrentTimestamp();
+                net_metrics.connection_id = meter_id_;
+                PerformanceMetrics::logNetworkMetrics(net_metrics);
+                
+                if (success) {
+                    cout << "✓ Sent " << current_encrypted_data_.size() << " bytes to " << aggregator_id << " (" << fixed << setprecision(2) << latency_ms << "ms)" << endl;
                 } else {
                     cerr << "Failed to send data to " << aggregator_id << endl;
                 }

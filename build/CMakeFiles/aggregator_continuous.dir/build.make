@@ -73,15 +73,15 @@ CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o: CMa
 CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o: /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp
 CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o: CMakeFiles/aggregator_continuous.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o -MF CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o.d -o CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o -c /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o -MF CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o.d -o CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.o -c /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp
 
 CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp > CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp > CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.i
 
 CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp -o CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/aggregator/aggregator_continuous.cpp -o CMakeFiles/aggregator_continuous.dir/aggregator/aggregator_continuous.cpp.s
 
 # Object files for target aggregator_continuous
 aggregator_continuous_OBJECTS = \
@@ -95,6 +95,7 @@ aggregator_continuous: CMakeFiles/aggregator_continuous.dir/build.make
 aggregator_continuous: /usr/local/lib/libseal-4.0.a
 aggregator_continuous: libnetwork_utils.a
 aggregator_continuous: libkdc_client.a
+aggregator_continuous: libperformance_metrics.a
 aggregator_continuous: /usr/local/lib/libseal-4.0.a
 aggregator_continuous: libnetwork_utils.a
 aggregator_continuous: /usr/lib/x86_64-linux-gnu/libssl.so

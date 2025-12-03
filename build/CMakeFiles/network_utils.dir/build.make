@@ -73,15 +73,15 @@ CMakeFiles/network_utils.dir/network/network_utils.cpp.o: CMakeFiles/network_uti
 CMakeFiles/network_utils.dir/network/network_utils.cpp.o: /workspaces/smart-grid-1/network/network_utils.cpp
 CMakeFiles/network_utils.dir/network/network_utils.cpp.o: CMakeFiles/network_utils.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/network_utils.dir/network/network_utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_utils.dir/network/network_utils.cpp.o -MF CMakeFiles/network_utils.dir/network/network_utils.cpp.o.d -o CMakeFiles/network_utils.dir/network/network_utils.cpp.o -c /workspaces/smart-grid-1/network/network_utils.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/network_utils.dir/network/network_utils.cpp.o -MF CMakeFiles/network_utils.dir/network/network_utils.cpp.o.d -o CMakeFiles/network_utils.dir/network/network_utils.cpp.o -c /workspaces/smart-grid-1/network/network_utils.cpp
 
 CMakeFiles/network_utils.dir/network/network_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/network_utils.dir/network/network_utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/network/network_utils.cpp > CMakeFiles/network_utils.dir/network/network_utils.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/network/network_utils.cpp > CMakeFiles/network_utils.dir/network/network_utils.cpp.i
 
 CMakeFiles/network_utils.dir/network/network_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/network_utils.dir/network/network_utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/network/network_utils.cpp -o CMakeFiles/network_utils.dir/network/network_utils.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/network/network_utils.cpp -o CMakeFiles/network_utils.dir/network/network_utils.cpp.s
 
 # Object files for target network_utils
 network_utils_OBJECTS = \

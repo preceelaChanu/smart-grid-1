@@ -54,6 +54,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/network_utils.dir/DependInfo.cmake"
+  "CMakeFiles/performance_metrics.dir/DependInfo.cmake"
   "CMakeFiles/kdc_client.dir/DependInfo.cmake"
   "CMakeFiles/keygen.dir/DependInfo.cmake"
   "CMakeFiles/client.dir/DependInfo.cmake"

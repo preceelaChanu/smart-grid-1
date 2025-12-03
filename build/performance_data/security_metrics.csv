@@ -1,0 +1,2 @@
+timestamp,algorithm,key_size_bits,poly_modulus_degree,security_level_bits,security_efficiency,ciphertext_expansion,quantum_resistant,attack_model
+2025-12-03 07:40:54.654,CKKS,327680,8192,128,0.000000,100,true,IND-CPA

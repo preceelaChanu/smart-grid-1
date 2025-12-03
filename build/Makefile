@@ -130,6 +130,19 @@ network_utils/fast:
 .PHONY : network_utils/fast
 
 #=============================================================================
+# Target rules for targets named performance_metrics
+
+# Build rule for target.
+performance_metrics: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_metrics
+.PHONY : performance_metrics
+
+# fast build rule for target.
+performance_metrics/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/build
+.PHONY : performance_metrics/fast
+
+#=============================================================================
 # Target rules for targets named kdc_client
 
 # Build rule for target.
@@ -523,6 +536,30 @@ network/network_utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/network/network_utils.cpp.s
 .PHONY : network/network_utils.cpp.s
 
+performance/performance_metrics.o: performance/performance_metrics.cpp.o
+.PHONY : performance/performance_metrics.o
+
+# target to build an object file
+performance/performance_metrics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/performance/performance_metrics.cpp.o
+.PHONY : performance/performance_metrics.cpp.o
+
+performance/performance_metrics.i: performance/performance_metrics.cpp.i
+.PHONY : performance/performance_metrics.i
+
+# target to preprocess a source file
+performance/performance_metrics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/performance/performance_metrics.cpp.i
+.PHONY : performance/performance_metrics.cpp.i
+
+performance/performance_metrics.s: performance/performance_metrics.cpp.s
+.PHONY : performance/performance_metrics.s
+
+# target to generate assembly for a file
+performance/performance_metrics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/performance/performance_metrics.cpp.s
+.PHONY : performance/performance_metrics.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -542,6 +579,7 @@ help:
 	@echo "... kdc_client"
 	@echo "... keygen"
 	@echo "... network_utils"
+	@echo "... performance_metrics"
 	@echo "... aggregator/aggregator.o"
 	@echo "... aggregator/aggregator.i"
 	@echo "... aggregator/aggregator.s"
@@ -575,6 +613,9 @@ help:
 	@echo "... network/network_utils.o"
 	@echo "... network/network_utils.i"
 	@echo "... network/network_utils.s"
+	@echo "... performance/performance_metrics.o"
+	@echo "... performance/performance_metrics.i"
+	@echo "... performance/performance_metrics.s"
 .PHONY : help
 
 

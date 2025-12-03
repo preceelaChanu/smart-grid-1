@@ -310,11 +310,8 @@ private:
         cout << "Analytics thread started" << endl;
         
         while (running) {
-            // Perform detailed analytics every hour
-            auto now = chrono::system_clock::now();
-            auto next_hour = chrono::time_point_cast<chrono::hours>(now) + chrono::hours(1);
-            
-            this_thread::sleep_until(next_hour);
+            // Perform detailed analytics every 4 minutes (simulating every hour with 15x speedup)
+            this_thread::sleep_for(chrono::minutes(4));
             
             if (running) {
                 perform_comprehensive_analytics();

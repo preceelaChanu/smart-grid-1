@@ -1,0 +1,2 @@
+/usr/bin/ar qc libperformance_metrics.a CMakeFiles/performance_metrics.dir/performance/performance_metrics.cpp.o
+/usr/bin/ranlib libperformance_metrics.a

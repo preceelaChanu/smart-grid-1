@@ -46,6 +46,10 @@ include_directories(${CMAKE_SOURCE_DIR}/network)
 add_library(network_utils network/network_utils.cpp)
 target_link_libraries(network_utils OpenSSL::SSL OpenSSL::Crypto)
 
+# Add performance metrics library  
+add_library(performance_metrics performance/performance_metrics.cpp)
+target_link_libraries(performance_metrics)
+
 # Add KDC client library
 add_library(kdc_client kdc/kdc_client.cpp)
 target_link_libraries(kdc_client Microsoft.SEAL::seal network_utils OpenSSL::SSL OpenSSL::Crypto)
@@ -73,9 +77,9 @@ target_link_libraries(kdc Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(certgen network_utils)
 
 # Link continuous operation targets
-target_link_libraries(client_continuous Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
-target_link_libraries(aggregator_continuous Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
-target_link_libraries(control_center_continuous Microsoft.SEAL::seal network_utils kdc_client Threads::Threads)
+target_link_libraries(client_continuous Microsoft.SEAL::seal network_utils kdc_client performance_metrics Threads::Threads)
+target_link_libraries(aggregator_continuous Microsoft.SEAL::seal network_utils kdc_client performance_metrics Threads::Threads)
+target_link_libraries(control_center_continuous Microsoft.SEAL::seal network_utils kdc_client performance_metrics Threads::Threads)
 
 # Set compiler flags for performance and debugging
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra")

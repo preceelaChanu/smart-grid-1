@@ -73,15 +73,15 @@ CMakeFiles/certgen.dir/certgen/certgen.cpp.o: CMakeFiles/certgen.dir/flags.make
 CMakeFiles/certgen.dir/certgen/certgen.cpp.o: /workspaces/smart-grid-1/certgen/certgen.cpp
 CMakeFiles/certgen.dir/certgen/certgen.cpp.o: CMakeFiles/certgen.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/certgen.dir/certgen/certgen.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/certgen.dir/certgen/certgen.cpp.o -MF CMakeFiles/certgen.dir/certgen/certgen.cpp.o.d -o CMakeFiles/certgen.dir/certgen/certgen.cpp.o -c /workspaces/smart-grid-1/certgen/certgen.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/certgen.dir/certgen/certgen.cpp.o -MF CMakeFiles/certgen.dir/certgen/certgen.cpp.o.d -o CMakeFiles/certgen.dir/certgen/certgen.cpp.o -c /workspaces/smart-grid-1/certgen/certgen.cpp
 
 CMakeFiles/certgen.dir/certgen/certgen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/certgen.dir/certgen/certgen.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/certgen/certgen.cpp > CMakeFiles/certgen.dir/certgen/certgen.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/certgen/certgen.cpp > CMakeFiles/certgen.dir/certgen/certgen.cpp.i
 
 CMakeFiles/certgen.dir/certgen/certgen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/certgen.dir/certgen/certgen.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/certgen/certgen.cpp -o CMakeFiles/certgen.dir/certgen/certgen.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/certgen/certgen.cpp -o CMakeFiles/certgen.dir/certgen/certgen.cpp.s
 
 # Object files for target certgen
 certgen_OBJECTS = \

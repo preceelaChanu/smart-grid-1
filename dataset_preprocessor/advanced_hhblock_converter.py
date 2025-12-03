@@ -192,9 +192,9 @@ class HHBlockConverter:
 
 def main():
     parser = argparse.ArgumentParser(description="Convert HHBlock dataset to normalized format")
-    parser.add_argument("--input-dir", default=r"c:\Users\preceelachanu.iren\Desktop\ami\hhblock_dataset",
+    parser.add_argument("--input-dir", default=r"D:/london/hhblock_dataset/hhblock_dataset",
                       help="Input directory containing HHBlock CSV files")
-    parser.add_argument("--output-dir", default=r"c:\Users\preceelachanu.iren\Desktop\ami\converted_data",
+    parser.add_argument("--output-dir", default=r"D:/london/preproprocessed/converted_data",
                       help="Output directory for converted files")
     parser.add_argument("--single-file", help="Convert a single file")
     parser.add_argument("--merge", action="store_true", help="Merge all converted files")

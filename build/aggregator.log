@@ -1,11 +1,11 @@
 === Continuous Aggregator Node ===
 Initializing for continuous operation...
 Target smart meters: 10
-Aggregation interval: 15 minutes
+Aggregation interval: 1 minutes (15x accelerated - simulates 15min)
 SEAL context initialized
 Loaded certificate: aggregator-001
 Requesting public keys from KDC...
-[2025-11-24 09:11:59] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+[2025-12-03 07:40:41] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
 Error: Failed to connect to KDC at 127.0.0.1:8444
 Error: Failed to send key request to KDC
 Failed to obtain keys from KDC, falling back to file keys
@@ -17,281 +17,3809 @@ Aggregation thread started
 Analytics thread started
 
 === Aggregator Status ===
-Current time: 2025-11-24 09:12:29
-Connected meters: 10
-Next aggregation in: 15 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:12:59
-Connected meters: 10
-Next aggregation in: 14 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:13:29
-Connected meters: 10
-Next aggregation in: 14 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:13:59
-Connected meters: 10
-Next aggregation in: 13 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:14:29
-Connected meters: 10
-Next aggregation in: 13 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:14:59
-Connected meters: 10
-Next aggregation in: 12 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:15:29
-Connected meters: 10
-Next aggregation in: 12 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:15:59
-Connected meters: 10
-Next aggregation in: 11 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:16:29
-Connected meters: 10
-Next aggregation in: 11 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:16:59
-Connected meters: 10
-Next aggregation in: 10 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:17:29
-Connected meters: 10
-Next aggregation in: 10 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:17:59
-Connected meters: 10
-Next aggregation in: 9 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:18:29
-Connected meters: 10
-Next aggregation in: 9 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:18:59
-Connected meters: 10
-Next aggregation in: 8 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:19:29
-Connected meters: 10
-Next aggregation in: 8 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:19:59
-Connected meters: 10
-Next aggregation in: 7 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:20:29
-Connected meters: 10
-Next aggregation in: 7 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:20:59
-Connected meters: 10
-Next aggregation in: 6 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:21:29
-Connected meters: 10
-Next aggregation in: 6 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:21:59
-Connected meters: 10
-Next aggregation in: 5 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:22:29
-Connected meters: 10
-Next aggregation in: 5 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:22:59
-Connected meters: 10
-Next aggregation in: 4 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:23:29
-Connected meters: 10
-Next aggregation in: 4 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:23:59
-Connected meters: 10
-Next aggregation in: 3 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:24:29
-Connected meters: 10
-Next aggregation in: 3 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:24:59
-Connected meters: 10
-Next aggregation in: 2 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:25:29
-Connected meters: 10
-Next aggregation in: 2 minutes
-Data points collected: 0 hours
-=========================
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:25:59
+Current time: 2025-12-03 07:41:11
 Connected meters: 10
 Next aggregation in: 1 minutes
 Data points collected: 0 hours
 =========================
 
 === Aggregator Status ===
-Current time: 2025-11-24 09:26:29
-Connected meters: 10
-Next aggregation in: 1 minutes
-Data points collected: 0 hours
-=========================
-
-========================================
-Starting aggregation cycle at 2025-11-24 09:26:59
-========================================
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9001
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9006
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9003
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9004
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9009
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9005
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9008
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9010
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9002
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:9007
-
-=== Aggregator Status ===
-Current time: 2025-11-24 09:26:59
+Current time: 2025-12-03 07:41:41
 Connected meters: 10
 Next aggregation in: 0 minutes
 Data points collected: 0 hours
 =========================
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-✓ Collected 334321 bytes from Smart Meter 3
-✓ Collected 334471 bytes from Smart Meter 9
-✓ Collected 334293 bytes from Smart Meter 4
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-✓ Collected 334409 bytes from Smart Meter 1
-✓ Collected 334419 bytes from Smart Meter 7
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-✓ Collected 334070 bytes from Smart Meter 5
-✓ Collected 334441 bytes from Smart Meter 6
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-✓ Collected 334356 bytes from Smart Meter 2
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
-✓ Collected 334413 bytes from Smart Meter 8
-✓ Collected 334254 bytes from Smart Meter 10
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:41:41
+========================================
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334317 bytes from Smart Meter 6
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334465 bytes from Smart Meter 7
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334334 bytes from Smart Meter 8
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 333286 bytes from Smart Meter 9
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334207 bytes from Smart Meter 10
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334532 bytes from Smart Meter 1
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334363 bytes from Smart Meter 2
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334257 bytes from Smart Meter 3
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334197 bytes from Smart Meter 4
+[2025-12-03 07:41:41] NETWORK INFO: Client authentication successful
+✓ Collected 334403 bytes from Smart Meter 5
 Data collection complete: 10/10 meters
 Performing homomorphic aggregation on 10 ciphertexts...
-✓ Homomorphic aggregation complete
-[2025-11-24 09:26:59] NETWORK INFO: Connected to server 127.0.0.1:8443
-[2025-11-24 09:26:59] NETWORK INFO: Client authentication successful
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:41:41] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:41:42] NETWORK INFO: Client authentication successful
 ✓ Sent aggregated data to control center
-Aggregation cycle completed in 0 seconds
-Next cycle in 15 minutes
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
 
 === Aggregator Status ===
-Current time: 2025-11-24 09:27:29
+Current time: 2025-12-03 07:42:11
 Connected meters: 10
-Next aggregation in: 15 minutes
+Next aggregation in: 1 minutes
 Data points collected: 1 hours
 =========================
 
 === Aggregator Status ===
-Current time: 2025-11-24 09:27:59
+Current time: 2025-12-03 07:42:41
 Connected meters: 10
-Next aggregation in: 14 minutes
+Next aggregation in: 0 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:42:42
+========================================
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334459 bytes from Smart Meter 10
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334261 bytes from Smart Meter 1
+✓ Collected 334340 bytes from Smart Meter 2
+✓ Collected 334453 bytes from Smart Meter 3
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334398 bytes from Smart Meter 4
+✓ Collected 334280 bytes from Smart Meter 5
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334401 bytes from Smart Meter 6
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334433 bytes from Smart Meter 7
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334281 bytes from Smart Meter 8
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Collected 334213 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 07:42:42] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:42:42] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:43:11
+Connected meters: 10
+Next aggregation in: 1 minutes
 Data points collected: 1 hours
 =========================
 
 === Aggregator Status ===
-Current time: 2025-11-24 09:28:29
+Current time: 2025-12-03 07:43:41
 Connected meters: 10
-Next aggregation in: 14 minutes
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:43:42
+========================================
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334269 bytes from Smart Meter 10
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334287 bytes from Smart Meter 1
+✓ Collected 334274 bytes from Smart Meter 2
+✓ Collected 334511 bytes from Smart Meter 3
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334533 bytes from Smart Meter 4
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334436 bytes from Smart Meter 5
+✓ Collected 334149 bytes from Smart Meter 6
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334373 bytes from Smart Meter 7
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334094 bytes from Smart Meter 8
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Collected 334116 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.10ms)
+[2025-12-03 07:43:42] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:43:42] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:44:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 07:44:41
+================================================
+Grid Summary:
+  Total Energy: 104.60 kWh
+  Total Readings: 3
+  Average per Reading: 34.87 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      104.60 |        3 |    34.87
+
+Peak Usage: 104.60 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 34.87 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:44:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:44:42
+========================================
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Collected 334202 bytes from Smart Meter 10
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Collected 334343 bytes from Smart Meter 4
+✓ Collected 334500 bytes from Smart Meter 1
+✓ Collected 334086 bytes from Smart Meter 5
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Collected 334337 bytes from Smart Meter 2
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Collected 333896 bytes from Smart Meter 6
+✓ Collected 334157 bytes from Smart Meter 3
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Collected 334143 bytes from Smart Meter ✓ Collected 8334180 bytes from Smart Meter 
+7
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Collected 334420 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.10ms)
+[2025-12-03 07:44:42] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:44:42] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:45:11
+Connected meters: 10
+Next aggregation in: 1 minutes
 Data points collected: 1 hours
 =========================
 
 === Aggregator Status ===
-Current time: 2025-11-24 09:28:59
+Current time: 2025-12-03 07:45:41
 Connected meters: 10
-Next aggregation in: 13 minutes
+Next aggregation in: 1 minutes
 Data points collected: 1 hours
 =========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:45:42
+========================================
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:45:42] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+✓ Collected 334147 bytes from Smart Meter 8
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+✓ Collected 334024 bytes from Smart Meter 7
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+✓ Collected 334358 bytes from Smart Meter 4
+✓ Collected 334437 bytes from Smart Meter 1
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+✓ Collected 334117 bytes from Smart Meter 6
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+✓ Collected 333947 bytes from Smart Meter 3
+✓ Collected 334291 bytes from Smart Meter 9
+✓ Collected 334490 bytes from Smart Meter 2
+✓ Collected 333959 bytes from Smart Meter 5
+[2025-12-03 07:45:42] NETWORK INFO: Client authentication successful
+✓ Collected 334291 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.10ms)
+[2025-12-03 07:45:43] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:45:43] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:46:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:46:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:46:43
+========================================
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+✓ Collected 334520 bytes from Smart Meter 9
+✓ Collected 334298 bytes from Smart Meter 2
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+✓ Collected [2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+✓ Collected 334334 bytes from Smart Meter 1
+334322 bytes from Smart Meter 7
+✓ Collected ✓ Collected [2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+✓ Collected 334380 bytes from Smart Meter 5
+✓ Collected 334392 bytes from Smart Meter 10
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+✓ Collected 334326 bytes from Smart Meter 3
+334165 bytes from Smart Meter 6
+334343 bytes from Smart Meter 4
+✓ Collected 334039 bytes from Smart Meter 8
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 07:46:43] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:46:43] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:47:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:47:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:47:43
+========================================
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+✓ Collected 334330 bytes from Smart Meter 8
+✓ Collected 334333 bytes from Smart Meter 7
+✓ Collected 334300 bytes from Smart Meter 3
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+✓ Collected 334204 bytes from Smart Meter 5
+✓ Collected 334399 bytes from Smart Meter 9
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+✓ Collected 333978 bytes from Smart Meter 10
+✓ Collected 333361 bytes from Smart Meter 2
+✓ Collected 334411 bytes from Smart Meter 6
+✓ Collected 334092 bytes from Smart Meter 4
+✓ Collected 334137 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 07:47:43] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:47:43] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:48:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 07:48:41
+================================================
+Grid Summary:
+  Total Energy: 247.50 kWh
+  Total Readings: 7
+  Average per Reading: 35.36 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      247.50 |        7 |    35.36
+
+Peak Usage: 247.50 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 35.36 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:48:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:48:43
+========================================
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+✓ Collected 334216 bytes from Smart Meter 4
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+✓ Collected 334103 bytes from Smart Meter 2
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+✓ Collected 333899 bytes from Smart Meter 5
+✓ Collected 334355 bytes from Smart Meter 10
+✓ Collected 334140 bytes from Smart Meter 8
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+✓ Collected 334185 bytes from Smart Meter 6
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+✓ Collected 334372 bytes from Smart Meter 1
+✓ Collected 334298 bytes from Smart Meter 3
+✓ Collected 334271 bytes from Smart Meter 7
+✓ Collected 334416 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:48:43] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:48:43] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:49:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:49:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:49:43
+========================================
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:49:43] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+[[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Collected 334255 bytes from Smart Meter 4
+2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Collected 334267 bytes from Smart Meter 9
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Collected [2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Collected 334320 bytes from Smart Meter 6
+334115 bytes from Smart Meter 7
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Collected 334492 bytes from Smart Meter 5
+✓ Collected 334045 bytes from Smart Meter 8
+✓ Collected 334066 bytes from Smart Meter 3
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Collected 334161 bytes from Smart Meter 1
+✓ Collected 334431 bytes from Smart Meter 10
+✓ Collected 334429 bytes from Smart Meter 2
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 07:49:44] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:49:44] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:50:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:50:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:50:44
+========================================
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+✓ Collected 334166 bytes from Smart Meter 1
+✓ Collected 334230 bytes from Smart Meter 10
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+✓ Collected 334437 bytes from Smart Meter 6
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+✓ Collected 334399 bytes from Smart Meter 5
+✓ Collected 334331 bytes from Smart Meter 2
+[[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+✓ Collected 334425 bytes from Smart Meter 8
+✓ Collected 334349 bytes from Smart Meter 3
+2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+✓ Collected 334411 bytes from Smart Meter 4
+✓ Collected 334326 bytes from Smart Meter 9
+✓ Collected 334158 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:50:44] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:50:44] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:51:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:51:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:51:44
+========================================
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+✓ Collected 334345 bytes from Smart Meter 3
+✓ Collected 334348 bytes from Smart Meter 7
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+✓ Collected 334499 bytes from Smart Meter 1
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+✓ Collected 334370 bytes from Smart Meter 2
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+✓ Collected 334297 bytes from Smart Meter 9
+✓ Collected 334143 bytes from Smart Meter 10
+✓ Collected 334111 bytes from Smart Meter 5
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+✓ Collected 334000 bytes from Smart Meter 6
+✓ Collected 334196 bytes from Smart Meter 4
+✓ Collected 333923 bytes from Smart Meter 8
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:51:44] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:51:44] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:52:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 07:52:41
+================================================
+Grid Summary:
+  Total Energy: 359.90 kWh
+  Total Readings: 11
+  Average per Reading: 32.72 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      359.90 |       11 |    32.72
+
+Peak Usage: 359.90 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 32.72 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:52:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:52:44
+========================================
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+✓ Collected 334368 bytes from Smart Meter 3
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+✓ Collected 334125 bytes from Smart Meter 4
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+✓ Collected 334055 bytes from Smart Meter 7
+✓ Collected [2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+✓ Collected 334394 bytes from Smart Meter 6
+✓ Collected 334442 bytes from Smart Meter 1
+334331 bytes from Smart Meter 2
+✓ Collected 334128 bytes from Smart Meter 9
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+✓ Collected 334148 bytes from Smart Meter 5
+[2025-12-03 07:52:44] NETWORK INFO: Client authentication successful
+✓ Collected 334336 bytes from Smart Meter 10
+✓ Collected 334209 bytes from Smart Meter 8
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:52:44] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:52:45] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:53:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:53:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:53:45
+========================================
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9010
+[[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9008
+2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Collected 334333 bytes from Smart Meter 1
+[[[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+[[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Collected 334194 bytes from Smart Meter 10
+✓ Collected 334270 bytes from Smart Meter 5
+[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Collected 2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Collected 334076 bytes from Smart Meter 2
+[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+334318 bytes from Smart Meter 6
+2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Collected 334387 bytes from Smart Meter 4
+✓ Collected 334355 bytes from Smart Meter 8
+[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Collected 334320 bytes from Smart Meter 9
+✓ Collected 334026 bytes from Smart Meter 3
+✓ Collected 334422 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:53:45] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:53:45] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:54:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:54:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:54:45
+========================================
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+✓ Collected 333756 bytes from Smart Meter 8
+✓ Collected 334198 bytes from Smart Meter 1
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+✓ Collected 334188 bytes from Smart Meter 2
+✓ Collected 334135 bytes from Smart Meter 3
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+✓ Collected 334494 bytes from Smart Meter 9
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+✓ Collected 334401 bytes from Smart Meter 7
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+✓ Collected 334433 bytes from Smart Meter 6
+✓ Collected 334310 bytes from Smart Meter 5
+✓ Collected 334412 bytes from Smart Meter 4
+✓ Collected 334167 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:54:45] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:54:45] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:55:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:55:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:55:45
+========================================
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334400 bytes from Smart Meter 1
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334389 bytes from Smart Meter 4
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+[[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334363 bytes from Smart Meter 6
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334160 bytes from Smart Meter 9
+2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334404 bytes from Smart Meter 5
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334456 bytes from Smart Meter 2
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Collected 334262 bytes from Smart Meter 7
+✓ Collected 334329 bytes from Smart Meter 10
+✓ Collected 334483 bytes from Smart Meter 8
+✓ Collected 334101 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 07:55:45] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:55:45] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:56:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 07:56:41
+================================================
+Grid Summary:
+  Total Energy: 473.80 kWh
+  Total Readings: 15
+  Average per Reading: 31.59 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      473.80 |       15 |    31.59
+
+Peak Usage: 473.80 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 31.59 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:56:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:56:45
+========================================
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:56:45] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+✓ Collected 334174 bytes from Smart Meter 2
+✓ Collected 333840 bytes from Smart Meter 5
+✓ Collected 334467 bytes from Smart Meter 9
+✓ Collected 334457 bytes from Smart Meter 3
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+✓ Collected 334345 bytes from Smart Meter 8
+✓ Collected 334184 bytes from Smart Meter 7
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+✓ Collected 334359 bytes from Smart Meter 4
+✓ Collected 334421 bytes from Smart Meter 6
+✓ Collected 334175 bytes from Smart Meter 10
+✓ Collected 334274 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 07:56:46] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:56:46] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:57:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:57:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:57:46
+========================================
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Collected 334301 bytes from Smart Meter 3
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Collected 334348 bytes from Smart Meter 5
+✓ Collected 334216 bytes from Smart Meter 9
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Collected 333741 bytes from Smart Meter 1
+✓ Collected 334142 bytes from Smart Meter 8
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Collected 334523 bytes from Smart Meter 4
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Collected 334306 bytes from Smart Meter 7
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Collected 334308 bytes from Smart Meter 2
+✓ Collected 334259 bytes from Smart Meter 10
+✓ Collected 334010 bytes from Smart Meter 6
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:57:46] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:57:46] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:58:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:58:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:58:46
+========================================
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:58:[462025-12-] NETWORK 03 07:58INFO: Connected to server 127.0.0.1:9008
+:46] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Collected [2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Collected 334347 bytes from Smart Meter 1
+✓ Collected 334077 bytes from Smart Meter 5
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Collected 334377 bytes from Smart Meter 10
+✓ Collected 334167 bytes from Smart Meter 7
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Collected 334374 bytes from Smart Meter 2
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Collected 334346 bytes from Smart Meter 9
+334401 bytes from Smart Meter 6
+✓ Collected 334383 bytes from Smart Meter 8
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Collected 334307 bytes from Smart Meter 3
+✓ Collected 334199 bytes from Smart Meter 4
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:58:46] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:58:46] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:59:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 07:59:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 07:59:46
+========================================
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 07:[592025-:1246] NETWORK INFO: -Connected to server 127.0.0.1:9010
+03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+✓ Collected 334117 bytes from Smart Meter 5
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+✓ Collected 334335 bytes from Smart Meter 6
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+✓ Collected 334326 bytes from Smart Meter 3
+✓ Collected 334088 bytes from Smart Meter 4
+✓ Collected 334415 bytes from Smart Meter 9
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+✓ Collected 334403 bytes from Smart Meter 8
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+✓ Collected 334174 bytes from Smart Meter 1
+✓ Collected 334327 bytes from Smart Meter 2
+✓ Collected 334407 bytes from Smart Meter 7
+[2025-12-03 07:59:46] NETWORK INFO: Client authentication successful
+✓ Collected 334297 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 07:59:46] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 07:59:47] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:00:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:00:41
+================================================
+Grid Summary:
+  Total Energy: 600.20 kWh
+  Total Readings: 19
+  Average per Reading: 31.59 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+
+Peak Usage: 600.20 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 31.59 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:00:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 1 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:00:47
+========================================
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Collected 334298 bytes from Smart Meter 2
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Collected 334333 bytes from Smart Meter 5
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Collected 334307 bytes from Smart Meter 8
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Collected 334276 bytes from Smart Meter 6
+✓ Collected 334031 bytes from Smart Meter 1
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Collected 334486 bytes from Smart Meter 3
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Collected 334415 bytes from Smart Meter 7
+✓ Collected 334331 bytes from Smart Meter 10
+✓ Collected 334044 bytes from Smart Meter 4
+✓ Collected 333985 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:00:47] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:00:47] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:01:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:01:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:01:47
+========================================
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Collected 334245 bytes from Smart Meter 9
+✓ Collected 334200 bytes from Smart Meter 4
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Collected 334435 bytes from Smart Meter 5
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Collected [2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Collected 334320 bytes from Smart Meter 8
+✓ Collected 334485 bytes from Smart Meter 6
+✓ Collected 334467 bytes from Smart Meter 7
+334377 bytes from Smart Meter 2
+✓ Collected 333809 bytes from Smart Meter 10
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Collected 333820 bytes from Smart Meter 3
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Collected 334115 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:01:47] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:01:47] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:02:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:02:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:02:47
+========================================
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+[[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+✓ Collected 334421 bytes from Smart Meter 8
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+✓ Collected 334099 bytes from Smart Meter 2
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+✓ Collected 334433 bytes from Smart Meter 4
+✓ Collected 333994 bytes from Smart Meter 7
+✓ Collected 334237 bytes from Smart Meter 9
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+✓ Collected 334332 bytes from Smart Meter 3
+✓ Collected 334171 bytes from Smart Meter 6
+✓ Collected 334361 bytes from Smart Meter 1
+✓ Collected 334505 bytes from Smart Meter 10
+✓ Collected 334179 bytes from Smart Meter 5
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:02:47] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:02:47] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:03:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:03:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:03:47
+========================================
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:03:47] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+✓ Collected 334151 bytes from Smart Meter 9
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+✓ Collected 334213 bytes from Smart Meter 2
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+✓ Collected 334341 bytes from Smart Meter 5
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+✓ Collected 334386 bytes from Smart Meter 7
+✓ Collected 334365 bytes from Smart Meter 8
+[2025-12-03 08:03:47] NETWORK INFO: Client authentication successful
+✓ Collected 334160 bytes from Smart Meter 1
+✓ Collected 334357 bytes from Smart Meter 4
+✓ Collected 334340 bytes from Smart Meter 3
+✓ Collected 334297 bytes from Smart Meter 6
+✓ Collected 334296 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:03:48] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:03:48] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:04:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:04:41
+================================================
+Grid Summary:
+  Total Energy: 728.40 kWh
+  Total Readings: 23
+  Average per Reading: 31.67 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      128.20 |        4 |    32.05
+
+Peak Usage: 600.20 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 31.67 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:04:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:04:48
+========================================
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+✓ Collected 334436 bytes from Smart Meter 7
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+✓ Collected ✓ Collected 334442 bytes from Smart Meter 334406 bytes from Smart Meter 14
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+✓ Collected 334259 bytes from Smart Meter 6
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+✓ Collected 334415 bytes from Smart Meter 9
+✓ Collected 334312 bytes from Smart Meter 10
+
+✓ Collected 334225 bytes from Smart Meter 8
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+✓ Collected 334150 bytes from Smart Meter 2
+✓ Collected 333983 bytes from Smart Meter 5
+✓ Collected 334067 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:04:48] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:04:48] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:05:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:05:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:05:48
+========================================
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Collected 334543 bytes from Smart Meter 9
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Collected 334375 bytes from Smart Meter 2
+✓ Collected 334256 bytes from Smart Meter 8
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Collected 334154 bytes from Smart Meter 1
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Collected 334067 bytes from Smart Meter 6
+✓ Collected 334220 bytes from Smart Meter 10
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Collected 334414 bytes from Smart Meter 4
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Collected 334346 bytes from Smart Meter 5
+✓ Collected 334332 bytes from Smart Meter 7
+✓ Collected 334481 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:05:48] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:05:48] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:06:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:06:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:06:48
+========================================
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+✓ Collected 333837 bytes from Smart Meter 4
+✓ Collected [2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+334496 bytes from Smart Meter 2
+[[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+✓ Collected 334467 bytes from Smart Meter 9
+✓ Collected 2025-12-33449103 08: bytes from Smart Meter 065:
+48] NETWORK INFO: Client authentication successful
+✓ Collected 334315 bytes from Smart Meter 8
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+✓ Collected 334169 bytes from Smart Meter 10
+[2025-12-03 08:06:48] NETWORK INFO: Client authentication successful
+✓ Collected 334248 bytes from Smart Meter 7
+✓ Collected 334112 bytes from Smart Meter 3
+✓ Collected 334308 bytes from Smart Meter 1
+✓ Collected 334202 bytes from Smart Meter 6
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:06:48] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:06:49] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:07:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:07:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:07:49
+========================================
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9005
+[[2025-202512--12-03 03 08:07:4908] NETWORK INFO: Connected to server 127.0.0.1:9010
+:[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9004
+07:49] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+✓ Collected 334098 bytes from Smart Meter 10
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+✓ Collected 333323 bytes from Smart Meter 9
+✓ Collected [334238 bytes from Smart Meter 6
+2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+✓ Collected 334371 bytes from Smart Meter 5
+✓ Collected 334466 bytes from Smart Meter 7
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+✓ Collected 333993 bytes from Smart Meter 4
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+✓ Collected 334322 bytes from Smart Meter 8
+✓ Collected 334396 bytes from Smart Meter 3
+✓ Collected 334373 bytes from Smart Meter 2
+✓ Collected 334042 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:07:49] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:07:49] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:08:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:08:41
+================================================
+Grid Summary:
+  Total Energy: 848.70 kWh
+  Total Readings: 27
+  Average per Reading: 31.43 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      248.50 |        8 |    31.06
+
+Peak Usage: 600.20 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 31.43 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:08:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:08:49
+========================================
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Collected 334334 bytes from Smart Meter 2
+✓ Collected 334093 bytes from Smart Meter 6
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Collected 334080 bytes from Smart Meter 3
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Collected 334225 bytes from Smart Meter 9
+✓ Collected 334379 bytes from Smart Meter 10
+✓ Collected 334256 bytes from Smart Meter 7
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Collected 334324 bytes from Smart Meter 4
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Collected 334378 bytes from Smart Meter 8
+✓ Collected 334459 bytes from Smart Meter 5
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Collected 334078 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:08:49] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:08:49] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:09:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:09:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:09:49
+========================================
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9005
+[[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9009
+2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9007
+[[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9008
+2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+✓ Collected 334084 bytes from Smart Meter 8
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+✓ Collected 334492 bytes from Smart Meter 5
+✓ Collected 334252 bytes from Smart Meter 3
+✓ Collected 334133 bytes from Smart Meter 6[
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+✓ Collected 334400 bytes from Smart Meter 4
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+✓ Collected 334280 bytes from Smart Meter 9
+✓ Collected 334098 bytes from Smart Meter 7
+2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+✓ Collected 334400 bytes from Smart Meter 2
+✓ Collected 333799 bytes from Smart Meter 1
+✓ Collected 334033 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:09:49] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:09:49] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:10:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:10:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:10:49
+========================================
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:10:49] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+✓ Collected 334157 bytes from Smart Meter 5
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+✓ Collected 334226 bytes from Smart Meter 4
+✓ Collected 334455 bytes from Smart Meter 2
+✓ Collected 334480 bytes from Smart Meter 9
+✓ Collected 334251 bytes from Smart Meter 10
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+[2025-12-03 08:10:49] NETWORK INFO: Client authentication successful
+✓ Collected 334195 bytes from Smart Meter 6
+✓ Collected 334385 bytes from Smart Meter 1
+✓ Collected 334353 bytes from Smart Meter 8
+✓ Collected 334395 bytes from Smart Meter 3
+✓ Collected 334145 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:10:50] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:10:50] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:11:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:11:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:11:50
+========================================
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+✓ Collected 334099 bytes from Smart Meter 8
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+✓ Collected 334196 bytes from Smart Meter 10
+✓ Collected 334044 bytes from Smart Meter 7
+✓ Collected 333997 bytes from Smart Meter 5
+✓ Collected 334044 bytes from Smart Meter 9
+✓ Collected 334261 bytes from Smart Meter 2
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+✓ Collected 334208 bytes from Smart Meter 4
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+✓ Collected 334290 bytes from Smart Meter 3
+✓ Collected 334195 bytes from Smart Meter 6
+✓ Collected 334417 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:11:50] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:11:50] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:12:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:12:41
+================================================
+Grid Summary:
+  Total Energy: 974.10 kWh
+  Total Readings: 31
+  Average per Reading: 31.42 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      373.90 |       12 |    31.16
+
+Peak Usage: 600.20 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 31.42 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:12:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:12:50
+========================================
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+✓ Collected 334370 bytes from Smart Meter 9
+✓ Collected 334179 bytes from Smart Meter 8
+✓ Collected 334401 bytes from Smart Meter 3
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+✓ Collected 334341 bytes from Smart Meter 2
+✓ Collected [2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+✓ Collected 334480 bytes from Smart Meter 10
+✓ Collected 334119 bytes from Smart Meter 5
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+334399 bytes from Smart Meter 4
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+✓ Collected 334405 bytes from Smart Meter 6
+✓ Collected 334385 bytes from Smart Meter 1
+✓ Collected 334123 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:12:50] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:12:50] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:13:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:13:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:13:50
+========================================
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+✓ Collected 334380 bytes from Smart Meter 10
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+✓ Collected 334135 bytes from Smart Meter 9
+✓ Collected 334083 bytes from Smart Meter 4
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+✓ Collected 334100 bytes from Smart Meter 6
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+✓ Collected ✓ Collected 333961 bytes from Smart Meter 3334377 bytes from Smart Meter 8
+
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+✓ Collected 334406 bytes from Smart Meter 1
+[2025-12-03 08:13:50] NETWORK INFO: Client authentication successful
+✓ Collected 334457 bytes from Smart Meter 5
+✓ Collected 334379 bytes from Smart Meter 2
+✓ Collected 334288 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:13:50] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:13:51] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:14:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:14:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:14:51
+========================================
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+✓ Collected 334115 bytes from Smart Meter 4
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+✓ Collected 334446 bytes from Smart Meter 5
+✓ Collected 334371 bytes from Smart Meter 6
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+✓ Collected 334422 bytes from Smart Meter 10
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+✓ Collected 334305 bytes from Smart Meter 1
+✓ Collected 334407 bytes from Smart Meter 8
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+✓ Collected 334338 bytes from Smart Meter 7
+✓ Collected 334512 bytes from Smart Meter 2
+✓ Collected 334426 bytes from Smart Meter 9
+✓ Collected 334321 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:14:51] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:14:51] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:15:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:15:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:15:51
+========================================
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+✓ Collected 334225 bytes from Smart Meter 8
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+✓ Collected 334251 bytes from Smart Meter 3
+✓ Collected 334475 bytes from Smart Meter 6
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+✓ Collected 334402 bytes from Smart Meter 1
+✓ Collected 334417 bytes from Smart Meter 2
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+✓ Collected 334282 bytes from Smart Meter 9
+✓ Collected 334172 bytes from Smart Meter 10
+✓ Collected 334367 bytes from Smart Meter 4
+✓ Collected 334155 bytes from Smart Meter 5
+✓ Collected 334380 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.11ms)
+[2025-12-03 08:15:51] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:15:51] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:16:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:16:41
+================================================
+Grid Summary:
+  Total Energy: 1069.20 kWh
+  Total Readings: 35
+  Average per Reading: 30.55 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      469.00 |       16 |    29.31
+
+Peak Usage: 600.20 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 30.55 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:16:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:16:51
+========================================
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+✓ Collected 334166 bytes from Smart Meter 7
+✓ Collected 334487 bytes from Smart Meter 3
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+✓ Collected 334406 bytes from Smart Meter 1
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+✓ Collected 334168 bytes from Smart Meter 4
+✓ Collected 334265 bytes from Smart Meter 5
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+✓ Collected 334344 bytes from Smart Meter 6
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+✓ Collected 334062 bytes from Smart Meter 9
+✓ Collected 334185 bytes from Smart Meter 10
+✓ Collected 334390 bytes from Smart Meter 8
+✓ Collected 334290 bytes from Smart Meter 2
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.10ms)
+[2025-12-03 08:16:51] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:16:51] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:17:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:17:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:17:51
+========================================
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:17:51] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+✓ Collected 334487 bytes from Smart Meter 6
+✓ Collected 334228 bytes from Smart Meter 8
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+✓ Collected 334278 bytes from Smart Meter 2
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+✓ Collected ✓ Collected 334089334242 bytes from Smart Meter 5 bytes from Smart Meter 1
+
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+✓ Collected 333236 bytes from Smart Meter 3
+✓ Collected 334255 bytes from Smart Meter 10
+✓ Collected 334130 bytes from Smart Meter 4
+[2025-12-03 08:17:51] NETWORK INFO: Client authentication successful
+✓ Collected 334431 bytes from Smart Meter 7
+✓ Collected 334269 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:17:52] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:17:52] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:18:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:18:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:18:52
+========================================
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+✓ Collected 334318 bytes from Smart Meter 6
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+✓ Collected 334030 bytes from Smart Meter 7
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+✓ Collected 334360 bytes from Smart Meter 4
+✓ Collected 334367 bytes from Smart Meter 9
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+✓ Collected ✓ Collected 334017334360 bytes from Smart Meter  bytes from Smart Meter 102
+
+✓ Collected 334220 bytes from Smart Meter 5
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+✓ Collected 334275 bytes from Smart Meter 8
+✓ Collected 334468 bytes from Smart Meter 1
+✓ Collected 334309 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:18:52] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:18:52] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:19:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:19:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:19:52
+========================================
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Collected 334465 bytes from Smart Meter 8
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Collected 334212 bytes from Smart Meter 9
+✓ Collected 334182 bytes from Smart Meter 7
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Collected 334108 bytes from Smart Meter 2
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Collected 334175 bytes from Smart Meter 3
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Collected 334427 bytes from Smart Meter 4
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Collected 334385 bytes from Smart Meter 5
+✓ Collected 334323 bytes from Smart Meter 1
+✓ Collected 334333 bytes from Smart Meter 10
+✓ Collected 333951 bytes from Smart Meter 6
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:19:52] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:19:52] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:20:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:20:41
+================================================
+Grid Summary:
+  Total Energy: 1191.90 kWh
+  Total Readings: 39
+  Average per Reading: 30.56 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      591.70 |       20 |    29.58
+
+Peak Usage: 600.20 kWh at 7:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 30.56 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:20:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:20:52
+========================================
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+✓ Collected 334463 bytes from Smart Meter 8
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+✓ Collected 334049 bytes from Smart Meter 1
+✓ Collected 334286 bytes from Smart Meter 10
+✓ Collected 334312 bytes from Smart Meter 4
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+✓ Collected 334457 bytes from Smart Meter 9
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+✓ Collected 334388 bytes from Smart Meter 3
+✓ Collected 334458 bytes from Smart Meter 5
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+[2025-12-03 08:20:52] NETWORK INFO: Client authentication successful
+✓ Collected 334426 bytes from Smart Meter 6
+✓ Collected 334362 bytes from Smart Meter 2
+✓ Collected 334175 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.10ms)
+[2025-12-03 08:20:52] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:20:53] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:21:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:21:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:21:53
+========================================
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+✓ Collected 334248 bytes from Smart Meter 6
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+✓ Collected 334285 bytes from Smart Meter 8
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+✓ Collected 334229 bytes from Smart Meter 3
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+✓ Collected 334352 bytes from Smart Meter 10
+✓ Collected 334393 bytes from Smart Meter 9
+✓ Collected 334390 bytes from Smart Meter 1
+✓ Collected 334135 bytes from Smart Meter 4
+✓ Collected 334407 bytes from Smart Meter 2
+✓ Collected 334350[ bytes from Smart Meter 72025
+-12-03 08:21:53] NETWORK INFO: Client authentication successful
+✓ Collected 334153 bytes from Smart Meter 5
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:21:53] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:21:53] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:22:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:22:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:22:53
+========================================
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+✓ Collected 334427 bytes from Smart Meter 7
+✓ Collected 334457 bytes from Smart Meter 2
+✓ Collected 334390 bytes from Smart Meter 6
+✓ Collected 334413 bytes from Smart Meter 9
+✓ Collected 334338 bytes from Smart Meter 4
+✓ Collected 334104 bytes from Smart Meter 5
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+✓ Collected 334392 bytes from Smart Meter 3
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+✓ Collected 334337 bytes from Smart Meter 8
+✓ Collected 334149 bytes from Smart Meter 10
+✓ Collected 334422 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:22:53] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:22:53] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:23:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:23:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:23:53
+========================================
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9002
+[[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9009
+2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+✓ Collected 334361 bytes from Smart Meter 4
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+✓ Collected 334186 bytes from Smart Meter 7
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+✓ Collected 334316 bytes from Smart Meter 8
+✓ Collected 334367 bytes from Smart Meter 1
+✓ Collected 334475 bytes from Smart Meter 9
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+✓ Collected 334309 bytes from Smart Meter 5
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+✓ Collected 334396 bytes from Smart Meter 2
+✓ Collected 334437 bytes from Smart Meter 3
+✓ Collected 334393 bytes from Smart Meter 10
+✓ Collected 334359 bytes from Smart Meter 6
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:23:53] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:23:53] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:24:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:24:41
+================================================
+Grid Summary:
+  Total Energy: 1298.40 kWh
+  Total Readings: 43
+  Average per Reading: 30.20 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      698.20 |       24 |    29.09
+
+Peak Usage: 698.20 kWh at 8:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 30.20 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:24:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:24:53
+========================================
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:24:53] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+✓ Collected 334125 bytes from Smart Meter 3
+✓ Collected 333771 bytes from Smart Meter 4
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+✓ Collected 334450 bytes from Smart Meter 7
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+✓ Collected 334435 bytes from Smart Meter 5
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+✓ Collected 334283 bytes from Smart Meter 10
+[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+✓ Collected 334463 bytes from Smart Meter 6
+[[2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+2025-12-03 08:24:53] NETWORK INFO: Client authentication successful
+✓ Collected 334212 bytes from Smart Meter 8
+✓ Collected 334324 bytes from Smart Meter 9
+✓ Collected 334274 bytes from Smart Meter 1
+✓ Collected 334104 bytes from Smart Meter 2
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:24:54] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:24:54] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:25:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:25:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:25:54
+========================================
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+✓ Collected 334327 bytes from Smart Meter 10
+[[2025-12-03 08:25:542025] NETWORK INFO-: Client authentication successful
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+12-03 08:25:54] NETWORK INFO: Client authentication successful
+✓ Collected 334298 bytes from Smart Meter 7
+✓ Collected 334273 bytes from Smart Meter 3
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+✓ Collected 333218 bytes from Smart Meter 8
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+✓ Collected 334471 bytes from Smart Meter 1
+✓ Collected 334423 bytes from Smart Meter 2
+✓ Collected [2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+✓ Collected 334311 bytes from Smart Meter 6
+334311 bytes from Smart Meter 9
+✓ Collected 334424 bytes from Smart Meter 5
+✓ Collected 334362 bytes from Smart Meter 4
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:25:54] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:25:54] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:26:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:26:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:26:54
+========================================
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9005
+[[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9008
+2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+✓ Collected 334490 bytes from Smart Meter 9
+✓ Collected 334385 bytes from Smart Meter 2
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+✓ Collected 334449 bytes from Smart Meter 5
+✓ Collected 334362 bytes from Smart Meter 3
+✓ Collected 334345 bytes from Smart Meter 8
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+✓ Collected 334479 bytes from Smart Meter 4
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+✓ Collected 333322 bytes from Smart Meter 1
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+✓ Collected 334320 bytes from Smart Meter 7
+✓ Collected 333721 bytes from Smart Meter 10
+✓ Collected 333855 bytes from Smart Meter 6
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:26:54] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:26:54] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:27:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:27:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:27:54
+========================================
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+✓ Collected 334542 bytes from Smart Meter 1
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+✓ Collected 334413 bytes from Smart Meter 8
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+✓ Collected 334330 bytes from Smart Meter 10
+✓ Collected 334372 bytes from Smart Meter 9
+✓ Collected 334165 bytes from Smart Meter 7
+✓ Collected 334452 bytes from Smart Meter 3
+✓ Collected 334312 bytes from Smart Meter 6
+✓ Collected 334152 bytes from Smart Meter 2
+[2025-12-03 08:27:54] NETWORK INFO: Client authentication successful
+✓ Collected 334419 bytes from Smart Meter 5
+✓ Collected 334408 bytes from Smart Meter 4
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:27:54] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:27:55] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:28:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:28:41
+================================================
+Grid Summary:
+  Total Energy: 1442.20 kWh
+  Total Readings: 47
+  Average per Reading: 30.69 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      842.00 |       28 |    30.07
+
+Peak Usage: 842.00 kWh at 8:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 30.69 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:28:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:28:55
+========================================
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:28:[552025-12-] NETWORK INFO03:  08:28:Connected to server 127.0.0.1:901055] NETWORK INFO: Connected to server 127.0.0.1:9008
+
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Collected 334399 bytes from Smart Meter 8
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Collected 334217 bytes from Smart Meter 7
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Collected 334435 bytes from Smart Meter 3
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Collected 334401 bytes from Smart Meter 4
+✓ Collected 334385 bytes from Smart Meter 2
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Collected 334365 bytes from Smart Meter 6
+✓ Collected 334470 bytes from Smart Meter 10
+✓ Collected 334031 bytes from Smart Meter 9
+✓ Collected 334323 bytes from Smart Meter 1
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Collected 334353 bytes from Smart Meter 5
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:28:55] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:28:55] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:29:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:29:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:29:55
+========================================
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:29:55[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9008
+] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Collected 334385 bytes from Smart Meter 4
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Collected 334145 bytes from Smart Meter 5
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Collected 334491 bytes from Smart Meter 10
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Collected 334376 bytes from Smart Meter 3
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Collected 334535 bytes from Smart Meter 8
+✓ Collected 334240 bytes from Smart Meter 7
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Collected 333967 bytes from Smart Meter 2
+✓ Collected 334346 bytes from Smart Meter 1
+✓ Collected ✓ Collected 334456 bytes from Smart Meter 3343936
+ bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:29:55] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:29:55] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:30:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:30:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:30:55
+========================================
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+✓ Collected 334321 bytes from Smart Meter 4
+✓ Collected 334345 bytes from Smart Meter 1
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+✓ Collected 334323 bytes from Smart Meter 10
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+✓ Collected 334229 bytes from Smart Meter 9
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+✓ Collected ✓ Collected 334284334176 bytes from Smart Meter 5 bytes from Smart Meter 
+✓ Collected 334557 bytes from Smart Meter 7
+✓ Collected 334380 bytes from Smart Meter 6
+3
+✓ Collected 334258 bytes from Smart Meter 2
+✓ Collected 334447 bytes from Smart Meter 8
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.09ms)
+[2025-12-03 08:30:55] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:30:55] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:31:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:31:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:31:55
+========================================
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:31:55] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+✓ Collected 334128 bytes from Smart Meter 7
+[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+[[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+✓ Collected 334411 bytes from Smart Meter 4
+2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+✓ Collected 334348 bytes from Smart Meter 3
+✓ Collected 334448 bytes from Smart Meter 2
+✓ Collected 334213 bytes from Smart Meter 9
+[[2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+✓ Collected 334210 bytes from Smart Meter 1
+✓ Collected 334166 bytes from Smart Meter 5
+2025-12-03 08:31:55] NETWORK INFO: Client authentication successful
+✓ Collected 334476 bytes from Smart Meter 6
+✓ Collected 334440 bytes from Smart Meter 8
+✓ Collected 334431 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:31:56] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:31:56] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:32:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:32:41
+================================================
+Grid Summary:
+  Total Energy: 1564.40 kWh
+  Total Readings: 51
+  Average per Reading: 30.67 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|      964.20 |       32 |    30.13
+
+Peak Usage: 964.20 kWh at 8:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 30.67 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:32:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:32:56
+========================================
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+✓ Collected 334082 bytes from Smart Meter 1
+✓ Collected 334214 bytes from Smart Meter 3
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+✓ Collected 334311 bytes from Smart Meter 6
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+✓ Collected 334250 bytes from Smart Meter 2
+[2025-12-03 08:32:56✓ Collected ] NETWORK INFO: Client authentication successful
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+✓ Collected 334277 bytes from Smart Meter 9
+✓ Collected 334377 bytes from Smart Meter 8
+✓ Collected 334230 bytes from Smart Meter 5
+334413 bytes from Smart Meter 7
+✓ Collected 334290 bytes from Smart Meter 10
+✓ Collected 334145 bytes from Smart Meter 4
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:32:56] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:32:56] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:33:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:33:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:33:56
+========================================
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9006
+[[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9008
+2025[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9007
+-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+✓ Collected 334452 bytes from Smart Meter 3
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+[[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+✓ Collected 334102 bytes from Smart Meter 6
+✓ Collected 334012 bytes from Smart Meter 2
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+✓ Collected 334400 bytes from Smart Meter 8
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+✓ Collected 334138 bytes from Smart Meter 10
+✓ Collected 333987 bytes from Smart Meter 1
+✓ Collected 333978 bytes from Smart Meter 7
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+✓ Collected 334250 bytes from Smart Meter 9
+✓ Collected 334303 bytes from Smart Meter 5
+✓ Collected 334389 bytes from Smart Meter 4
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:33:56] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:33:56] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:34:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:34:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:34:56
+========================================
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+✓ Collected 334422 bytes from Smart Meter 8
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+✓ Collected 333828 bytes from Smart Meter 5
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+✓ Collected 334348 bytes from Smart Meter 9
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+✓ Collected 334408 bytes from Smart Meter 10
+✓ Collected 334337 bytes from Smart Meter 6
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+✓ Collected 334432 bytes from Smart Meter 3
+[2025-12-03 08:34:56] NETWORK INFO: Client authentication successful
+✓ Collected 334428 bytes from Smart Meter 7
+✓ Collected 334229 bytes from Smart Meter 2
+✓ Collected 334184 bytes from Smart Meter 1
+✓ Collected 334390 bytes from Smart Meter 4
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:34:56] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:34:57] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:35:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:35:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:35:57
+========================================
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9006
+[[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9010[
+2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9005
+2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+✓ Collected 334113 bytes from Smart Meter 5
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+✓ Collected 334348 bytes from Smart Meter 4
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+✓ Collected 334095 bytes from Smart Meter 2
+✓ Collected 334070 bytes from Smart Meter 6
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+✓ Collected 334359 bytes from Smart Meter 7
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+✓ Collected 334459 bytes from Smart Meter 9
+✓ Collected 334389 bytes from Smart Meter 10
+✓ Collected 334154 bytes from Smart Meter 8
+✓ Collected 334041 bytes from Smart Meter 3
+✓ Collected 334196 bytes from Smart Meter 1
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:35:57] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:35:57] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:36:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:36:41
+================================================
+Grid Summary:
+  Total Energy: 1699.70 kWh
+  Total Readings: 55
+  Average per Reading: 30.90 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|     1099.50 |       36 |    30.54
+
+Peak Usage: 1099.50 kWh at 8:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 30.90 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:36:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:36:57
+========================================
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334434 bytes from Smart Meter 5
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334413 bytes from Smart Meter 9
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334420 bytes from Smart Meter 2
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334420 bytes from Smart Meter 1
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334398 bytes from Smart Meter 7
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334109 bytes from Smart Meter 6
+✓ Collected 334226 bytes from Smart Meter 8
+✓ Collected 334491 bytes from Smart Meter 3
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Collected 334187 bytes from Smart Meter 4
+✓ Collected 334011 bytes from Smart Meter 10
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:36:57] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:36:57] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:37:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:37:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:37:57
+========================================
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+✓ Collected 334228 bytes from Smart Meter 6
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+✓ Collected 334192 bytes from Smart Meter 2
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+✓ Collected 334390 bytes from Smart Meter 4
+✓ Collected 334399 bytes from Smart Meter 1
+✓ Collected 334341 bytes from Smart Meter 10
+✓ Collected 333874 bytes from Smart Meter 8
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+✓ Collected 334209 bytes from Smart Meter 5
+✓ Collected 334418 bytes from Smart Meter 7
+✓ Collected 334209 bytes from Smart Meter 3
+✓ Collected 334370 bytes from Smart Meter 9
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:37:57] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:37:57] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:38:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:38:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:38:57
+========================================
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:38:57] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 334386 bytes from Smart Meter 4
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 334103 bytes from Smart Meter 10
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 333810 bytes from Smart Meter 7
+✓ Collected 333895 bytes from Smart Meter 2
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 334344 bytes from Smart Meter 8
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 333389 bytes from Smart Meter 5
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 334226 bytes from Smart Meter 6
+[2025-12-03 08:38:57] NETWORK INFO: Client authentication successful
+✓ Collected 334144 bytes from Smart Meter 1
+✓ Collected 334357 bytes from Smart Meter 9
+✓ Collected 334358 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:38:58] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:38:58] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:39:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:39:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:39:58
+========================================
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+✓ Collected 334151 bytes from Smart Meter 6
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+✓ Collected 334310 bytes from Smart Meter 9
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+✓ Collected ✓ Collected 334402334150 bytes from Smart Meter  bytes from Smart Meter 43
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+✓ Collected 334144 bytes from Smart Meter 1
+✓ Collected 334096 bytes from Smart Meter 5
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+✓ Collected 334427 bytes from Smart Meter 10
+✓ Collected 334375 bytes from Smart Meter 2
+✓ Collected 333893 bytes from Smart Meter 8
+✓ Collected 334238 bytes from Smart Meter 7
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:39:58] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:39:58] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:40:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+================================================
+HOURLY SMART GRID ANALYTICS REPORT
+Generated at: 2025-12-03 08:40:41
+================================================
+Grid Summary:
+  Total Energy: 1829.80 kWh
+  Total Readings: 59
+  Average per Reading: 31.01 kWh
+  Connected Meters: 10
+
+Hourly Breakdown:
+Hour | Total (kWh) | Readings | Avg (kWh)
+-----|-------------|----------|----------
+ 7:00|      600.20 |       19 |    31.59
+ 8:00|     1229.60 |       40 |    30.74
+
+Peak Usage: 1229.60 kWh at 8:00
+
+Demand Forecast (Next Hour):
+  Predicted consumption: 31.01 kWh
+================================================
+End of Hourly Report
+================================================
+
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:40:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+========================================
+Starting aggregation cycle at 2025-12-03 08:40:58
+========================================
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9001
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9003
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9004
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9002
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9005
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9007
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9006
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9009
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9010
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:9008
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Collected 334406 bytes from Smart Meter 4
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Collected 334368 bytes from Smart Meter 6
+✓ Collected 334471 bytes from Smart Meter 1
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Collected 334209 bytes from Smart Meter 8
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Collected 334149 bytes from Smart Meter 2
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Collected 334379 bytes from Smart Meter 9
+✓ Collected 334382 bytes from Smart Meter 7
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Collected 334230 bytes from Smart Meter 10
+✓ Collected 334451 bytes from Smart Meter 5
+✓ Collected 334081 bytes from Smart Meter 3
+Data collection complete: 10/10 meters
+Performing homomorphic aggregation on 10 ciphertexts...
+✓ Homomorphic aggregation complete (100.07ms)
+[2025-12-03 08:40:58] NETWORK INFO: Connected to server 127.0.0.1:8443
+[2025-12-03 08:40:58] NETWORK INFO: Client authentication successful
+✓ Sent aggregated data to control center
+Aggregation cycle 0 completed in 0 seconds
+Performance: 0.00 ops/sec, avg response: 5.00ms
+Next cycle in 1 minutes
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:41:11
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+=== Aggregator Status ===
+Current time: 2025-12-03 08:41:41
+Connected meters: 10
+Next aggregation in: 1 minutes
+Data points collected: 2 hours
+=========================
+
+Received shutdown signal. Gracefully shutting down aggregator...
+
+Received shutdown signal. Gracefully shutting down aggregator...

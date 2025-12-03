@@ -1,0 +1,1 @@
+timestamp,algorithm,poly_modulus_degree,scale_bits,plaintext_size_bytes,ciphertext_size_bytes,encryption_time_ms,communication_overhead,security_level_bits,meter_id

@@ -591,8 +591,11 @@ CMakeFiles/client_continuous.dir/client/client_continuous.cpp.o: /workspaces/sma
   /usr/local/include/SEAL-4.0/seal/version.h \
   /workspaces/smart-grid-1/include/json.hpp \
   /workspaces/smart-grid-1/include/kdc_client.h \
-  /workspaces/smart-grid-1/include/network_utils.h
+  /workspaces/smart-grid-1/include/network_utils.h \
+  /workspaces/smart-grid-1/include/performance_metrics.h
 
+
+/workspaces/smart-grid-1/include/performance_metrics.h:
 
 /workspaces/smart-grid-1/include/network_utils.h:
 

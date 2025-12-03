@@ -73,15 +73,15 @@ CMakeFiles/control_center.dir/control_center/control_center.cpp.o: CMakeFiles/co
 CMakeFiles/control_center.dir/control_center/control_center.cpp.o: /workspaces/smart-grid-1/control_center/control_center.cpp
 CMakeFiles/control_center.dir/control_center/control_center.cpp.o: CMakeFiles/control_center.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/control_center.dir/control_center/control_center.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_center.dir/control_center/control_center.cpp.o -MF CMakeFiles/control_center.dir/control_center/control_center.cpp.o.d -o CMakeFiles/control_center.dir/control_center/control_center.cpp.o -c /workspaces/smart-grid-1/control_center/control_center.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/control_center.dir/control_center/control_center.cpp.o -MF CMakeFiles/control_center.dir/control_center/control_center.cpp.o.d -o CMakeFiles/control_center.dir/control_center/control_center.cpp.o -c /workspaces/smart-grid-1/control_center/control_center.cpp
 
 CMakeFiles/control_center.dir/control_center/control_center.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/control_center.dir/control_center/control_center.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/control_center/control_center.cpp > CMakeFiles/control_center.dir/control_center/control_center.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/control_center/control_center.cpp > CMakeFiles/control_center.dir/control_center/control_center.cpp.i
 
 CMakeFiles/control_center.dir/control_center/control_center.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/control_center.dir/control_center/control_center.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/control_center/control_center.cpp -o CMakeFiles/control_center.dir/control_center/control_center.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/control_center/control_center.cpp -o CMakeFiles/control_center.dir/control_center/control_center.cpp.s
 
 # Object files for target control_center
 control_center_OBJECTS = \

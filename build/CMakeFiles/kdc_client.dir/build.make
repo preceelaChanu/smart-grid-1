@@ -73,15 +73,15 @@ CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o: CMakeFiles/kdc_client.dir/flags.
 CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o: /workspaces/smart-grid-1/kdc/kdc_client.cpp
 CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o: CMakeFiles/kdc_client.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o -MF CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o.d -o CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o -c /workspaces/smart-grid-1/kdc/kdc_client.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o -MF CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o.d -o CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o -c /workspaces/smart-grid-1/kdc/kdc_client.cpp
 
 CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/kdc/kdc_client.cpp > CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/kdc/kdc_client.cpp > CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.i
 
 CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/kdc/kdc_client.cpp -o CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/kdc/kdc_client.cpp -o CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.s
 
 # Object files for target kdc_client
 kdc_client_OBJECTS = \

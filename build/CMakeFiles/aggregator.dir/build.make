@@ -73,15 +73,15 @@ CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o: CMakeFiles/aggregator.dir
 CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o: /workspaces/smart-grid-1/aggregator/aggregator.cpp
 CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o: CMakeFiles/aggregator.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o -MF CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o.d -o CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o -c /workspaces/smart-grid-1/aggregator/aggregator.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o -MF CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o.d -o CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o -c /workspaces/smart-grid-1/aggregator/aggregator.cpp
 
 CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/aggregator/aggregator.cpp > CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/smart-grid-1/aggregator/aggregator.cpp > CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.i
 
 CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/aggregator/aggregator.cpp -o CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/smart-grid-1/aggregator/aggregator.cpp -o CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.s
 
 # Object files for target aggregator
 aggregator_OBJECTS = \
