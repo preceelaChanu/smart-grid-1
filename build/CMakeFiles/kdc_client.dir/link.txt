@@ -1,2 +1,0 @@
-/usr/bin/ar qc libkdc_client.a CMakeFiles/kdc_client.dir/kdc/kdc_client.cpp.o
-/usr/bin/ranlib libkdc_client.a
