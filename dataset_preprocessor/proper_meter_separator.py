@@ -147,8 +147,8 @@ class ProperMeterSeparator:
 def main():
     """Main function to run the proper meter separation"""
     
-    converted_data_dir = "converted_data"
-    meter_output_dir = "meter_data_corrected"
+    converted_data_dir = "D:\london\converted_data"
+    meter_output_dir = "D:\london\meter_data_corrected"
     
     print("Proper Meter Data Separator")
     print("=" * 50)

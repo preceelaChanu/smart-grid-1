@@ -7,6 +7,8 @@
 #include <signal.h>
 #include <sstream>
 #include <atomic>
+#include <vector>
+#include <string>
 #include "seal/seal.h"
 #include "json.hpp"
 #include "network_utils.h"
@@ -45,9 +47,11 @@ private:
     NodeCertificate meter_cert_;
     int server_sockfd_;
     
-    // Data generation
-    mt19937 rng_;
-    uniform_real_distribution<double> energy_dist_;
+    // Real meter data
+    vector<double> consumption_data_;
+    size_t current_data_index_;
+    string meter_data_folder_;
+    bool data_loaded_;
     
     // Timing
     chrono::seconds transmission_interval_;
@@ -61,11 +65,12 @@ private:
 public:
     SmartMeterContinuous(int meter_id) : 
         meter_id_(meter_id),
-        rng_(chrono::steady_clock::now().time_since_epoch().count()),
-        energy_dist_(0.5, 5.0),  // Energy consumption between 0.5 and 5.0 kWh
+        current_data_index_(0),
+        data_loaded_(false),
         transmission_interval_(300)  // Send data every 5 minutes (300 seconds)
     {
         port_ = 9000 + meter_id_;
+        meter_data_folder_ = "D:/london/meter_data_corrected";  // Default path, can be configured
     }
     
     ~SmartMeterContinuous() {
@@ -125,6 +130,12 @@ public:
         scale_ = pow(2.0, ckks_scale_bits);
         
         cout << "Cryptographic components initialized" << endl;
+        
+        // Load real meter data
+        if (!load_meter_data()) {
+            cerr << "Warning: Could not load meter data file" << endl;
+            return false;
+        }
         
         // Setup network server
         server_sockfd_ = NetworkUtils::create_server_socket(port_);
@@ -198,6 +209,70 @@ private:
         return true;
     }
     
+    bool load_meter_data() {
+        // Construct filename based on meter ID
+        // Format: meter_MAC000002.csv (or similar based on actual files)
+        stringstream filename;
+        filename << meter_data_folder_ << "/meter_MAC" << setfill('0') << setw(6) << meter_id_ << ".csv";
+        
+        ifstream data_file(filename.str());
+        if (!data_file.is_open()) {
+            cerr << "Error: Could not open meter data file: " << filename.str() << endl;
+            return false;
+        }
+        
+        cout << "Loading meter data from: " << filename.str() << endl;
+        
+        string line;
+        bool first_line = true;
+        int line_count = 0;
+        
+        // Read CSV file
+        while (getline(data_file, line)) {
+            // Skip header if present
+            if (first_line) {
+                first_line = false;
+                // Check if it's a header line (contains "meter_id" or "timestamp")
+                if (line.find("meter_id") != string::npos || 
+                    line.find("timestamp") != string::npos) {
+                    continue;
+                }
+            }
+            
+            // Parse CSV line: meter_id,timestamp,consumption_kwh
+            stringstream ss(line);
+            string meter_id_str, timestamp_str, consumption_str;
+            
+            if (getline(ss, meter_id_str, ',') && 
+                getline(ss, timestamp_str, ',') && 
+                getline(ss, consumption_str, ',')) {
+                
+                try {
+                    // Parse consumption value (third column)
+                    double consumption = stod(consumption_str);
+                    consumption_data_.push_back(consumption);
+                    line_count++;
+                } catch (const exception& e) {
+                    // Skip invalid lines
+                    continue;
+                }
+            }
+        }
+        
+        data_file.close();
+        
+        if (consumption_data_.empty()) {
+            cerr << "Error: No valid data loaded from file" << endl;
+            return false;
+        }
+        
+        cout << "✓ Loaded " << consumption_data_.size() << " consumption readings from meter data file" << endl;
+        data_loaded_ = true;
+        current_data_index_ = 0;
+        
+        return true;
+    }
+    
     void data_generation_loop() {
         cout << "Data generation thread started" << endl;
         
@@ -221,28 +296,20 @@ private:
     void generate_and_encrypt_data() {
         lock_guard<mutex> lock(data_mutex_);
         
-        // Simulate realistic energy consumption with time-based variations
+        // Get current timestamp
         auto now = chrono::system_clock::now();
         auto time_t = chrono::system_clock::to_time_t(now);
-        auto tm = *localtime(&time_t);
         
-        // Add time-of-day variations (higher consumption during peak hours)
-        double time_factor = 1.0;
-        if (tm.tm_hour >= 7 && tm.tm_hour <= 10) {
-            time_factor = 1.5;  // Morning peak
-        } else if (tm.tm_hour >= 17 && tm.tm_hour <= 22) {
-            time_factor = 1.8;  // Evening peak
-        } else if (tm.tm_hour >= 23 || tm.tm_hour <= 6) {
-            time_factor = 0.6;  // Night time low consumption
+        // Get next consumption value from real data
+        if (!consumption_data_.empty()) {
+            current_energy_value_ = consumption_data_[current_data_index_];
+            
+            // Move to next data point, wrap around if needed
+            current_data_index_ = (current_data_index_ + 1) % consumption_data_.size();
+        } else {
+            cerr << "No consumption data available!" << endl;
+            current_energy_value_ = 0.0;
         }
-        
-        // Generate energy value with realistic variations
-        current_energy_value_ = energy_dist_(rng_) * time_factor;
-        
-        // Add some randomness for realistic simulation
-        uniform_real_distribution<double> variation(-0.2, 0.2);
-        current_energy_value_ += variation(rng_);
-        current_energy_value_ = max(0.1, current_energy_value_);  // Minimum 0.1 kWh
         
         // Encrypt the data
         vector<double> values = {current_energy_value_};
