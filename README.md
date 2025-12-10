@@ -2,208 +2,280 @@
 
 ## Overview
 
-This project is a real-time framework designed to benchmark the performance and feasibility of Post-Quantum Homomorphic Encryption (HE) algorithms within a Smart Grid environment. It simulates a realistic, privacy-preserving 3-tier architecture where Smart Meters (Clients) encrypt their real-number energy consumption data (e.g., 1.234 kWh) before sending it to an Aggregator for processing, and finally to a Control Center for result decryption.
+This project implements a **real-time, scalable** framework for benchmarking Post-Quantum Homomorphic Encryption (HE) performance in Smart Grid environments. It features a privacy-preserving 3-tier architecture where **configurable numbers of Smart Meters** encrypt real-number energy consumption data using **CKKS encryption**, transmit it to an **Aggregator** for homomorphic processing, and forward results to a **Control Center** for decryption and analytics.
 
-The system utilizes the CKKS (Cheon-Kim-Kim-Song) scheme from the Microsoft SEAL library. CKKS is a "levelled" HE scheme that supports approximate arithmetic on encrypted real numbers, making it ideal for smart grid analytics such as aggregation, weighted averages, and billing calculations without revealing individual user data.
+The system utilizes the **CKKS (Cheon-Kim-Kim-Song) scheme** from Microsoft SEAL with **configurable security parameters** including polynomial degree, scale precision, and security levels. The framework supports **accelerated simulation** with configurable timing intervals for rapid research and development.
+
+## Key Features
+
+- **Scalable Architecture**: Configurable number of concurrent smart meters with batched aggregation
+- **Real-time Performance**: High-performance encryption with continuous data streaming  
+- **Research-Grade Metrics**: Comprehensive CSV performance data for algorithm comparison
+- **Post-Quantum Security**: Configurable security levels with certificate-based PKI
+- **Accelerated Testing**: Configurable simulation speedup for rapid analysis
+- **Flexible Configuration**: All parameters adjustable via configuration files
 
 ## System Architecture
 
-The project simulates a secure data flow model common in privacy-preserving smart grid literature (e.g., Zhou et al., Wagh et al.):
+The framework implements a **continuous operation model** with real-time encrypted data streaming:
 
-graph TD
-    KGC[Key Generation Center] -- Generates Keys --> Keys[(Key Storage)]
-    Keys -- Public Key --> Client[Smart Meter (Client)]
-    Keys -- Public Key + Relin Keys --> Agg[Aggregator Node]
-    Keys -- Secret Key --> Control[Control Center]
-    
-    Client -- 1. Encrypts Data --> Data[(Encrypted Data Files)]
-    Data -- 2. Loads Ciphertexts --> Agg
-    Agg -- 3. Homomorphic Aggregation --> AggResult[Aggregated Ciphertext]
-    AggResult -- 4. Sends Result --> Control
-    Control -- 5. Decrypts Result --> Final[Plaintext Total]
-
-
-## Functional Architecture: Role of Each Node
-
-The framework is managed by four distinct executable programs, ensuring a strict separation of concerns and cryptographic keys.
-
-| Program | Logical Node Type | Role & Key Access | Primary Action(s) |
-|---------|-------------------|-------------------|-------------------|
-| keygen | KGC (Key Generation Center) | Trusted Authority. Generates all keys based on config.json and distributes them via disk. | Generates PK, SK, and RLK once at setup. |
-| client | Smart Meter | Data Producer. Uses the Public Key (PK) to encrypt sensitive usage data. | 1. Encrypts real-number data (CKKS).<br>2. Saves unique ciphertext to a file. |
-| aggregator | Middleware / Fog Node | Blind Processor. Uses PK and Relinearization Keys (RLK) for computation. Crucially, does not have the Secret Key. | 1. Loads all client ciphertexts.<br>2. Performs Homomorphic Aggregation.<br>3. Saves the single aggregated result. |
-| control_center | Analytics Center | Final Manager / Decryptor. Only node with the Secret Key (SK). | 1. Loads the final aggregated ciphertext.<br>2. Decrypts it to reveal the total sum.<br>3. Decodes the result for verification. |
-
-## Security Guarantee: 
-
-The privacy of the system rests on the fact that the Aggregator, which performs the computations on all user data, does not possess the Secret Key. It operates entirely on encrypted data.
-
-## Project Structure
 ```
-smart_grid_benchmark/
-├── CMakeLists.txt       # Master build configuration
-├── config.json          # Central configuration for security & simulation settings
-├── run_test.sh          # Automated test harness script (Orchestrator)
-├── include/             # External headers (nlohmann/json)
-├── keygen/
-│   └── keygen.cpp       # Source code for Key Generation Center (CKKS)
-├── client/
-│   └── client.cpp       # Source code for Smart Meter Simulator (CKKS)
-├── aggregator/
-│   └── aggregator.cpp   # Source code for Aggregator Node (CKKS)
-├── control_center/
-│   └── control_center.cpp # Source code for Control Center (CKKS)
-├── keys/                # Storage for generated keys (PK, SK, RLK)
-└── data/                # Storage for encrypted smart meter data
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Smart Meters  │    │    Aggregator    │    │ Control Center  │
+│ (configurable)  │───▶│   (Batched)      │───▶│  (Analytics)    │
+│                 │    │                  │    │                 │
+│ • CKKS Encrypt  │    │ • Homomorphic    │    │ • Decrypt       │
+│ • Configurable  │    │   Aggregation    │    │ • Statistics    │
+│   intervals     │    │ • Configurable   │    │ • CSV Export    │
+│ • Configurable  │    │   connections    │    │ • Performance   │
+│   parameters    │    │                  │    │   Analysis      │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
 
-## Prerequisites
-```
-Before running the framework, ensure your system has the following installed:
-
-OS: Ubuntu Linux (20.04 or 22.04 recommended)
-
-Compiler: g++ (supporting C++17)
-
-Build System: cmake (version 3.16+)
-
-Utilities: git, jq (for JSON parsing in scripts)
-
-sudo apt update
-sudo apt install build-essential g++ cmake git jq
-```
-
-## Installation
-
-1. Clone the Repository
-```
-mkdir smart_grid_benchmark
-cd smart_grid_benchmark
-## (If you are using git, clone here. Otherwise, create the folders manually)
-```
-
-2. Install Microsoft SEAL (v4.0.0)
-
-The project relies on the Microsoft SEAL library.
-
-### Clone and build SEAL inside the project or externally
-```
-git clone [https://github.com/microsoft/SEAL.git](https://github.com/microsoft/SEAL.git)
-cd SEAL
-git checkout v4.0.0
-cmake -S . -B build -DSEAL_THROW_ON_TRANSPARENT_CIPHERTEXT=OFF
-cmake --build build
-sudo cmake --install build
-cd ..
-```
-
-3. Install JSON Helper
-
-The project uses nlohmann/json for configuration parsing.
-```
-mkdir -p include
-wget -O include/json.hpp [https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp](https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp)
-```
-
-4. Build the Framework
-```
-mkdir build
-cd build
-cmake ..
-make
-cd ..
-```
-
-# Usage
-
-You can run the components individually or use the automated test harness.
-
-Option A: Automated Test Harness (Recommended)
-
-The run_test.sh script acts as the Utility Orchestrator. It manages the entire lifecycle: cleaning old data, generating new keys, simulating N clients, running the aggregator, and verifying the result.
-```
-chmod +x run_test.sh
-./run_test.sh
-```
-
-Option B: Manual Execution
-
-Generate Keys:
-```
-./build/keygen
-```
-
-Run Clients: (Replace 1 with the Client ID)
-```
-./build/client 1
-./build/client 2
-```
-
-Run Aggregator:
-```
-./build/aggregator
-```
-
-Run Control Center:
-```
-./build/control_center
-```
-
-## Configuration (config.json)
-
-All experiment variables are controlled via config.json. You do not need to recompile the code to change these settings.
-```
-{
-  "comment_security": "poly_modulus_degree: 8192 (fast), 16384 (strong), 32768 (paranoid)",
-  "poly_modulus_degree": 8192,
-  
-  "comment_scale": "CKKS initial scale. 40-bits is a good default.",
-  "ckks_scale_bits": 40,
-
-  "comment_clients": "Number of smart meters to simulate in the test harness.",
-  "num_clients": 10,
-
-  "comment_paths": "File paths for keys and data.",
-  "public_key_file": "keys/public_key.seal",
-  "secret_key_file": "keys/secret_key.seal",
-  "relin_keys_file": "keys/relin_keys.seal",
-  "data_path_prefix": "data/ct_client_"
-}
-```
-
-poly_modulus_degree: The main security parameter. Higher values (e.g., 16384) increase security and precision but increase computation time and ciphertext size.
-
-ckks_scale_bits: Controls the precision of the real-number arithmetic.
-
-num_clients: Controls how many distinct client simulations the test harness runs.
+**Data Flow:**
+1. **Smart Meters**: Generate synthetic energy data, encrypt with CKKS using configured parameters
+2. **Aggregator**: Collect encrypted data using configurable batching, perform homomorphic aggregation
+3. **Control Center**: Receive aggregated ciphertext, decrypt, and export performance analytics
 
 ## Performance Metrics
 
-The framework automatically logs the following metrics to the console for every run, allowing for rigorous performance analysis:
+The system generates comprehensive research data in CSV format:
 
-Key Generation Time: Time taken by KGC to generate keys.
+| Metric Category | Key Measurements |
+|-----------------|------------------|
+| **Encryption** | Timing, compression ratio, security level, parameter impact |
+| **Network** | Throughput, latency, connection overhead, scalability |
+| **Scalability** | Concurrent connections, aggregation time, memory usage |
+| **Security** | Certificate validation, key distribution, PKI overhead |
+| **Homomorphic** | Operation timing, noise growth, computation depth |
 
-Encryption Time: Time taken by a Client to encode and encrypt a single double.
+All metrics adapt automatically to the configured parameters, enabling comparative analysis across different security and performance settings.
 
-Serialization Overhead: Time taken to save the ciphertext to disk.
 
-Ciphertext Size: The storage footprint of the encrypted data (simulating bandwidth).
+## Core Components
 
-Aggregation Time: Time taken by the Aggregator to sum all client data.
+The system consists of focused, production-ready components:
 
-Deserialization Overhead: Time taken by the Aggregator to load the ciphertexts.
+| Component | Executable | Purpose | Key Features |
+|-----------|------------|---------|--------------|
+| **Key Generation** | `keygen` | Generate CKKS keys | 8192 poly degree, 128-bit security |
+| **Certificate Gen** | `certgen` | PKI certificate creation | TLS-ready certificates for all nodes |
+| **Key Distribution** | `kdc` | Secure key distribution | Certificate-based authentication |
+| **Smart Meters** | `client_continuous` | Real-time data encryption | Continuous operation, performance logging |
+| **Aggregator** | `aggregator_continuous` | Homomorphic computation | Batched connections, scalable processing |
+| **Control Center** | `control_center_continuous` | Analytics & decryption | Result processing, CSV export |
 
-Decryption Time: Time taken by the Control Center to decrypt the final result.
+## Quick Start
 
-Precision Error: The difference between the expected plaintext result and the decrypted (approximate) result.
+### 1. Build the System
+```bash
+# Install dependencies
+./install_dependencies.sh
 
-## Data Source
+# Build all components
+mkdir -p build && cd build
+cmake .. && make -j4
+```
 
-The simulation supports real-world data integration. It is designed to encrypt double (real number) values, making it compatible with the kWh readings from the Smart Meters in London dataset.
+### 2. Run Full System Test
+```bash
+# Generate keys and certificates for 50 meters
+./run_continuous_test.sh
 
-Source: Kaggle - Smart Meters in London
+# For research comparison with different configurations
+./run_research_comparison.sh
+```
 
-## License
+### 3. Performance Analysis
+```bash
+# View real-time encryption metrics
+tail -f build/performance_data/encryption_metrics.csv
 
-This project is built for academic research and benchmarking purposes.
+# Analyze system scalability
+tail -f build/performance_data/scalability_metrics.csv
+```
+
+## Project Structure
+```
+smart-grid-1/
+├── CMakeLists.txt              # Build configuration
+├── config.json                 # System configuration (security, network, timing)
+├── run_continuous_test.sh      # Full system test script
+├── run_research_comparison.sh  # Research automation script
+├── install_dependencies.sh     # Dependency installation
+├── include/
+│   ├── performance_metrics.h   # Performance measurement framework
+│   ├── network_utils.h         # Network communication utilities
+│   ├── kdc_client.h            # Key distribution client
+│   └── json.hpp                # JSON parsing library
+├── keygen/
+│   └── keygen.cpp              # CKKS key generation (8192 poly, 40-bit scale)
+├── certgen/
+│   └── certgen.cpp             # PKI certificate generation
+├── kdc/
+│   ├── kdc.cpp                 # Key Distribution Center server
+│   └── kdc_client.cpp          # KDC client implementation
+├── client/
+│   └── client_continuous.cpp   # Smart meter with continuous operation
+├── aggregator/
+│   └── aggregator_continuous.cpp # Batched homomorphic aggregation
+├── control_center/
+│   └── control_center_continuous.cpp # Analytics and decryption
+├── network/
+│   └── network_utils.cpp       # TCP/IP communication framework
+├── performance/
+│   └── performance_metrics.cpp # CSV performance logging
+├── keys/                       # Generated cryptographic keys and certificates
+└── build/
+    ├── performance_data/       # CSV output files for research analysis
+    └── [executables]           # Built binaries
+```
+
+## Configuration
+
+All system parameters are configurable through `config.json`. Key categories:
+
+### Security Parameters
+```json
+{
+  "poly_modulus_degree": [8192, 16384, 32768],  // Security level (higher = more secure)
+  "ckks_scale_bits": [30, 40, 50],              // Precision for real numbers
+  "security_level": [128, 192, 256]             // Target security bits
+}
+```
+
+### System Scale
+```json
+{
+  "num_clients": 10,                    // Number of smart meters (1-100+)
+  "data_collection_interval": 20,       // Seconds between readings
+  "simulation_acceleration": 15         // Speedup factor for testing
+}
+```
+
+### Network Configuration
+```json
+{
+  "aggregator": {
+    "max_parallel_connections": 50,     // Concurrent connection limit
+    "connect_timeout": 30,              // Connection timeout (seconds)
+    "batch_size": 10                    // Meters processed per batch
+  }
+}
+```
+
+### Performance Tuning
+```json
+{
+  "performance_metrics": {
+    "enable_csv_export": true,          // Export performance data
+    "measurement_precision": "nanoseconds", // Timing precision
+    "export_interval": 60               // CSV export frequency
+  }
+}
+```
+## Research Applications
+
+This framework is designed for academic research and algorithm comparison:
+
+### Performance Benchmarking
+- **Encryption Timing**: Nanosecond-precision measurements for algorithm comparison
+- **Scalability Analysis**: Connection handling, memory usage, and throughput metrics
+- **Network Overhead**: Communication cost analysis for practical deployment
+- **Security Validation**: Certificate-based PKI with post-quantum cryptography
+
+### CSV Data Export
+Generated performance data includes:
+- `encryption_metrics.csv`: Encryption timing, compression ratios, security levels
+- `network_metrics.csv`: Throughput, latency, connection overhead
+- `scalability_metrics.csv`: Concurrent connections, memory usage, processing time
+- `homomorphic_metrics.csv`: Operation timing, noise growth, computation depth
+- `security_metrics.csv`: Certificate validation, authentication overhead
+
+### Algorithm Comparison
+The standardized CSV format enables comparison with:
+- Other homomorphic encryption schemes (BGV, BFV, TFHE)
+- Traditional cryptographic approaches
+- Performance optimizations and parameter tuning
+- Different network architectures and configurations
+
+## Technical Specifications
+
+- **Encryption**: CKKS with configurable polynomial degree (8192-32768)
+- **Security**: Configurable post-quantum security levels (128-256 bits)
+- **Performance**: Optimized encryption with parameter-dependent timing
+- **Scalability**: Configurable smart meter count with batched processing
+- **Throughput**: Adaptive batching with configurable connection limits
+- **Acceleration**: Configurable simulation speedup for testing scenarios
+- **Flexibility**: All parameters adjustable without code changes
+
+## Dependencies
+
+The system automatically installs dependencies via `./install_dependencies.sh`:
+- **Microsoft SEAL 4.1+**: Homomorphic encryption library
+- **nlohmann/json**: Configuration file parsing
+- **OpenSSL**: Certificate generation and validation
+- **CMake 3.16+**: Build system
+
+## Usage
+
+### Automated Testing (Recommended)
+```bash
+# Full system demonstration with configured parameters
+./run_continuous_test.sh
+
+# Research comparison across multiple configurations
+./run_research_comparison.sh
+```
+
+### Manual Component Testing
+```bash
+# Generate cryptographic keys
+./build/keygen
+
+# Start individual components
+./build/kdc                      # Key distribution center
+./build/client_continuous 1      # Smart meter (specify ID)
+./build/aggregator_continuous    # Homomorphic aggregator
+./build/control_center_continuous # Analytics center
+```
+
+## Configuration Management
+
+All system parameters are controlled via `config.json` - **no recompilation required**:
+
+### Core Parameters
+- **`poly_modulus_degree`**: Security level (8192=fast, 16384=strong, 32768=maximum)
+- **`ckks_scale_bits`**: Real number precision (30-60 bits)
+- **`num_clients`**: Number of smart meters (1-100+)
+
+### Network & Performance
+- **`max_parallel_connections`**: Concurrent connection limit
+- **`data_collection_interval`**: Timing between meter readings
+- **`simulation_acceleration`**: Speedup factor for testing
+
+### Example Configuration
+```json
+{
+  "poly_modulus_degree": 8192,
+  "ckks_scale_bits": 40,
+  "num_clients": 10,
+  "aggregator": {
+    "max_parallel_connections": 50,
+    "connect_timeout": 30
+  }
+}
+```
+
+## Research Output
+
+The framework automatically generates CSV files for performance analysis:
+- **Encryption metrics**: Timing, security parameters, compression ratios
+- **Network metrics**: Throughput, latency, connection overhead  
+- **Scalability metrics**: Memory usage, concurrent processing
+- **Security metrics**: Certificate validation, authentication overhead
+
+## Contributing & License
+
+This framework is designed for academic research in privacy-preserving smart grid analytics. The configurable parameter system and standardized CSV output enable reproducible research and algorithm comparison across different homomorphic encryption approaches.
 Uses Microsoft SEAL (MIT License).

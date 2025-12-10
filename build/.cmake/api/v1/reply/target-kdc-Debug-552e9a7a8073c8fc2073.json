@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "control_center_continuous"
+			"path" : "kdc"
 		}
 	],
 	"backtrace" : 1,
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 69,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 82,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
@@ -99,18 +99,10 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "performance_metrics::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "kdc_client::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "network_utils::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "control_center_continuous::@6890427a1f51a3e7e1df",
+	"id" : "kdc::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -122,26 +114,6 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "/usr/local/lib/libseal-4.0.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libnetwork_utils.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libkdc_client.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libperformance_metrics.a",
-				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
@@ -166,8 +138,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "control_center_continuous",
-	"nameOnDisk" : "control_center_continuous",
+	"name" : "kdc",
+	"nameOnDisk" : "kdc",
 	"paths" : 
 	{
 		"build" : ".",
@@ -188,7 +160,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "control_center/control_center_continuous.cpp",
+			"path" : "kdc/kdc.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

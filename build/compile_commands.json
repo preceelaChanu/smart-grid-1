@@ -25,24 +25,6 @@
 },
 {
   "directory": "/workspaces/smart-grid-1/build",
-  "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/client.dir/client/client.cpp.o -c /workspaces/smart-grid-1/client/client.cpp",
-  "file": "/workspaces/smart-grid-1/client/client.cpp",
-  "output": "CMakeFiles/client.dir/client/client.cpp.o"
-},
-{
-  "directory": "/workspaces/smart-grid-1/build",
-  "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o -c /workspaces/smart-grid-1/aggregator/aggregator.cpp",
-  "file": "/workspaces/smart-grid-1/aggregator/aggregator.cpp",
-  "output": "CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o"
-},
-{
-  "directory": "/workspaces/smart-grid-1/build",
-  "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/control_center.dir/control_center/control_center.cpp.o -c /workspaces/smart-grid-1/control_center/control_center.cpp",
-  "file": "/workspaces/smart-grid-1/control_center/control_center.cpp",
-  "output": "CMakeFiles/control_center.dir/control_center/control_center.cpp.o"
-},
-{
-  "directory": "/workspaces/smart-grid-1/build",
   "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/certgen.dir/certgen/certgen.cpp.o -c /workspaces/smart-grid-1/certgen/certgen.cpp",
   "file": "/workspaces/smart-grid-1/certgen/certgen.cpp",
   "output": "CMakeFiles/certgen.dir/certgen/certgen.cpp.o"

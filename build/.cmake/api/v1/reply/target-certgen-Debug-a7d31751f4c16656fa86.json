@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "client"
+			"path" : "certgen"
 		}
 	],
 	"backtrace" : 1,
@@ -32,7 +32,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 73,
+				"line" : 71,
 				"parent" : 0
 			},
 			{
@@ -73,11 +73,6 @@
 				{
 					"backtrace" : 5,
 					"path" : "/workspaces/smart-grid-1/network"
-				},
-				{
-					"backtrace" : 2,
-					"isSystem" : true,
-					"path" : "/usr/local/include/SEAL-4.0"
 				}
 			],
 			"language" : "CXX",
@@ -99,14 +94,10 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "kdc_client::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "network_utils::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "client::@6890427a1f51a3e7e1df",
+	"id" : "certgen::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -118,26 +109,6 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "/usr/local/lib/libseal-4.0.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libnetwork_utils.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libkdc_client.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "/usr/local/lib/libseal-4.0.a",
-				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
@@ -157,8 +128,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "client",
-	"nameOnDisk" : "client",
+	"name" : "certgen",
+	"nameOnDisk" : "certgen",
 	"paths" : 
 	{
 		"build" : ".",
@@ -179,7 +150,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "client/client.cpp",
+			"path" : "certgen/certgen.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

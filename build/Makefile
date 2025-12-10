@@ -169,45 +169,6 @@ keygen/fast:
 .PHONY : keygen/fast
 
 #=============================================================================
-# Target rules for targets named client
-
-# Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
-.PHONY : client
-
-# fast build rule for target.
-client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-.PHONY : client/fast
-
-#=============================================================================
-# Target rules for targets named aggregator
-
-# Build rule for target.
-aggregator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 aggregator
-.PHONY : aggregator
-
-# fast build rule for target.
-aggregator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator.dir/build.make CMakeFiles/aggregator.dir/build
-.PHONY : aggregator/fast
-
-#=============================================================================
-# Target rules for targets named control_center
-
-# Build rule for target.
-control_center: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 control_center
-.PHONY : control_center
-
-# fast build rule for target.
-control_center/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center.dir/build.make CMakeFiles/control_center.dir/build
-.PHONY : control_center/fast
-
-#=============================================================================
 # Target rules for targets named certgen
 
 # Build rule for target.
@@ -272,30 +233,6 @@ control_center_continuous/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center_continuous.dir/build.make CMakeFiles/control_center_continuous.dir/build
 .PHONY : control_center_continuous/fast
 
-aggregator/aggregator.o: aggregator/aggregator.cpp.o
-.PHONY : aggregator/aggregator.o
-
-# target to build an object file
-aggregator/aggregator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator.dir/build.make CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.o
-.PHONY : aggregator/aggregator.cpp.o
-
-aggregator/aggregator.i: aggregator/aggregator.cpp.i
-.PHONY : aggregator/aggregator.i
-
-# target to preprocess a source file
-aggregator/aggregator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator.dir/build.make CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.i
-.PHONY : aggregator/aggregator.cpp.i
-
-aggregator/aggregator.s: aggregator/aggregator.cpp.s
-.PHONY : aggregator/aggregator.s
-
-# target to generate assembly for a file
-aggregator/aggregator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator.dir/build.make CMakeFiles/aggregator.dir/aggregator/aggregator.cpp.s
-.PHONY : aggregator/aggregator.cpp.s
-
 aggregator/aggregator_continuous.o: aggregator/aggregator_continuous.cpp.o
 .PHONY : aggregator/aggregator_continuous.o
 
@@ -344,30 +281,6 @@ certgen/certgen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/certgen.dir/build.make CMakeFiles/certgen.dir/certgen/certgen.cpp.s
 .PHONY : certgen/certgen.cpp.s
 
-client/client.o: client/client.cpp.o
-.PHONY : client/client.o
-
-# target to build an object file
-client/client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client/client.cpp.o
-.PHONY : client/client.cpp.o
-
-client/client.i: client/client.cpp.i
-.PHONY : client/client.i
-
-# target to preprocess a source file
-client/client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client/client.cpp.i
-.PHONY : client/client.cpp.i
-
-client/client.s: client/client.cpp.s
-.PHONY : client/client.s
-
-# target to generate assembly for a file
-client/client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client/client.cpp.s
-.PHONY : client/client.cpp.s
-
 client/client_continuous.o: client/client_continuous.cpp.o
 .PHONY : client/client_continuous.o
 
@@ -391,30 +304,6 @@ client/client_continuous.s: client/client_continuous.cpp.s
 client/client_continuous.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client_continuous.dir/build.make CMakeFiles/client_continuous.dir/client/client_continuous.cpp.s
 .PHONY : client/client_continuous.cpp.s
-
-control_center/control_center.o: control_center/control_center.cpp.o
-.PHONY : control_center/control_center.o
-
-# target to build an object file
-control_center/control_center.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center.dir/build.make CMakeFiles/control_center.dir/control_center/control_center.cpp.o
-.PHONY : control_center/control_center.cpp.o
-
-control_center/control_center.i: control_center/control_center.cpp.i
-.PHONY : control_center/control_center.i
-
-# target to preprocess a source file
-control_center/control_center.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center.dir/build.make CMakeFiles/control_center.dir/control_center/control_center.cpp.i
-.PHONY : control_center/control_center.cpp.i
-
-control_center/control_center.s: control_center/control_center.cpp.s
-.PHONY : control_center/control_center.s
-
-# target to generate assembly for a file
-control_center/control_center.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center.dir/build.make CMakeFiles/control_center.dir/control_center/control_center.cpp.s
-.PHONY : control_center/control_center.cpp.s
 
 control_center/control_center_continuous.o: control_center/control_center_continuous.cpp.o
 .PHONY : control_center/control_center_continuous.o
@@ -568,36 +457,24 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... aggregator"
 	@echo "... aggregator_continuous"
 	@echo "... certgen"
-	@echo "... client"
 	@echo "... client_continuous"
-	@echo "... control_center"
 	@echo "... control_center_continuous"
 	@echo "... kdc"
 	@echo "... kdc_client"
 	@echo "... keygen"
 	@echo "... network_utils"
 	@echo "... performance_metrics"
-	@echo "... aggregator/aggregator.o"
-	@echo "... aggregator/aggregator.i"
-	@echo "... aggregator/aggregator.s"
 	@echo "... aggregator/aggregator_continuous.o"
 	@echo "... aggregator/aggregator_continuous.i"
 	@echo "... aggregator/aggregator_continuous.s"
 	@echo "... certgen/certgen.o"
 	@echo "... certgen/certgen.i"
 	@echo "... certgen/certgen.s"
-	@echo "... client/client.o"
-	@echo "... client/client.i"
-	@echo "... client/client.s"
 	@echo "... client/client_continuous.o"
 	@echo "... client/client_continuous.i"
 	@echo "... client/client_continuous.s"
-	@echo "... control_center/control_center.o"
-	@echo "... control_center/control_center.i"
-	@echo "... control_center/control_center.s"
 	@echo "... control_center/control_center_continuous.o"
 	@echo "... control_center/control_center_continuous.i"
 	@echo "... control_center/control_center_continuous.s"
