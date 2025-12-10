@@ -1,0 +1,21 @@
+=== Key Distribution Center (KDC) Server ===
+Initializing secure key distribution service...
+Loaded KDC certificate: kdc-001
+SEAL context initialized
+Loaded existing cryptographic keys (version 1)
+[2025-12-10 07:55:01] NETWORK INFO: Server socket created and listening on port 8444
+✓ KDC server listening on port 8444
+Ready to serve cryptographic keys to authorized nodes
+
+=== KDC Operational ===
+Secure key distribution service is now active
+Authorized nodes can request cryptographic keys
+Press Ctrl+C to shutdown gracefully
+KDC server started - waiting for key requests...
+✓ Accepted connection from: 127.0.0.1:43050
+[2025-12-10 07:55:03] NETWORK INFO: KDC authentication successful for node: control-center-001
+✓ Authenticated client: control-center-001 (type: 2)
+Key request from control-center-001:
+  Requested version: 0
+  Request type: 2
+  Sending complete key set (control center authorized)

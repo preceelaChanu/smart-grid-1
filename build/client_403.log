@@ -1,0 +1,87 @@
+=== Continuous Smart Meter Server 403 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-403
+Requesting public keys from KDC...
+[2025-12-10 08:03:22] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:03:22] NETWORK INFO: Server socket created and listening on port 9403
+✓ Smart meter server ready on port 9403
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9403
+[2025-12-10 08:03:36] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+[2025-12-10 08:03:42] Meter 403: Generated 4.925 kWh (encrypted: 334024 bytes, 5.494 ms)
+✓ Sent 334024 bytes to aggregator-001 (0.84ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:02] Meter 403: Generated 3.817 kWh (encrypted: 334364 bytes, 4.414 ms)
+[2025-12-10 08:04:22] Meter 403: Generated 6.525 kWh (encrypted: 334411 bytes, 5.687 ms)
+[2025-12-10 08:04:39] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334411 bytes to aggregator-001 (0.44ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:42] Meter 403: Generated 2.749 kWh (encrypted: 334427 bytes, 4.634 ms)
+[2025-12-10 08:05:02] Meter 403: Generated 6.353 kWh (encrypted: 334421 bytes, 5.851 ms)
+[2025-12-10 08:05:22] Meter 403: Generated 1.851 kWh (encrypted: 334469 bytes, 6.236 ms)
+[2025-12-10 08:05:42] Meter 403: Generated 1.501 kWh (encrypted: 334386 bytes, 5.035 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334386 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:06:02] Meter 403: Generated 5.220 kWh (encrypted: 334147 bytes, 6.478 ms)
+[2025-12-10 08:06:22] Meter 403: Generated 2.946 kWh (encrypted: 334424 bytes, 4.528 ms)
+[2025-12-10 08:06:42] Meter 403: Generated 5.726 kWh (encrypted: 334430 bytes, 15.512 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334430 bytes to aggregator-001 (8.98ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:02] Meter 403: Generated 2.220 kWh (encrypted: 334466 bytes, 6.445 ms)
+[2025-12-10 08:07:22] Meter 403: Generated 4.551 kWh (encrypted: 334411 bytes, 17.042 ms)
+[2025-12-10 08:07:43] Meter 403: Generated 3.080 kWh (encrypted: 334065 bytes, 6.375 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334065 bytes to aggregator-001 (0.41ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:03] Meter 403: Generated 7.470 kWh (encrypted: 334196 bytes, 5.847 ms)
+[2025-12-10 08:08:23] Meter 403: Generated 7.214 kWh (encrypted: 334411 bytes, 4.703 ms)
+[2025-12-10 08:08:43] Meter 403: Generated 5.956 kWh (encrypted: 334358 bytes, 4.572 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334358 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:03] Meter 403: Generated 3.958 kWh (encrypted: 334339 bytes, 5.597 ms)
+[2025-12-10 08:09:23] Meter 403: Generated 1.286 kWh (encrypted: 334211 bytes, 4.679 ms)
+[2025-12-10 08:09:43] Meter 403: Generated 6.631 kWh (encrypted: 334206 bytes, 6.006 ms)
+[2025-12-10 08:10:03] Meter 403: Generated 2.691 kWh (encrypted: 334179 bytes, 5.232 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334179 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:23] Meter 403: Generated 1.927 kWh (encrypted: 334315 bytes, 7.494 ms)
+[2025-12-10 08:10:43] Meter 403: Generated 2.528 kWh (encrypted: 334448 bytes, 4.923 ms)
+[2025-12-10 08:11:03] Meter 403: Generated 1.030 kWh (encrypted: 333869 bytes, 6.031 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 333869 bytes to aggregator-001 (0.42ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:23] Meter 403: Generated 2.417 kWh (encrypted: 334433 bytes, 6.656 ms)
+[2025-12-10 08:11:43] Meter 403: Generated 6.041 kWh (encrypted: 334373 bytes, 4.669 ms)
+[2025-12-10 08:12:03] Meter 403: Generated 3.020 kWh (encrypted: 334434 bytes, 4.360 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334434 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:23] Meter 403: Generated 0.817 kWh (encrypted: 333580 bytes, 6.503 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 403 shutdown complete

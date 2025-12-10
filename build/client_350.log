@@ -1,0 +1,94 @@
+=== Continuous Smart Meter Server 350 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-350
+Requesting public keys from KDC...
+[2025-12-10 08:02:16] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:02:16] NETWORK INFO: Server socket created and listening on port 9350
+✓ Smart meter server ready on port 9350
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9350
+[2025-12-10 08:02:33] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+[2025-12-10 08:02:36] Meter 350: Generated 6.069 kWh (encrypted: 334465 bytes, 7.232 ms)
+✓ Sent 334465 bytes to aggregator-001 (0.68ms)
+Session completed with aggregator-001
+[2025-12-10 08:02:56] Meter 350: Generated 1.921 kWh (encrypted: 334227 bytes, 4.383 ms)
+[2025-12-10 08:03:16] Meter 350: Generated 5.555 kWh (encrypted: 334064 bytes, 5.930 ms)
+[2025-12-10 08:03:36] Meter 350: Generated 2.549 kWh (encrypted: 334234 bytes, 6.147 ms)
+[2025-12-10 08:03:36] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334234 bytes to aggregator-001 (0.43ms)
+Session completed with aggregator-001
+[2025-12-10 08:03:56] Meter 350: Generated 0.992 kWh (encrypted: 334201 bytes, 4.407 ms)
+[2025-12-10 08:04:16] Meter 350: Generated 3.305 kWh (encrypted: 334405 bytes, 4.373 ms)
+[2025-12-10 08:04:36] Meter 350: Generated 3.434 kWh (encrypted: 334311 bytes, 4.636 ms)
+[2025-12-10 08:04:39] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334311 bytes to aggregator-001 (2.31ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:56] Meter 350: Generated 7.363 kWh (encrypted: 334385 bytes, 4.765 ms)
+[2025-12-10 08:05:16] Meter 350: Generated 0.641 kWh (encrypted: 334373 bytes, 4.591 ms)
+[2025-12-10 08:05:36] Meter 350: Generated 4.556 kWh (encrypted: 334389 bytes, 5.994 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334389 bytes to aggregator-001 (0.39ms)
+Session completed with aggregator-001
+[2025-12-10 08:05:56] Meter 350: Generated 1.583 kWh (encrypted: 334013 bytes, 5.072 ms)
+[2025-12-10 08:06:16] Meter 350: Generated 2.655 kWh (encrypted: 334409 bytes, 5.082 ms)
+[2025-12-10 08:06:36] Meter 350: Generated 2.062 kWh (encrypted: 334465 bytes, 6.709 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334465 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:06:56] Meter 350: Generated 2.936 kWh (encrypted: 334468 bytes, 5.674 ms)
+[2025-12-10 08:07:16] Meter 350: Generated 5.905 kWh (encrypted: 334124 bytes, 5.571 ms)
+[2025-12-10 08:07:36] Meter 350: Generated 5.082 kWh (encrypted: 334145 bytes, 4.525 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334145 bytes to aggregator-001 (0.43ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:56] Meter 350: Generated 0.789 kWh (encrypted: 334308 bytes, 4.684 ms)
+[2025-12-10 08:08:16] Meter 350: Generated 2.740 kWh (encrypted: 334228 bytes, 5.103 ms)
+[2025-12-10 08:08:36] Meter 350: Generated 5.526 kWh (encrypted: 334183 bytes, 4.699 ms)
+[2025-12-10 08:08:56] Meter 350: Generated 3.002 kWh (encrypted: 334294 bytes, 6.624 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334294 bytes to aggregator-001 (0.31ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:16] Meter 350: Generated 1.807 kWh (encrypted: 333924 bytes, 6.497 ms)
+[2025-12-10 08:09:36] Meter 350: Generated 3.808 kWh (encrypted: 334509 bytes, 6.084 ms)
+[2025-12-10 08:09:56] Meter 350: Generated 2.046 kWh (encrypted: 334150 bytes, 5.449 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334150 bytes to aggregator-001 (0.46ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:16] Meter 350: Generated 5.255 kWh (encrypted: 334011 bytes, 5.700 ms)
+[2025-12-10 08:10:36] Meter 350: Generated 3.710 kWh (encrypted: 334181 bytes, 5.291 ms)
+[2025-12-10 08:10:56] Meter 350: Generated 3.032 kWh (encrypted: 334396 bytes, 7.437 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334396 bytes to aggregator-001 (0.34ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:16] Meter 350: Generated 5.706 kWh (encrypted: 334356 bytes, 7.376 ms)
+[2025-12-10 08:11:36] Meter 350: Generated 2.921 kWh (encrypted: 334413 bytes, 4.479 ms)
+[2025-12-10 08:11:56] Meter 350: Generated 3.343 kWh (encrypted: 334298 bytes, 5.505 ms)
+[2025-12-10 08:12:16] Meter 350: Generated 5.118 kWh (encrypted: 334277 bytes, 4.575 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334277 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 350 shutdown complete

@@ -1,0 +1,94 @@
+=== Continuous Smart Meter Server 352 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-352
+Requesting public keys from KDC...
+[2025-12-10 08:02:18] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:02:18] NETWORK INFO: Server socket created and listening on port 9352
+✓ Smart meter server ready on port 9352
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9352
+[2025-12-10 08:02:33] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+[2025-12-10 08:02:38] Meter 352: Generated 3.387 kWh (encrypted: 334346 bytes, 5.499 ms)
+✓ Sent 334346 bytes to aggregator-001 (0.70ms)
+Session completed with aggregator-001
+[2025-12-10 08:02:58] Meter 352: Generated 1.539 kWh (encrypted: 334482 bytes, 4.786 ms)
+[2025-12-10 08:03:18] Meter 352: Generated 6.679 kWh (encrypted: 334107 bytes, 4.768 ms)
+[2025-12-10 08:03:36] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334107 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:03:38] Meter 352: Generated 6.420 kWh (encrypted: 334431 bytes, 6.088 ms)
+[2025-12-10 08:03:58] Meter 352: Generated 2.176 kWh (encrypted: 334020 bytes, 5.707 ms)
+[2025-12-10 08:04:18] Meter 352: Generated 4.069 kWh (encrypted: 334494 bytes, 6.053 ms)
+[2025-12-10 08:04:38] Meter 352: Generated 3.587 kWh (encrypted: 334163 bytes, 5.998 ms)
+[2025-12-10 08:04:39] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334163 bytes to aggregator-001 (0.38ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:59] Meter 352: Generated 2.975 kWh (encrypted: 333280 bytes, 5.306 ms)
+[2025-12-10 08:05:19] Meter 352: Generated 7.002 kWh (encrypted: 334405 bytes, 4.709 ms)
+[2025-12-10 08:05:39] Meter 352: Generated 4.342 kWh (encrypted: 334520 bytes, 7.519 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334520 bytes to aggregator-001 (0.41ms)
+Session completed with aggregator-001
+[2025-12-10 08:05:59] Meter 352: Generated 1.453 kWh (encrypted: 334373 bytes, 4.390 ms)
+[2025-12-10 08:06:19] Meter 352: Generated 6.787 kWh (encrypted: 334453 bytes, 6.319 ms)
+[2025-12-10 08:06:39] Meter 352: Generated 3.643 kWh (encrypted: 334323 bytes, 6.365 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334323 bytes to aggregator-001 (0.38ms)
+Session completed with aggregator-001
+[2025-12-10 08:06:59] Meter 352: Generated 5.074 kWh (encrypted: 334443 bytes, 6.532 ms)
+[2025-12-10 08:07:19] Meter 352: Generated 4.364 kWh (encrypted: 333389 bytes, 6.493 ms)
+[2025-12-10 08:07:39] Meter 352: Generated 2.464 kWh (encrypted: 334116 bytes, 7.424 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334116 bytes to aggregator-001 (0.33ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:59] Meter 352: Generated 6.873 kWh (encrypted: 334446 bytes, 6.670 ms)
+[2025-12-10 08:08:19] Meter 352: Generated 6.411 kWh (encrypted: 334144 bytes, 4.767 ms)
+[2025-12-10 08:08:39] Meter 352: Generated 6.435 kWh (encrypted: 334409 bytes, 4.920 ms)
+[2025-12-10 08:08:59] Meter 352: Generated 6.232 kWh (encrypted: 334450 bytes, 5.019 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334450 bytes to aggregator-001 (0.51ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:19] Meter 352: Generated 2.866 kWh (encrypted: 334155 bytes, 6.763 ms)
+[2025-12-10 08:09:39] Meter 352: Generated 5.290 kWh (encrypted: 334391 bytes, 4.483 ms)
+[2025-12-10 08:09:59] Meter 352: Generated 3.278 kWh (encrypted: 334447 bytes, 4.621 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334447 bytes to aggregator-001 (2.32ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:19] Meter 352: Generated 5.394 kWh (encrypted: 334215 bytes, 6.549 ms)
+[2025-12-10 08:10:39] Meter 352: Generated 2.225 kWh (encrypted: 334373 bytes, 5.944 ms)
+[2025-12-10 08:10:59] Meter 352: Generated 2.000 kWh (encrypted: 334137 bytes, 5.379 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334137 bytes to aggregator-001 (7.29ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:19] Meter 352: Generated 1.522 kWh (encrypted: 333906 bytes, 6.906 ms)
+[2025-12-10 08:11:39] Meter 352: Generated 5.676 kWh (encrypted: 334010 bytes, 4.666 ms)
+[2025-12-10 08:11:59] Meter 352: Generated 2.544 kWh (encrypted: 334433 bytes, 5.160 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334433 bytes to aggregator-001 (0.76ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:19] Meter 352: Generated 7.045 kWh (encrypted: 334254 bytes, 6.887 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 352 shutdown complete

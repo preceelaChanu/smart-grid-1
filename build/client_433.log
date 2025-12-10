@@ -1,0 +1,81 @@
+=== Continuous Smart Meter Server 433 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-433
+Requesting public keys from KDC...
+[2025-12-10 08:04:00] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:04:00] NETWORK INFO: Server socket created and listening on port 9433
+✓ Smart meter server ready on port 9433
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9433
+[2025-12-10 08:04:20] Meter 433: Generated 2.249 kWh (encrypted: 334276 bytes, 5.067 ms)
+[2025-12-10 08:04:40] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334276 bytes to aggregator-001 (0.80ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:40] Meter 433: Generated 4.954 kWh (encrypted: 334224 bytes, 4.842 ms)
+[2025-12-10 08:05:00] Meter 433: Generated 7.167 kWh (encrypted: 334217 bytes, 4.472 ms)
+[2025-12-10 08:05:20] Meter 433: Generated 6.494 kWh (encrypted: 334378 bytes, 5.619 ms)
+[2025-12-10 08:05:40] Meter 433: Generated 6.454 kWh (encrypted: 334458 bytes, 4.453 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334458 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:06:00] Meter 433: Generated 2.373 kWh (encrypted: 334226 bytes, 6.456 ms)
+[2025-12-10 08:06:20] Meter 433: Generated 4.694 kWh (encrypted: 334400 bytes, 4.916 ms)
+[2025-12-10 08:06:40] Meter 433: Generated 1.738 kWh (encrypted: 334473 bytes, 5.041 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334473 bytes to aggregator-001 (0.41ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:00] Meter 433: Generated 4.534 kWh (encrypted: 334424 bytes, 4.631 ms)
+[2025-12-10 08:07:20] Meter 433: Generated 7.139 kWh (encrypted: 334240 bytes, 5.129 ms)
+[2025-12-10 08:07:40] Meter 433: Generated 1.327 kWh (encrypted: 334341 bytes, 4.649 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334341 bytes to aggregator-001 (3.46ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:00] Meter 433: Generated 3.632 kWh (encrypted: 334280 bytes, 5.033 ms)
+[2025-12-10 08:08:20] Meter 433: Generated 7.612 kWh (encrypted: 334267 bytes, 6.653 ms)
+[2025-12-10 08:08:40] Meter 433: Generated 6.442 kWh (encrypted: 334465 bytes, 4.476 ms)
+[2025-12-10 08:09:00] Meter 433: Generated 2.357 kWh (encrypted: 334466 bytes, 6.547 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334466 bytes to aggregator-001 (1.28ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:20] Meter 433: Generated 4.540 kWh (encrypted: 334377 bytes, 5.161 ms)
+[2025-12-10 08:09:40] Meter 433: Generated 1.738 kWh (encrypted: 334177 bytes, 6.727 ms)
+[2025-12-10 08:10:00] Meter 433: Generated 4.199 kWh (encrypted: 334058 bytes, 10.415 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334058 bytes to aggregator-001 (7.40ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:20] Meter 433: Generated 2.433 kWh (encrypted: 334322 bytes, 6.548 ms)
+[2025-12-10 08:10:40] Meter 433: Generated 5.102 kWh (encrypted: 334393 bytes, 4.904 ms)
+[2025-12-10 08:11:00] Meter 433: Generated 3.155 kWh (encrypted: 334419 bytes, 6.164 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334419 bytes to aggregator-001 (0.39ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:20] Meter 433: Generated 2.981 kWh (encrypted: 334123 bytes, 4.657 ms)
+[2025-12-10 08:11:40] Meter 433: Generated 2.100 kWh (encrypted: 334448 bytes, 6.111 ms)
+[2025-12-10 08:12:00] Meter 433: Generated 1.267 kWh (encrypted: 334278 bytes, 5.982 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334278 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:20] Meter 433: Generated 7.207 kWh (encrypted: 334045 bytes, 4.632 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Data generation thread stopped
+Network server thread stopped
+Smart meter 433 shutdown complete

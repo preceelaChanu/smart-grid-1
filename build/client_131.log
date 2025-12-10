@@ -1,0 +1,124 @@
+=== Continuous Smart Meter Server 131 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-131
+Requesting public keys from KDC...
+[2025-12-10 07:57:45] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 07:57:45] NETWORK INFO: Server socket created and listening on port 9131
+✓ Smart meter server ready on port 9131
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9131
+[2025-12-10 07:58:05] Meter 131: Generated 2.234 kWh (encrypted: 334356 bytes, 4.963 ms)
+[2025-12-10 07:58:25] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334356 bytes to aggregator-001 (8.27ms)
+Session completed with aggregator-001
+[2025-12-10 07:58:25] Meter 131: Generated 7.436 kWh (encrypted: 334173 bytes, 6.632 ms)
+[2025-12-10 07:58:45] Meter 131: Generated 3.133 kWh (encrypted: 334455 bytes, 4.632 ms)
+[2025-12-10 07:59:05] Meter 131: Generated 2.616 kWh (encrypted: 334297 bytes, 6.600 ms)
+[2025-12-10 07:59:25] Meter 131: Generated 6.449 kWh (encrypted: 334116 bytes, 6.321 ms)
+[2025-12-10 07:59:26] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334116 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 07:59:45] Meter 131: Generated 4.037 kWh (encrypted: 334335 bytes, 4.552 ms)
+[2025-12-10 08:00:05] Meter 131: Generated 2.256 kWh (encrypted: 334195 bytes, 4.907 ms)
+[2025-12-10 08:00:25] Meter 131: Generated 1.613 kWh (encrypted: 334247 bytes, 6.724 ms)
+[2025-12-10 08:00:28] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334247 bytes to aggregator-001 (0.38ms)
+Session completed with aggregator-001
+[2025-12-10 08:00:46] Meter 131: Generated 3.253 kWh (encrypted: 334064 bytes, 5.051 ms)
+[2025-12-10 08:01:06] Meter 131: Generated 1.589 kWh (encrypted: 334176 bytes, 4.676 ms)
+[2025-12-10 08:01:26] Meter 131: Generated 4.766 kWh (encrypted: 334180 bytes, 5.139 ms)
+[2025-12-10 08:01:31] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334180 bytes to aggregator-001 (2.70ms)
+Session completed with aggregator-001
+[2025-12-10 08:01:46] Meter 131: Generated 1.915 kWh (encrypted: 334344 bytes, 4.640 ms)
+[2025-12-10 08:02:06] Meter 131: Generated 4.033 kWh (encrypted: 334365 bytes, 4.383 ms)
+[2025-12-10 08:02:26] Meter 131: Generated 5.132 kWh (encrypted: 334134 bytes, 4.862 ms)
+[2025-12-10 08:02:33] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334134 bytes to aggregator-001 (29.05ms)
+Session completed with aggregator-001
+[2025-12-10 08:02:46] Meter 131: Generated 7.470 kWh (encrypted: 334092 bytes, 6.310 ms)
+[2025-12-10 08:03:06] Meter 131: Generated 1.668 kWh (encrypted: 334421 bytes, 14.711 ms)
+[2025-12-10 08:03:26] Meter 131: Generated 3.534 kWh (encrypted: 334302 bytes, 5.038 ms)
+[2025-12-10 08:03:36] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334302 bytes to aggregator-001 (0.41ms)
+Session completed with aggregator-001
+[2025-12-10 08:03:46] Meter 131: Generated 1.715 kWh (encrypted: 334383 bytes, 4.580 ms)
+[2025-12-10 08:04:06] Meter 131: Generated 7.438 kWh (encrypted: 334133 bytes, 4.667 ms)
+[2025-12-10 08:04:26] Meter 131: Generated 2.465 kWh (encrypted: 334437 bytes, 6.513 ms)
+[2025-12-10 08:04:39] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334437 bytes to aggregator-001 (0.40ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:46] Meter 131: Generated 3.362 kWh (encrypted: 334469 bytes, 4.601 ms)
+[2025-12-10 08:05:06] Meter 131: Generated 4.013 kWh (encrypted: 334449 bytes, 4.802 ms)
+[2025-12-10 08:05:26] Meter 131: Generated 5.023 kWh (encrypted: 334388 bytes, 4.910 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334388 bytes to aggregator-001 (0.38ms)
+Session completed with aggregator-001
+[2025-12-10 08:05:46] Meter 131: Generated 2.681 kWh (encrypted: 334216 bytes, 6.229 ms)
+[2025-12-10 08:06:06] Meter 131: Generated 7.517 kWh (encrypted: 334427 bytes, 5.030 ms)
+[2025-12-10 08:06:26] Meter 131: Generated 4.980 kWh (encrypted: 334153 bytes, 6.998 ms)
+[2025-12-10 08:06:46] Meter 131: Generated 3.109 kWh (encrypted: 334407 bytes, 4.584 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334407 bytes to aggregator-001 (0.40ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:06] Meter 131: Generated 0.934 kWh (encrypted: 334311 bytes, 6.510 ms)
+[2025-12-10 08:07:26] Meter 131: Generated 5.245 kWh (encrypted: 334225 bytes, 6.052 ms)
+[2025-12-10 08:07:46] Meter 131: Generated 4.137 kWh (encrypted: 334394 bytes, 4.568 ms)
+[2025-12-10 08:07:55] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334394 bytes to aggregator-001 (0.42ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:06] Meter 131: Generated 7.503 kWh (encrypted: 334314 bytes, 5.104 ms)
+[2025-12-10 08:08:26] Meter 131: Generated 2.408 kWh (encrypted: 334314 bytes, 4.379 ms)
+[2025-12-10 08:08:46] Meter 131: Generated 1.364 kWh (encrypted: 334258 bytes, 5.896 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334258 bytes to aggregator-001 (1.20ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:06] Meter 131: Generated 5.090 kWh (encrypted: 334207 bytes, 16.199 ms)
+[2025-12-10 08:09:26] Meter 131: Generated 4.693 kWh (encrypted: 334199 bytes, 6.859 ms)
+[2025-12-10 08:09:46] Meter 131: Generated 3.357 kWh (encrypted: 334446 bytes, 5.130 ms)
+[2025-12-10 08:10:06] Meter 131: Generated 3.234 kWh (encrypted: 334266 bytes, 4.790 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334266 bytes to aggregator-001 (0.49ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:26] Meter 131: Generated 0.606 kWh (encrypted: 334445 bytes, 4.509 ms)
+[2025-12-10 08:10:46] Meter 131: Generated 6.771 kWh (encrypted: 334489 bytes, 5.511 ms)
+[2025-12-10 08:11:06] Meter 131: Generated 3.840 kWh (encrypted: 334337 bytes, 4.744 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334337 bytes to aggregator-001 (11.23ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:26] Meter 131: Generated 4.767 kWh (encrypted: 334438 bytes, 6.731 ms)
+[2025-12-10 08:11:46] Meter 131: Generated 7.225 kWh (encrypted: 334214 bytes, 4.837 ms)
+[2025-12-10 08:12:06] Meter 131: Generated 5.117 kWh (encrypted: 334173 bytes, 6.278 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334173 bytes to aggregator-001 (0.41ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:26] Meter 131: Generated 4.386 kWh (encrypted: 334167 bytes, 6.497 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 131 shutdown complete

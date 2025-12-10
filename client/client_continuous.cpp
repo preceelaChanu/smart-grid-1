@@ -78,9 +78,13 @@ public:
         cout << "Initializing for continuous operation..." << endl;
         
         // Load configuration
+        // Try to load config from current directory first, then parent
         ifstream config_file("config.json");
         if (!config_file.is_open()) {
-            cerr << "Error: Could not open config.json" << endl;
+            config_file.open("../config.json");
+        }
+        if (!config_file.is_open()) {
+            cerr << "Error: Could not open config.json in current or parent directory" << endl;
             return false;
         }
         

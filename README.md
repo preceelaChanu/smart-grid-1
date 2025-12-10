@@ -79,7 +79,7 @@ cmake .. && make -j4
 
 ### 2. Run Full System Test
 ```bash
-# Generate keys and certificates for 50 meters
+# Generate keys and certificates for n meters
 ./run_continuous_test.sh
 
 # For research comparison with different configurations

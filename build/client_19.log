@@ -1,0 +1,141 @@
+=== Continuous Smart Meter Server 19 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-019
+Requesting public keys from KDC...
+[2025-12-10 07:55:29] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 07:55:29] NETWORK INFO: Server socket created and listening on port 9019
+✓ Smart meter server ready on port 9019
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9019
+[2025-12-10 07:55:49] Meter 19: Generated 4.064 kWh (encrypted: 334147 bytes, 4.842 ms)
+[2025-12-10 07:56:05] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334147 bytes to aggregator-001 (0.72ms)
+Session completed with aggregator-001
+[2025-12-10 07:56:09] Meter 19: Generated 1.691 kWh (encrypted: 334418 bytes, 6.945 ms)
+[2025-12-10 07:56:29] Meter 19: Generated 1.073 kWh (encrypted: 334341 bytes, 5.781 ms)
+[2025-12-10 07:56:49] Meter 19: Generated 4.045 kWh (encrypted: 334441 bytes, 4.299 ms)
+[2025-12-10 07:57:09] Meter 19: Generated 3.534 kWh (encrypted: 334181 bytes, 4.329 ms)
+[2025-12-10 07:57:15] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334181 bytes to aggregator-001 (1.27ms)
+Session completed with aggregator-001
+[2025-12-10 07:57:29] Meter 19: Generated 2.202 kWh (encrypted: 334283 bytes, 4.309 ms)
+[2025-12-10 07:57:49] Meter 19: Generated 2.990 kWh (encrypted: 334084 bytes, 4.524 ms)
+[2025-12-10 07:58:09] Meter 19: Generated 2.734 kWh (encrypted: 334460 bytes, 4.438 ms)
+[2025-12-10 07:58:25] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334460 bytes to aggregator-001 (0.34ms)
+Session completed with aggregator-001
+[2025-12-10 07:58:29] Meter 19: Generated 1.298 kWh (encrypted: 334453 bytes, 4.451 ms)
+[2025-12-10 07:58:49] Meter 19: Generated 2.898 kWh (encrypted: 334391 bytes, 4.641 ms)
+[2025-12-10 07:59:09] Meter 19: Generated 3.879 kWh (encrypted: 334099 bytes, 4.573 ms)
+[2025-12-10 07:59:26] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334099 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 07:59:29] Meter 19: Generated 1.558 kWh (encrypted: 333949 bytes, 4.503 ms)
+[2025-12-10 07:59:49] Meter 19: Generated 7.070 kWh (encrypted: 334066 bytes, 5.126 ms)
+[2025-12-10 08:00:09] Meter 19: Generated 1.307 kWh (encrypted: 334278 bytes, 5.552 ms)
+[2025-12-10 08:00:28] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334278 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:00:29] Meter 19: Generated 5.355 kWh (encrypted: 334072 bytes, 4.830 ms)
+[2025-12-10 08:00:49] Meter 19: Generated 5.401 kWh (encrypted: 334457 bytes, 6.463 ms)
+[2025-12-10 08:01:09] Meter 19: Generated 3.452 kWh (encrypted: 334312 bytes, 5.072 ms)
+[2025-12-10 08:01:29] Meter 19: Generated 3.689 kWh (encrypted: 334243 bytes, 4.355 ms)
+[2025-12-10 08:01:31] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334243 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:01:49] Meter 19: Generated 6.770 kWh (encrypted: 334378 bytes, 4.726 ms)
+[2025-12-10 08:02:09] Meter 19: Generated 2.551 kWh (encrypted: 334104 bytes, 9.665 ms)
+[2025-12-10 08:02:29] Meter 19: Generated 4.567 kWh (encrypted: 334236 bytes, 4.463 ms)
+[2025-12-10 08:02:33] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334236 bytes to aggregator-001 (5.66ms)
+Session completed with aggregator-001
+[2025-12-10 08:02:49] Meter 19: Generated 4.769 kWh (encrypted: 334259 bytes, 4.748 ms)
+[2025-12-10 08:03:09] Meter 19: Generated 1.909 kWh (encrypted: 334508 bytes, 5.357 ms)
+[2025-12-10 08:03:29] Meter 19: Generated 7.412 kWh (encrypted: 334476 bytes, 5.583 ms)
+[2025-12-10 08:03:36] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334476 bytes to aggregator-001 (0.40ms)
+Session completed with aggregator-001
+[2025-12-10 08:03:49] Meter 19: Generated 6.037 kWh (encrypted: 334437 bytes, 5.240 ms)
+[2025-12-10 08:04:09] Meter 19: Generated 5.570 kWh (encrypted: 334025 bytes, 4.406 ms)
+[2025-12-10 08:04:29] Meter 19: Generated 5.743 kWh (encrypted: 334338 bytes, 6.609 ms)
+[2025-12-10 08:04:39] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334338 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:49] Meter 19: Generated 7.008 kWh (encrypted: 334461 bytes, 4.412 ms)
+[2025-12-10 08:05:09] Meter 19: Generated 2.682 kWh (encrypted: 334348 bytes, 18.808 ms)
+[2025-12-10 08:05:29] Meter 19: Generated 5.887 kWh (encrypted: 334390 bytes, 4.878 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334390 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:05:49] Meter 19: Generated 5.415 kWh (encrypted: 334333 bytes, 4.521 ms)
+[2025-12-10 08:06:09] Meter 19: Generated 3.475 kWh (encrypted: 334171 bytes, 4.447 ms)
+[2025-12-10 08:06:29] Meter 19: Generated 2.821 kWh (encrypted: 334425 bytes, 4.982 ms)
+[2025-12-10 08:06:49] Meter 19: Generated 5.655 kWh (encrypted: 334152 bytes, 4.479 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334152 bytes to aggregator-001 (1.07ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:09] Meter 19: Generated 1.722 kWh (encrypted: 334267 bytes, 6.114 ms)
+[2025-12-10 08:07:29] Meter 19: Generated 6.607 kWh (encrypted: 334239 bytes, 6.620 ms)
+[2025-12-10 08:07:49] Meter 19: Generated 5.654 kWh (encrypted: 334423 bytes, 4.801 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334423 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:10] Meter 19: Generated 7.451 kWh (encrypted: 334433 bytes, 7.158 ms)
+[2025-12-10 08:08:30] Meter 19: Generated 6.409 kWh (encrypted: 334035 bytes, 7.116 ms)
+[2025-12-10 08:08:50] Meter 19: Generated 7.482 kWh (encrypted: 334386 bytes, 5.209 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334386 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:10] Meter 19: Generated 1.524 kWh (encrypted: 334456 bytes, 5.127 ms)
+[2025-12-10 08:09:30] Meter 19: Generated 0.777 kWh (encrypted: 334416 bytes, 6.886 ms)
+[2025-12-10 08:09:50] Meter 19: Generated 3.406 kWh (encrypted: 334440 bytes, 4.472 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334440 bytes to aggregator-001 (0.39ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:10] Meter 19: Generated 6.775 kWh (encrypted: 334252 bytes, 4.276 ms)
+[2025-12-10 08:10:30] Meter 19: Generated 5.688 kWh (encrypted: 334154 bytes, 5.629 ms)
+[2025-12-10 08:10:50] Meter 19: Generated 2.353 kWh (encrypted: 333949 bytes, 5.190 ms)
+[2025-12-10 08:11:10] Meter 19: Generated 2.707 kWh (encrypted: 334322 bytes, 4.806 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334322 bytes to aggregator-001 (0.38ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:30] Meter 19: Generated 0.653 kWh (encrypted: 334073 bytes, 6.654 ms)
+[2025-12-10 08:11:50] Meter 19: Generated 4.441 kWh (encrypted: 334174 bytes, 7.032 ms)
+[2025-12-10 08:12:10] Meter 19: Generated 2.320 kWh (encrypted: 334322 bytes, 6.389 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334322 bytes to aggregator-001 (0.36ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:30] Meter 19: Generated 6.844 kWh (encrypted: 334263 bytes, 6.805 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Data generation thread stopped
+Smart meter 19 shutdown complete

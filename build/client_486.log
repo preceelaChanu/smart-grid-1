@@ -1,0 +1,74 @@
+=== Continuous Smart Meter Server 486 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-486
+Requesting public keys from KDC...
+[2025-12-10 08:05:07] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:05:07] NETWORK INFO: Server socket created and listening on port 9486
+✓ Smart meter server ready on port 9486
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9486
+[2025-12-10 08:05:27] Meter 486: Generated 3.701 kWh (encrypted: 333359 bytes, 5.130 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 333359 bytes to aggregator-001 (14.81ms)
+Session completed with aggregator-001
+[2025-12-10 08:05:47] Meter 486: Generated 5.566 kWh (encrypted: 334528 bytes, 4.829 ms)
+[2025-12-10 08:06:07] Meter 486: Generated 4.359 kWh (encrypted: 334316 bytes, 8.339 ms)
+[2025-12-10 08:06:27] Meter 486: Generated 1.454 kWh (encrypted: 334263 bytes, 4.956 ms)
+[2025-12-10 08:06:47] Meter 486: Generated 6.068 kWh (encrypted: 334338 bytes, 4.672 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334338 bytes to aggregator-001 (6.06ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:07] Meter 486: Generated 2.053 kWh (encrypted: 334430 bytes, 8.008 ms)
+[2025-12-10 08:07:27] Meter 486: Generated 5.136 kWh (encrypted: 334433 bytes, 5.393 ms)
+[2025-12-10 08:07:47] Meter 486: Generated 1.353 kWh (encrypted: 333939 bytes, 4.599 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 333939 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:07] Meter 486: Generated 2.294 kWh (encrypted: 334321 bytes, 6.243 ms)
+[2025-12-10 08:08:27] Meter 486: Generated 1.807 kWh (encrypted: 334291 bytes, 5.371 ms)
+[2025-12-10 08:08:47] Meter 486: Generated 4.618 kWh (encrypted: 334106 bytes, 5.340 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334106 bytes to aggregator-001 (0.50ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:07] Meter 486: Generated 4.564 kWh (encrypted: 334400 bytes, 4.942 ms)
+[2025-12-10 08:09:27] Meter 486: Generated 1.359 kWh (encrypted: 334154 bytes, 5.855 ms)
+[2025-12-10 08:09:47] Meter 486: Generated 2.912 kWh (encrypted: 334272 bytes, 4.557 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334272 bytes to aggregator-001 (0.39ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:07] Meter 486: Generated 3.288 kWh (encrypted: 334118 bytes, 6.507 ms)
+[2025-12-10 08:10:27] Meter 486: Generated 1.374 kWh (encrypted: 334389 bytes, 5.442 ms)
+[2025-12-10 08:10:47] Meter 486: Generated 1.024 kWh (encrypted: 334387 bytes, 5.486 ms)
+[2025-12-10 08:11:07] Meter 486: Generated 4.982 kWh (encrypted: 334044 bytes, 6.756 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334044 bytes to aggregator-001 (85.72ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:27] Meter 486: Generated 1.294 kWh (encrypted: 334428 bytes, 4.884 ms)
+[2025-12-10 08:11:47] Meter 486: Generated 5.615 kWh (encrypted: 334441 bytes, 6.507 ms)
+[2025-12-10 08:12:07] Meter 486: Generated 1.337 kWh (encrypted: 334051 bytes, 4.680 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334051 bytes to aggregator-001 (0.47ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:27] Meter 486: Generated 4.686 kWh (encrypted: 334092 bytes, 4.855 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 486 shutdown complete

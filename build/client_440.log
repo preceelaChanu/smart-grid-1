@@ -1,0 +1,81 @@
+=== Continuous Smart Meter Server 440 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-440
+Requesting public keys from KDC...
+[2025-12-10 08:04:09] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:04:09] NETWORK INFO: Server socket created and listening on port 9440
+✓ Smart meter server ready on port 9440
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9440
+[2025-12-10 08:04:29] Meter 440: Generated 5.081 kWh (encrypted: 333896 bytes, 5.187 ms)
+[2025-12-10 08:04:40] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 333896 bytes to aggregator-001 (0.71ms)
+Session completed with aggregator-001
+[2025-12-10 08:04:49] Meter 440: Generated 4.818 kWh (encrypted: 334348 bytes, 4.413 ms)
+[2025-12-10 08:05:09] Meter 440: Generated 6.205 kWh (encrypted: 334044 bytes, 4.587 ms)
+[2025-12-10 08:05:29] Meter 440: Generated 4.231 kWh (encrypted: 334181 bytes, 4.570 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334181 bytes to aggregator-001 (1.50ms)
+Session completed with aggregator-001
+[2025-12-10 08:05:49] Meter 440: Generated 1.225 kWh (encrypted: 334147 bytes, 7.565 ms)
+[2025-12-10 08:06:09] Meter 440: Generated 3.990 kWh (encrypted: 334480 bytes, 4.484 ms)
+[2025-12-10 08:06:29] Meter 440: Generated 2.243 kWh (encrypted: 334373 bytes, 4.602 ms)
+[2025-12-10 08:06:49] Meter 440: Generated 4.417 kWh (encrypted: 334438 bytes, 4.583 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334438 bytes to aggregator-001 (1.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:09] Meter 440: Generated 3.220 kWh (encrypted: 334496 bytes, 6.642 ms)
+[2025-12-10 08:07:29] Meter 440: Generated 6.202 kWh (encrypted: 334433 bytes, 4.570 ms)
+[2025-12-10 08:07:49] Meter 440: Generated 2.554 kWh (encrypted: 334051 bytes, 4.684 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334051 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:09] Meter 440: Generated 4.294 kWh (encrypted: 334370 bytes, 4.806 ms)
+[2025-12-10 08:08:29] Meter 440: Generated 1.711 kWh (encrypted: 334220 bytes, 6.407 ms)
+[2025-12-10 08:08:49] Meter 440: Generated 1.323 kWh (encrypted: 334122 bytes, 4.659 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334122 bytes to aggregator-001 (0.33ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:09] Meter 440: Generated 3.867 kWh (encrypted: 334583 bytes, 4.904 ms)
+[2025-12-10 08:09:29] Meter 440: Generated 4.108 kWh (encrypted: 334320 bytes, 4.497 ms)
+[2025-12-10 08:09:49] Meter 440: Generated 1.302 kWh (encrypted: 334415 bytes, 4.616 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334415 bytes to aggregator-001 (0.36ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:09] Meter 440: Generated 3.614 kWh (encrypted: 334485 bytes, 6.140 ms)
+[2025-12-10 08:10:29] Meter 440: Generated 6.426 kWh (encrypted: 334112 bytes, 4.855 ms)
+[2025-12-10 08:10:49] Meter 440: Generated 3.851 kWh (encrypted: 334142 bytes, 5.751 ms)
+[2025-12-10 08:11:09] Meter 440: Generated 6.790 kWh (encrypted: 334265 bytes, 5.583 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334265 bytes to aggregator-001 (1.72ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:29] Meter 440: Generated 2.185 kWh (encrypted: 334330 bytes, 4.685 ms)
+[2025-12-10 08:11:49] Meter 440: Generated 7.169 kWh (encrypted: 334198 bytes, 4.570 ms)
+[2025-12-10 08:12:09] Meter 440: Generated 7.019 kWh (encrypted: 334165 bytes, 7.087 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334165 bytes to aggregator-001 (0.50ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:29] Meter 440: Generated 4.382 kWh (encrypted: 334422 bytes, 5.596 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 440 shutdown complete

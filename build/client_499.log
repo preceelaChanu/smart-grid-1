@@ -1,0 +1,73 @@
+=== Continuous Smart Meter Server 499 ===
+Initializing for continuous operation...
+SEAL context initialized
+Loaded certificate: smart-meter-499
+Requesting public keys from KDC...
+[2025-12-10 08:05:24] NETWORK ERROR: Failed to connect to 127.0.0.1:8444: Connection refused
+Error: Failed to connect to KDC at 127.0.0.1:8444
+Error: Failed to send key request to KDC
+Failed to obtain keys from KDC, falling back to file keys
+Loaded keys from fallback files
+Cryptographic components initialized
+[2025-12-10 08:05:24] NETWORK INFO: Server socket created and listening on port 9499
+✓ Smart meter server ready on port 9499
+Data transmission interval: 20 seconds (15x accelerated - simulates 5min)
+✓ Performance metrics CSV files initialized in performance_data/
+Starting continuous smart meter operation...
+Press Ctrl+C to stop gracefully
+Data generation thread started
+Network server thread started on port 9499
+[2025-12-10 08:05:44] Meter 499: Generated 3.426 kWh (encrypted: 334331 bytes, 4.840 ms)
+[2025-12-10 08:05:44] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334331 bytes to aggregator-001 (0.81ms)
+Session completed with aggregator-001
+[2025-12-10 08:06:04] Meter 499: Generated 1.699 kWh (encrypted: 334391 bytes, 4.687 ms)
+[2025-12-10 08:06:24] Meter 499: Generated 6.082 kWh (encrypted: 334441 bytes, 5.146 ms)
+[2025-12-10 08:06:44] Meter 499: Generated 2.915 kWh (encrypted: 333366 bytes, 4.310 ms)
+[2025-12-10 08:06:50] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 333366 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:07:04] Meter 499: Generated 1.727 kWh (encrypted: 333740 bytes, 6.285 ms)
+[2025-12-10 08:07:24] Meter 499: Generated 2.971 kWh (encrypted: 333334 bytes, 6.714 ms)
+[2025-12-10 08:07:44] Meter 499: Generated 2.528 kWh (encrypted: 334380 bytes, 4.507 ms)
+[2025-12-10 08:07:56] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334380 bytes to aggregator-001 (0.90ms)
+Session completed with aggregator-001
+[2025-12-10 08:08:04] Meter 499: Generated 3.723 kWh (encrypted: 334095 bytes, 6.498 ms)
+[2025-12-10 08:08:24] Meter 499: Generated 5.693 kWh (encrypted: 334181 bytes, 4.909 ms)
+[2025-12-10 08:08:44] Meter 499: Generated 4.829 kWh (encrypted: 334376 bytes, 4.312 ms)
+[2025-12-10 08:09:01] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334376 bytes to aggregator-001 (1.05ms)
+Session completed with aggregator-001
+[2025-12-10 08:09:04] Meter 499: Generated 4.893 kWh (encrypted: 334391 bytes, 7.399 ms)
+[2025-12-10 08:09:24] Meter 499: Generated 6.952 kWh (encrypted: 334467 bytes, 7.090 ms)
+[2025-12-10 08:09:44] Meter 499: Generated 3.052 kWh (encrypted: 334323 bytes, 4.967 ms)
+[2025-12-10 08:10:04] Meter 499: Generated 4.886 kWh (encrypted: 334365 bytes, 7.870 ms)
+[2025-12-10 08:10:06] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334365 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:10:24] Meter 499: Generated 6.609 kWh (encrypted: 334095 bytes, 4.751 ms)
+[2025-12-10 08:10:44] Meter 499: Generated 7.035 kWh (encrypted: 334413 bytes, 4.654 ms)
+[2025-12-10 08:11:04] Meter 499: Generated 4.441 kWh (encrypted: 334080 bytes, 9.464 ms)
+[2025-12-10 08:11:12] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334080 bytes to aggregator-001 (0.37ms)
+Session completed with aggregator-001
+[2025-12-10 08:11:24] Meter 499: Generated 1.199 kWh (encrypted: 334474 bytes, 15.467 ms)
+[2025-12-10 08:11:44] Meter 499: Generated 7.101 kWh (encrypted: 334405 bytes, 4.858 ms)
+[2025-12-10 08:12:04] Meter 499: Generated 5.121 kWh (encrypted: 334306 bytes, 12.720 ms)
+[2025-12-10 08:12:17] NETWORK INFO: Server authentication successful for node: aggregator-001
+✓ Aggregator connected: aggregator-001 from 127.0.0.1
+✓ Sent 334306 bytes to aggregator-001 (0.35ms)
+Session completed with aggregator-001
+[2025-12-10 08:12:24] Meter 499: Generated 6.379 kWh (encrypted: 334501 bytes, 4.350 ms)
+
+Received shutdown signal. Gracefully shutting down smart meter...
+Network server thread stopped
+Data generation thread stopped
+Smart meter 499 shutdown complete
