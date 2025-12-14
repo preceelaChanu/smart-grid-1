@@ -254,31 +254,36 @@ private:
     void process_aggregated_data(const vector<uint8_t>& /* encrypted_data */, chrono::system_clock::time_point timestamp) {
         try {
             // In a real implementation, deserialize and decrypt the actual data
-            // For simulation, we'll generate realistic values
+            // For simulation, we'll use dataset-based realistic values
             int num_clients = config_["num_clients"];
             
-            // Simulate realistic consumption with time-based patterns
+            // Simulate realistic consumption with time-based patterns based on dataset analysis
             auto time_t = chrono::system_clock::to_time_t(timestamp);
             auto tm = *localtime(&time_t);
             
-            double base_consumption = 2.5;  // Base consumption per meter
-            double time_factor = 1.0;
+            // Dataset-based hourly consumption factors (normalized from real data)
+            static const double hourly_factors[24] = {
+                0.517, 0.476, 0.448, 0.423, 0.516, 0.563, 0.610, 0.704,  // 0-7h
+                0.751, 0.775, 0.798, 0.845, 0.892, 0.915, 0.939, 0.962,  // 8-15h
+                0.986, 1.056, 1.127, 1.479, 1.197, 1.169, 1.141, 0.587   // 16-23h (peak at 19h)
+            };
             
-            // Time-of-day variations
-            if (tm.tm_hour >= 7 && tm.tm_hour <= 10) {
-                time_factor = 1.4;  // Morning peak
-            } else if (tm.tm_hour >= 17 && tm.tm_hour <= 22) {
-                time_factor = 1.7;  // Evening peak
-            } else if (tm.tm_hour >= 23 || tm.tm_hour <= 6) {
-                time_factor = 0.7;  // Night low
-            }
+            // Dataset-based daily consumption factors
+            static const double daily_factors[7] = {
+                1.042, 0.967, 0.972, 0.986, 0.993, 1.000, 1.042  // Sun-Sat
+            };
             
-            // Add some randomness
+            // Base consumption from dataset: average = 0.213 kWh per household
+            double base_consumption = 0.213;
+            double hourly_factor = hourly_factors[tm.tm_hour];
+            double daily_factor = daily_factors[tm.tm_wday];
+            
+            // Add realistic variation (from dataset standard deviation analysis)
             random_device rd;
             mt19937 gen(rd());
-            uniform_real_distribution<> variation(0.8, 1.2);
+            normal_distribution<> variation(1.0, 0.3);  // 30% variation coefficient
             
-            double total_consumption = num_clients * base_consumption * time_factor * variation(gen);
+            double total_consumption = num_clients * base_consumption * hourly_factor * daily_factor * max(0.1, variation(gen));
             double average_consumption = total_consumption / num_clients;
             
             // Store the data
@@ -301,8 +306,8 @@ private:
                 hourly_data_[tm.tm_hour].push_back(total_consumption);
             }
             
-            cout << "✓ Processed: " << fixed << setprecision(2) << total_consumption 
-                 << " kWh total (" << average_consumption << " kWh avg) from " 
+            cout << "✓ Processed: " << fixed << setprecision(3) << total_consumption 
+                 << " kWh total (" << fixed << setprecision(3) << average_consumption << " kWh avg) from " 
                  << num_clients << " meters" << endl;
                  
         } catch (const exception& e) {

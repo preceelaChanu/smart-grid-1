@@ -1,0 +1,2 @@
+timestamp,plaintext_size_bytes,encrypted_size_bytes,encryption_expansion_ratio,plaintext_aggregated_size_bytes,encrypted_aggregated_size_bytes,aggregated_expansion_ratio,space_efficiency_percent,algorithm,poly_modulus_degree,num_values_aggregated
+2025-12-14 17:03:10.931,384,3145728,8192.0000,8,65536,8192.0000,0.0122,CKKS,8192,48

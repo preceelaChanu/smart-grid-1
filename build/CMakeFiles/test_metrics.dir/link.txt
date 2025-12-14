@@ -1,0 +1,1 @@
+/usr/bin/g++  -O3 -Wall -Wextra -g -DDEBUG -g CMakeFiles/test_metrics.dir/test_metrics.cpp.o -o test_metrics  /usr/local/lib/libseal-4.0.a libperformance_metrics.a 

@@ -37,6 +37,18 @@
 },
 {
   "directory": "/workspaces/smart-grid-1/build",
+  "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/homomorphic_example.dir/homomorphic_example.cpp.o -c /workspaces/smart-grid-1/homomorphic_example.cpp",
+  "file": "/workspaces/smart-grid-1/homomorphic_example.cpp",
+  "output": "CMakeFiles/homomorphic_example.dir/homomorphic_example.cpp.o"
+},
+{
+  "directory": "/workspaces/smart-grid-1/build",
+  "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/test_metrics.dir/test_metrics.cpp.o -c /workspaces/smart-grid-1/test_metrics.cpp",
+  "file": "/workspaces/smart-grid-1/test_metrics.cpp",
+  "output": "CMakeFiles/test_metrics.dir/test_metrics.cpp.o"
+},
+{
+  "directory": "/workspaces/smart-grid-1/build",
   "command": "/usr/bin/g++  -I/workspaces/smart-grid-1/include -I/workspaces/smart-grid-1/network -isystem /usr/local/include/SEAL-4.0  -O3 -Wall -Wextra -g -DDEBUG -g -std=gnu++17 -o CMakeFiles/client_continuous.dir/client/client_continuous.cpp.o -c /workspaces/smart-grid-1/client/client_continuous.cpp",
   "file": "/workspaces/smart-grid-1/client/client_continuous.cpp",
   "output": "CMakeFiles/client_continuous.dir/client/client_continuous.cpp.o"

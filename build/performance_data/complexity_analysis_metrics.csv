@@ -1,0 +1,2 @@
+timestamp,operation_type,input_size,poly_modulus_degree,time_per_operation_us,time_complexity_factor,memory_operations,arithmetic_operations,cpu_cycles_per_element,theoretical_complexity,complexity_class,iteration_number
+2025-12-14 17:03:10.931,homomorphic_addition,48,8192,2407.000000,0.022601788,8192,8192,125.3646,8192.000000,O(n),0

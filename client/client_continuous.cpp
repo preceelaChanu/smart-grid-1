@@ -46,9 +46,33 @@ private:
     NodeCertificate meter_cert_;
     int server_sockfd_;
     
-    // Data generation
+    // Data generation based on real dataset patterns
     mt19937 rng_;
     uniform_real_distribution<double> energy_dist_;
+    
+    // Household consumption profiles (based on dataset analysis)
+    enum class HouseholdType {
+        LOW_CONSUMER,      // 95.4% - avg <0.5 kWh
+        MEDIUM_CONSUMER,   // 4.6% - avg 0.5-2.0 kWh  
+        HIGH_CONSUMER,     // 0.0% - avg >2.0 kWh
+        VARIABLE_CONSUMER  // 51.0% - high variation
+    };
+    
+    HouseholdType household_type_;
+    double base_consumption_;
+    double variation_factor_;
+    bool is_variable_consumer_;
+    
+    // Temporal consumption patterns (from dataset)
+    static constexpr double hourly_factors_[24] = {
+        0.517, 0.476, 0.448, 0.423, 0.516, 0.563, 0.610, 0.704,  // 0-7h
+        0.751, 0.775, 0.798, 0.845, 0.892, 0.915, 0.939, 0.962,  // 8-15h  
+        0.986, 1.056, 1.127, 1.479, 1.197, 1.169, 1.141, 0.587   // 16-23h
+    };
+    
+    static constexpr double daily_factors_[7] = {
+        1.042, 0.967, 0.972, 0.986, 0.993, 1.000, 1.042  // Sun-Sat
+    };
     
     // Timing
     chrono::seconds transmission_interval_;
@@ -63,10 +87,38 @@ public:
     SmartMeterContinuous(int meter_id) : 
         meter_id_(meter_id),
         rng_(chrono::steady_clock::now().time_since_epoch().count()),
-        energy_dist_(0.5, 5.0),  // Energy consumption between 0.5 and 5.0 kWh
+        energy_dist_(0.0, 1.0),  // Uniform distribution for random factors
         transmission_interval_(20)  // Send data every 20 seconds (simulating 5 minutes)
     {
         port_ = 9000 + meter_id_;
+        
+        // Assign household type based on dataset statistics
+        uniform_real_distribution<double> type_selector(0.0, 1.0);
+        double type_rand = type_selector(rng_);
+        
+        if (type_rand < 0.954) {  // 95.4% low consumers
+            household_type_ = HouseholdType::LOW_CONSUMER;
+            base_consumption_ = 0.15 + (type_selector(rng_) * 0.35);  // 0.15-0.5 kWh
+            variation_factor_ = 0.3;
+        } else if (type_rand < 0.9995) {  // 4.6% medium consumers 
+            household_type_ = HouseholdType::MEDIUM_CONSUMER;
+            base_consumption_ = 0.5 + (type_selector(rng_) * 1.5);   // 0.5-2.0 kWh
+            variation_factor_ = 0.4;
+        } else {  // 0.05% high consumers (very rare)
+            household_type_ = HouseholdType::HIGH_CONSUMER;
+            base_consumption_ = 2.0 + (type_selector(rng_) * 0.112); // 2.0-2.112 kWh
+            variation_factor_ = 0.2;
+        }
+        
+        // 51% are variable consumers with higher variation
+        is_variable_consumer_ = (type_selector(rng_) < 0.51);
+        if (is_variable_consumer_) {
+            variation_factor_ *= 2.0;  // Double the variation for variable consumers
+        }
+        
+        // Adjust base consumption to match dataset average (0.213 kWh)
+        // Apply a scaling factor to ensure overall average matches
+        base_consumption_ *= 0.85;  // Scale down to match real average
     }
     
     ~SmartMeterContinuous() {
@@ -241,28 +293,39 @@ private:
     void generate_and_encrypt_data() {
         lock_guard<mutex> lock(data_mutex_);
         
-        // Simulate realistic energy consumption with time-based variations
+        // Get current time for temporal pattern analysis
         auto now = chrono::system_clock::now();
         auto time_t = chrono::system_clock::to_time_t(now);
         auto tm = *localtime(&time_t);
         
-        // Add time-of-day variations (higher consumption during peak hours)
-        double time_factor = 1.0;
-        if (tm.tm_hour >= 7 && tm.tm_hour <= 10) {
-            time_factor = 1.5;  // Morning peak
-        } else if (tm.tm_hour >= 17 && tm.tm_hour <= 22) {
-            time_factor = 1.8;  // Evening peak
-        } else if (tm.tm_hour >= 23 || tm.tm_hour <= 6) {
-            time_factor = 0.6;  // Night time low consumption
+        // Apply hourly consumption factor (from dataset peak analysis)
+        double hourly_factor = hourly_factors_[tm.tm_hour];
+        
+        // Apply daily consumption factor (from dataset weekly pattern)
+        double daily_factor = daily_factors_[tm.tm_wday];
+        
+        // Generate base consumption value
+        double random_factor = energy_dist_(rng_);
+        
+        // Apply household-specific consumption pattern
+        current_energy_value_ = base_consumption_ * hourly_factor * daily_factor;
+        
+        // Add variation based on household type and variability
+        normal_distribution<double> variation(0.0, variation_factor_);
+        double variation_amount = variation(rng_);
+        current_energy_value_ += (current_energy_value_ * variation_amount);
+        
+        // Add small random noise to simulate meter precision
+        uniform_real_distribution<double> noise(-0.001, 0.001);
+        current_energy_value_ += noise(rng_);
+        
+        // Ensure non-negative consumption (some households have near-zero usage)
+        current_energy_value_ = max(0.0, current_energy_value_);
+        
+        // Implement 0.000 kWh consumers (some households from dataset)
+        if (household_type_ == HouseholdType::LOW_CONSUMER && random_factor < 0.02) {
+            current_energy_value_ = 0.0;  // 2% chance of zero consumption
         }
-        
-        // Generate energy value with realistic variations
-        current_energy_value_ = energy_dist_(rng_) * time_factor;
-        
-        // Add some randomness for realistic simulation
-        uniform_real_distribution<double> variation(-0.2, 0.2);
-        current_energy_value_ += variation(rng_);
-        current_energy_value_ = max(0.1, current_energy_value_);  // Minimum 0.1 kWh
         
         // Measure encryption performance
         auto encryption_start = chrono::high_resolution_clock::now();
@@ -299,10 +362,22 @@ private:
         enc_metrics.meter_id = meter_id_;
         PerformanceMetrics::logEncryptionMetrics(enc_metrics);
         
-        // Log the data generation with encryption timing
+        // Log the data generation with household type info
+        string household_type_str;
+        switch (household_type_) {
+            case HouseholdType::LOW_CONSUMER: household_type_str = "Low"; break;
+            case HouseholdType::MEDIUM_CONSUMER: household_type_str = "Medium"; break;
+            case HouseholdType::HIGH_CONSUMER: household_type_str = "High"; break;
+            case HouseholdType::VARIABLE_CONSUMER: household_type_str = "Variable"; break;
+        }
+        
         cout << "[" << put_time(localtime(&time_t), "%Y-%m-%d %H:%M:%S") << "] "
-             << "Meter " << meter_id_ << ": Generated " << fixed << setprecision(3) 
-             << current_energy_value_ << " kWh (encrypted: " << current_encrypted_data_.size() 
+             << "Meter " << meter_id_ << " (" << household_type_str 
+             << (is_variable_consumer_ ? "-Variable" : "") << "): " 
+             << fixed << setprecision(3) << current_energy_value_ << " kWh "
+             << "(H:" << fixed << setprecision(2) << hourly_factor 
+             << ", D:" << daily_factor << ") "
+             << "(encrypted: " << current_encrypted_data_.size() 
              << " bytes, " << fixed << setprecision(3) << encryption_time << " ms)" << endl;
     }
     
@@ -416,6 +491,10 @@ private:
         }
     }
 };
+
+// Define static arrays for temporal consumption patterns
+constexpr double SmartMeterContinuous::hourly_factors_[24];
+constexpr double SmartMeterContinuous::daily_factors_[7];
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {

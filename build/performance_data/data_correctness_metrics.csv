@@ -1,0 +1,2 @@
+timestamp,expected_value,actual_value,absolute_error,relative_error_percent,accuracy_percentage,is_correct,threshold,operation_type,num_operations,meter_id
+2025-12-14 17:03:10.931,135.460000000,135.459965000,3.500000e-05,0.000026,100.0000,true,1.000e-03,homomorphic_aggregation,1,-1

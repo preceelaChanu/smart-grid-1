@@ -195,6 +195,32 @@ kdc/fast:
 .PHONY : kdc/fast
 
 #=============================================================================
+# Target rules for targets named homomorphic_example
+
+# Build rule for target.
+homomorphic_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 homomorphic_example
+.PHONY : homomorphic_example
+
+# fast build rule for target.
+homomorphic_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/build
+.PHONY : homomorphic_example/fast
+
+#=============================================================================
+# Target rules for targets named test_metrics
+
+# Build rule for target.
+test_metrics: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_metrics
+.PHONY : test_metrics
+
+# fast build rule for target.
+test_metrics/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/build
+.PHONY : test_metrics/fast
+
+#=============================================================================
 # Target rules for targets named client_continuous
 
 # Build rule for target.
@@ -329,6 +355,30 @@ control_center/control_center_continuous.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center_continuous.dir/build.make CMakeFiles/control_center_continuous.dir/control_center/control_center_continuous.cpp.s
 .PHONY : control_center/control_center_continuous.cpp.s
 
+homomorphic_example.o: homomorphic_example.cpp.o
+.PHONY : homomorphic_example.o
+
+# target to build an object file
+homomorphic_example.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/homomorphic_example.cpp.o
+.PHONY : homomorphic_example.cpp.o
+
+homomorphic_example.i: homomorphic_example.cpp.i
+.PHONY : homomorphic_example.i
+
+# target to preprocess a source file
+homomorphic_example.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/homomorphic_example.cpp.i
+.PHONY : homomorphic_example.cpp.i
+
+homomorphic_example.s: homomorphic_example.cpp.s
+.PHONY : homomorphic_example.s
+
+# target to generate assembly for a file
+homomorphic_example.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/homomorphic_example.cpp.s
+.PHONY : homomorphic_example.cpp.s
+
 kdc/kdc.o: kdc/kdc.cpp.o
 .PHONY : kdc/kdc.o
 
@@ -449,6 +499,30 @@ performance/performance_metrics.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/performance/performance_metrics.cpp.s
 .PHONY : performance/performance_metrics.cpp.s
 
+test_metrics.o: test_metrics.cpp.o
+.PHONY : test_metrics.o
+
+# target to build an object file
+test_metrics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/test_metrics.cpp.o
+.PHONY : test_metrics.cpp.o
+
+test_metrics.i: test_metrics.cpp.i
+.PHONY : test_metrics.i
+
+# target to preprocess a source file
+test_metrics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/test_metrics.cpp.i
+.PHONY : test_metrics.cpp.i
+
+test_metrics.s: test_metrics.cpp.s
+.PHONY : test_metrics.s
+
+# target to generate assembly for a file
+test_metrics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/test_metrics.cpp.s
+.PHONY : test_metrics.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -461,11 +535,13 @@ help:
 	@echo "... certgen"
 	@echo "... client_continuous"
 	@echo "... control_center_continuous"
+	@echo "... homomorphic_example"
 	@echo "... kdc"
 	@echo "... kdc_client"
 	@echo "... keygen"
 	@echo "... network_utils"
 	@echo "... performance_metrics"
+	@echo "... test_metrics"
 	@echo "... aggregator/aggregator_continuous.o"
 	@echo "... aggregator/aggregator_continuous.i"
 	@echo "... aggregator/aggregator_continuous.s"
@@ -478,6 +554,9 @@ help:
 	@echo "... control_center/control_center_continuous.o"
 	@echo "... control_center/control_center_continuous.i"
 	@echo "... control_center/control_center_continuous.s"
+	@echo "... homomorphic_example.o"
+	@echo "... homomorphic_example.i"
+	@echo "... homomorphic_example.s"
 	@echo "... kdc/kdc.o"
 	@echo "... kdc/kdc.i"
 	@echo "... kdc/kdc.s"
@@ -493,6 +572,9 @@ help:
 	@echo "... performance/performance_metrics.o"
 	@echo "... performance/performance_metrics.i"
 	@echo "... performance/performance_metrics.s"
+	@echo "... test_metrics.o"
+	@echo "... test_metrics.i"
+	@echo "... test_metrics.s"
 .PHONY : help
 
 

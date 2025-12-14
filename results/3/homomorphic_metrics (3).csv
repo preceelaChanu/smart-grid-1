@@ -1,0 +1,2 @@
+timestamp,operation,num_operands,operation_time_ms,result_size_bytes,noise_budget_before,noise_budget_after,aggregation_cycle
+2025-12-12 15:15:29.930,ciphertext_aggregation,500,5000.039,334000,60.000,55.000,0

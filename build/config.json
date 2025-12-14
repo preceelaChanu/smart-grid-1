@@ -1,20 +1,11 @@
 {
-  "comment_security": "poly_modulus_degree: 8192 (fast), 16384 (strong), 32768 (paranoid)",
   "poly_modulus_degree": 8192,
-  
-  "comment_scale": "CKKS initial scale. 40-bits is a good default.",
   "ckks_scale_bits": 40,
-
-  "comment_clients": "Number of smart meters to simulate in the test harness.",
-  "num_clients": 500,
-
-  "comment_paths": "File paths for keys and data.",
+  "num_clients": 50,
   "public_key_file": "keys/public_key.seal",
   "secret_key_file": "keys/secret_key.seal",
   "relin_keys_file": "keys/relin_keys.seal",
   "data_path_prefix": "data/ct_client_",
-
-  "comment_network": "Network configuration for TCP/IP communication.",
   "control_center": {
     "host": "127.0.0.1",
     "port": 8443,
@@ -24,7 +15,7 @@
     "certificate": "keys/aggregator.cert",
     "connect_timeout": 30,
     "data_timeout": 60,
-    "max_parallel_connections": 500,
+    "max_parallel_connections": 50,
     "connection_retry_attempts": 3,
     "retry_delay_ms": 1000
   },
@@ -33,7 +24,7 @@
     "connect_timeout": 30,
     "base_port": 9000,
     "port_range": 5000,
-    "max_concurrent_connections": 500,
+    "max_concurrent_connections": 50,
     "server_timeout": 300,
     "data_collection_timeout": 60
   },

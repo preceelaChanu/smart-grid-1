@@ -6,7 +6,7 @@
   "ckks_scale_bits": 40,
 
   "comment_clients": "Number of smart meters to simulate in the test harness.",
-  "num_clients": 500,
+  "num_clients": 50,
 
   "comment_paths": "File paths for keys and data.",
   "public_key_file": "keys/public_key.seal",
@@ -24,7 +24,7 @@
     "certificate": "keys/aggregator.cert",
     "connect_timeout": 30,
     "data_timeout": 60,
-    "max_parallel_connections": 500,
+    "max_parallel_connections": 50,
     "connection_retry_attempts": 3,
     "retry_delay_ms": 1000
   },
@@ -33,7 +33,7 @@
     "connect_timeout": 30,
     "base_port": 9000,
     "port_range": 5000,
-    "max_concurrent_connections": 500,
+    "max_concurrent_connections": 50,
     "server_timeout": 300,
     "data_collection_timeout": 60
   },

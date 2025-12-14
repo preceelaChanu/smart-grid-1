@@ -41,6 +41,16 @@ if [ $? -ne 0 ]; then
 fi
 echo "✓ Encryption keys generated"
 
+# Generate comprehensive performance metrics baseline
+echo ""
+echo "2a. Generating baseline performance metrics..."
+./test_metrics
+if [ $? -eq 0 ]; then
+    echo "✓ Baseline performance metrics collected"
+else
+    echo "Warning: Performance metrics collection failed, continuing..."
+fi
+
 # Step 2: Generate certificates
 echo ""
 echo "2. Generating network certificates..."
@@ -78,6 +88,27 @@ cleanup() {
     done
     
     echo "System shutdown complete"
+    
+    echo ""
+    echo "========================================="
+    echo "Performance Metrics Summary"
+    echo "========================================="
+    if [ -d "performance_data" ]; then
+        echo "📊 Performance data collected:"
+        for file in performance_data/*.csv; do
+            if [ -f "$file" ]; then
+                lines=$(wc -l < "$file")
+                entries=$((lines - 1))  # Subtract header
+                echo "  - $(basename "$file"): $entries entries"
+            fi
+        done
+        echo ""
+        echo "📁 Detailed metrics available in: $(pwd)/performance_data/"
+    else
+        echo "⚠️  No performance data collected"
+    fi
+    echo "========================================="
+    
     exit 0
 }
 

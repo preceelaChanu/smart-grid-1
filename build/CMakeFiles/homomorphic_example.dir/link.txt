@@ -1,0 +1,1 @@
+/usr/bin/g++  -O3 -Wall -Wextra -g -DDEBUG -g CMakeFiles/homomorphic_example.dir/homomorphic_example.cpp.o -o homomorphic_example  /usr/local/lib/libseal-4.0.a libperformance_metrics.a 

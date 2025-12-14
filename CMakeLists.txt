@@ -59,6 +59,8 @@ target_include_directories(kdc_client PUBLIC ${CMAKE_SOURCE_DIR}/include)
 add_executable(keygen keygen/keygen.cpp)
 add_executable(certgen certgen/certgen.cpp)
 add_executable(kdc kdc/kdc.cpp)
+add_executable(homomorphic_example homomorphic_example.cpp)
+add_executable(test_metrics test_metrics.cpp)
 
 # Add continuous operation targets
 add_executable(client_continuous client/client_continuous.cpp)
@@ -69,6 +71,8 @@ add_executable(control_center_continuous control_center/control_center_continuou
 target_link_libraries(keygen Microsoft.SEAL::seal)
 target_link_libraries(kdc Microsoft.SEAL::seal network_utils Threads::Threads)
 target_link_libraries(certgen network_utils)
+target_link_libraries(homomorphic_example Microsoft.SEAL::seal performance_metrics)
+target_link_libraries(test_metrics Microsoft.SEAL::seal performance_metrics)
 
 # Link continuous operation targets
 target_link_libraries(client_continuous Microsoft.SEAL::seal network_utils kdc_client performance_metrics Threads::Threads)

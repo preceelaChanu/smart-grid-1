@@ -1,0 +1,150 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SmartGridBenchmark",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "aggregator_continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aggregator_continuous-Debug-57351e9b33e4542b49b1.json",
+					"name" : "aggregator_continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "certgen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-certgen-Debug-0695829e36f70e107ca2.json",
+					"name" : "certgen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client_continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_continuous-Debug-7a6034074bfaa3951a7f.json",
+					"name" : "client_continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "control_center_continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-control_center_continuous-Debug-63e963e6b24da9267536.json",
+					"name" : "control_center_continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "homomorphic_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-homomorphic_example-Debug-ea76aeb6f510ffc18f02.json",
+					"name" : "homomorphic_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kdc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kdc-Debug-fc93c84af006577dd849.json",
+					"name" : "kdc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kdc_client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kdc_client-Debug-5a8ac9002a06a335c806.json",
+					"name" : "kdc_client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "keygen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-keygen-Debug-a1385f050aa264e05180.json",
+					"name" : "keygen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "network_utils::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-network_utils-Debug-d7ae0a31cd462d7ae204.json",
+					"name" : "network_utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "performance_metrics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-performance_metrics-Debug-f8f910ba0519187ebb41.json",
+					"name" : "performance_metrics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_metrics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_metrics-Debug-a6fb7e4ce37c412512e5.json",
+					"name" : "test_metrics",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspaces/smart-grid-1/build",
+		"source" : "/workspaces/smart-grid-1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

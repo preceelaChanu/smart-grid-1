@@ -4,6 +4,7 @@
 #include <ctime>
 #include <iomanip>
 #include <filesystem>
+#include <cmath>
 
 std::mutex PerformanceMetrics::csv_mutex_;
 
@@ -48,6 +49,20 @@ void PerformanceMetrics::initializeCSVFiles() {
     writeCSVHeader("performance_data/security_metrics.csv",
         "timestamp,algorithm,key_size_bits,poly_modulus_degree,security_level_bits,"
         "security_efficiency,ciphertext_expansion,quantum_resistant,attack_model");
+        
+    writeCSVHeader("performance_data/data_correctness_metrics.csv",
+        "timestamp,expected_value,actual_value,absolute_error,relative_error_percent,"
+        "accuracy_percentage,is_correct,threshold,operation_type,num_operations,meter_id");
+        
+    writeCSVHeader("performance_data/size_comparison_metrics.csv",
+        "timestamp,plaintext_size_bytes,encrypted_size_bytes,encryption_expansion_ratio,"
+        "plaintext_aggregated_size_bytes,encrypted_aggregated_size_bytes,aggregated_expansion_ratio,"
+        "space_efficiency_percent,algorithm,poly_modulus_degree,num_values_aggregated");
+        
+    writeCSVHeader("performance_data/complexity_analysis_metrics.csv",
+        "timestamp,operation_type,input_size,poly_modulus_degree,time_per_operation_us,"
+        "time_complexity_factor,memory_operations,arithmetic_operations,cpu_cycles_per_element,"
+        "theoretical_complexity,complexity_class,iteration_number");
     
     std::cout << "✓ Performance metrics CSV files initialized in performance_data/" << std::endl;
 }
@@ -137,6 +152,64 @@ void PerformanceMetrics::logSecurityMetrics(const SecurityMetrics& metrics) {
     appendToCSV("performance_data/security_metrics.csv", row.str());
 }
 
+void PerformanceMetrics::logDataCorrectnessMetrics(const DataCorrectnessMetrics& metrics) {
+    std::lock_guard<std::mutex> lock(csv_mutex_);
+    
+    std::stringstream row;
+    row << metrics.timestamp << ","
+        << std::fixed << std::setprecision(9) << metrics.expected_value << ","
+        << std::fixed << std::setprecision(9) << metrics.actual_value << ","
+        << std::scientific << std::setprecision(6) << metrics.absolute_error << ","
+        << std::fixed << std::setprecision(6) << metrics.relative_error_percent << ","
+        << std::fixed << std::setprecision(4) << metrics.accuracy_percentage << ","
+        << (metrics.is_correct ? "true" : "false") << ","
+        << std::scientific << std::setprecision(3) << metrics.threshold << ","
+        << metrics.operation_type << ","
+        << metrics.num_operations << ","
+        << metrics.meter_id;
+    
+    appendToCSV("performance_data/data_correctness_metrics.csv", row.str());
+}
+
+void PerformanceMetrics::logSizeComparisonMetrics(const SizeComparisonMetrics& metrics) {
+    std::lock_guard<std::mutex> lock(csv_mutex_);
+    
+    std::stringstream row;
+    row << metrics.timestamp << ","
+        << metrics.plaintext_size_bytes << ","
+        << metrics.encrypted_size_bytes << ","
+        << std::fixed << std::setprecision(4) << metrics.encryption_expansion_ratio << ","
+        << metrics.plaintext_aggregated_size_bytes << ","
+        << metrics.encrypted_aggregated_size_bytes << ","
+        << std::fixed << std::setprecision(4) << metrics.aggregated_expansion_ratio << ","
+        << std::fixed << std::setprecision(4) << metrics.space_efficiency_percent << ","
+        << metrics.algorithm << ","
+        << metrics.poly_modulus_degree << ","
+        << metrics.num_values_aggregated;
+    
+    appendToCSV("performance_data/size_comparison_metrics.csv", row.str());
+}
+
+void PerformanceMetrics::logComplexityAnalysisMetrics(const ComplexityAnalysisMetrics& metrics) {
+    std::lock_guard<std::mutex> lock(csv_mutex_);
+    
+    std::stringstream row;
+    row << metrics.timestamp << ","
+        << metrics.operation_type << ","
+        << metrics.input_size << ","
+        << metrics.poly_modulus_degree << ","
+        << std::fixed << std::setprecision(6) << metrics.time_per_operation_us << ","
+        << std::fixed << std::setprecision(9) << metrics.time_complexity_factor << ","
+        << metrics.memory_operations << ","
+        << metrics.arithmetic_operations << ","
+        << std::fixed << std::setprecision(4) << metrics.cpu_cycles_per_element << ","
+        << std::fixed << std::setprecision(6) << metrics.theoretical_complexity << ","
+        << metrics.complexity_class << ","
+        << metrics.iteration_number;
+    
+    appendToCSV("performance_data/complexity_analysis_metrics.csv", row.str());
+}
+
 void PerformanceMetrics::writeCSVHeader(const std::string& filename, const std::string& header) {
     std::ofstream file(filename, std::ios::out | std::ios::trunc);
     if (file.is_open()) {
@@ -204,4 +277,118 @@ void PerformanceMetrics::generateSummaryReport() {
     report.close();
     
     std::cout << "✓ Performance summary report generated: performance_data/summary_report.txt" << std::endl;
+}
+
+PerformanceMetrics::DataCorrectnessMetrics PerformanceMetrics::analyzeCorrectness(
+    double expected, double actual, const std::string& operation_type, 
+    int meter_id, double threshold) {
+    
+    DataCorrectnessMetrics metrics;
+    metrics.expected_value = expected;
+    metrics.actual_value = actual;
+    metrics.absolute_error = std::abs(expected - actual);
+    
+    if (std::abs(expected) > 1e-15) {
+        metrics.relative_error_percent = (metrics.absolute_error / std::abs(expected)) * 100.0;
+    } else {
+        metrics.relative_error_percent = 0.0;
+    }
+    
+    metrics.accuracy_percentage = 100.0 - metrics.relative_error_percent;
+    metrics.is_correct = (metrics.absolute_error <= threshold);
+    metrics.threshold = threshold;
+    metrics.operation_type = operation_type;
+    metrics.num_operations = 1;
+    metrics.timestamp = getCurrentTimestamp();
+    metrics.meter_id = meter_id;
+    
+    return metrics;
+}
+
+PerformanceMetrics::SizeComparisonMetrics PerformanceMetrics::analyzeSizes(
+    size_t plaintext_size, size_t encrypted_size, 
+    size_t plaintext_agg_size, size_t encrypted_agg_size,
+    const std::string& algorithm, size_t poly_degree, int num_values) {
+    
+    SizeComparisonMetrics metrics;
+    metrics.plaintext_size_bytes = plaintext_size;
+    metrics.encrypted_size_bytes = encrypted_size;
+    metrics.encryption_expansion_ratio = (plaintext_size > 0) ? 
+        static_cast<double>(encrypted_size) / plaintext_size : 0.0;
+    
+    metrics.plaintext_aggregated_size_bytes = plaintext_agg_size;
+    metrics.encrypted_aggregated_size_bytes = encrypted_agg_size;
+    metrics.aggregated_expansion_ratio = (plaintext_agg_size > 0) ? 
+        static_cast<double>(encrypted_agg_size) / plaintext_agg_size : 0.0;
+    
+    metrics.space_efficiency_percent = (metrics.encryption_expansion_ratio > 0) ?
+        100.0 / metrics.encryption_expansion_ratio : 0.0;
+    
+    metrics.algorithm = algorithm;
+    metrics.poly_modulus_degree = poly_degree;
+    metrics.num_values_aggregated = num_values;
+    metrics.timestamp = getCurrentTimestamp();
+    
+    return metrics;
+}
+
+PerformanceMetrics::ComplexityAnalysisMetrics PerformanceMetrics::analyzeComplexity(
+    const std::string& operation_type, size_t input_size, size_t poly_degree,
+    double execution_time_us, int iteration) {
+    
+    ComplexityAnalysisMetrics metrics;
+    metrics.operation_type = operation_type;
+    metrics.input_size = input_size;
+    metrics.poly_modulus_degree = poly_degree;
+    metrics.time_per_operation_us = execution_time_us;
+    
+    // Calculate normalized time complexity factor
+    // For homomorphic operations, complexity is typically O(n log n) where n = poly_degree
+    if (poly_degree > 0) {
+        double log_n = std::log2(static_cast<double>(poly_degree));
+        metrics.time_complexity_factor = execution_time_us / (poly_degree * log_n);
+        
+        // Estimate theoretical complexity class
+        if (operation_type == "encryption" || operation_type == "decryption") {
+            metrics.theoretical_complexity = poly_degree * log_n;
+            metrics.complexity_class = "O(n log n)";
+        } else if (operation_type == "addition") {
+            metrics.theoretical_complexity = poly_degree;
+            metrics.complexity_class = "O(n)";
+        } else if (operation_type == "multiplication" || operation_type == "relinearization") {
+            metrics.theoretical_complexity = poly_degree * log_n * log_n;
+            metrics.complexity_class = "O(n log²n)";
+        } else {
+            metrics.theoretical_complexity = poly_degree;
+            metrics.complexity_class = "O(n)";
+        }
+    } else {
+        metrics.time_complexity_factor = 0.0;
+        metrics.theoretical_complexity = 0.0;
+        metrics.complexity_class = "O(1)";
+    }
+    
+    // Estimate memory and arithmetic operations
+    if (operation_type == "encryption" || operation_type == "decryption") {
+        metrics.memory_operations = poly_degree * 2;  // Read input, write output
+        metrics.arithmetic_operations = poly_degree * std::log2(poly_degree) * 4;  // NTT operations
+    } else if (operation_type == "addition") {
+        metrics.memory_operations = poly_degree * 3;  // Read two operands, write result
+        metrics.arithmetic_operations = poly_degree;  // Simple element-wise addition
+    } else if (operation_type == "multiplication") {
+        metrics.memory_operations = poly_degree * 3;  // Read two operands, write result
+        metrics.arithmetic_operations = poly_degree * std::log2(poly_degree) * 6;  // Complex multiplication
+    } else {
+        metrics.memory_operations = poly_degree;
+        metrics.arithmetic_operations = poly_degree;
+    }
+    
+    // Estimate CPU cycles per element (very rough approximation)
+    metrics.cpu_cycles_per_element = (input_size > 0) ? 
+        (execution_time_us * 2.5) / input_size : 0.0;  // Assuming 2.5 GHz CPU
+    
+    metrics.iteration_number = iteration;
+    metrics.timestamp = getCurrentTimestamp();
+    
+    return metrics;
 }

@@ -81,12 +81,61 @@ public:
         std::string timestamp;
     };
     
+    // Data correctness analysis metrics
+    struct DataCorrectnessMetrics {
+        double expected_value;          // Expected plaintext result
+        double actual_value;            // Actual decrypted result
+        double absolute_error;          // |expected - actual|
+        double relative_error_percent;  // (|expected - actual| / |expected|) * 100
+        double accuracy_percentage;     // 100 - relative_error_percent
+        bool is_correct;                // Whether error is within acceptable threshold
+        double threshold;               // Acceptable error threshold
+        std::string operation_type;     // encryption, aggregation, etc.
+        int num_operations;             // Number of operations performed
+        std::string timestamp;
+        int meter_id;
+    };
+    
+    // Size comparison metrics
+    struct SizeComparisonMetrics {
+        size_t plaintext_size_bytes;         // Original data size
+        size_t encrypted_size_bytes;         // Encrypted data size
+        double encryption_expansion_ratio;   // encrypted_size / plaintext_size
+        size_t plaintext_aggregated_size_bytes;     // Plaintext aggregated size
+        size_t encrypted_aggregated_size_bytes;     // Encrypted aggregated size
+        double aggregated_expansion_ratio;          // encrypted_agg / plaintext_agg
+        double space_efficiency_percent;            // 100 / encryption_expansion_ratio
+        std::string algorithm;                      // CKKS, BFV, etc.
+        size_t poly_modulus_degree;
+        std::string timestamp;
+        int num_values_aggregated;
+    };
+    
+    // Machine-independent complexity analysis
+    struct ComplexityAnalysisMetrics {
+        std::string operation_type;          // encryption, decryption, addition, etc.
+        size_t input_size;                   // Input data size (elements or bytes)
+        size_t poly_modulus_degree;          // Security parameter
+        double time_per_operation_us;        // Microseconds per operation
+        double time_complexity_factor;       // Normalized time factor
+        size_t memory_operations;            // Number of memory operations
+        size_t arithmetic_operations;        // Number of arithmetic operations
+        double cpu_cycles_per_element;       // CPU cycles per data element
+        double theoretical_complexity;       // O(n), O(n log n), etc. as numeric factor
+        std::string complexity_class;        // "O(n)", "O(n log n)", etc.
+        std::string timestamp;
+        int iteration_number;                // For averaging multiple runs
+    };
+    
     // Static methods for logging metrics
     static void logEncryptionMetrics(const EncryptionMetrics& metrics);
     static void logHomomorphicMetrics(const HomomorphicMetrics& metrics);
     static void logNetworkMetrics(const NetworkMetrics& metrics);
     static void logScalabilityMetrics(const ScalabilityMetrics& metrics);
     static void logSecurityMetrics(const SecurityMetrics& metrics);
+    static void logDataCorrectnessMetrics(const DataCorrectnessMetrics& metrics);
+    static void logSizeComparisonMetrics(const SizeComparisonMetrics& metrics);
+    static void logComplexityAnalysisMetrics(const ComplexityAnalysisMetrics& metrics);
     
     // Utility methods
     static std::string getCurrentTimestamp();
@@ -94,6 +143,16 @@ public:
     static void generateSummaryReport();
     static size_t estimateSecurityLevel(size_t poly_modulus_degree);
     static double calculateSecurityEfficiency(double performance_ms, size_t security_bits);
+    static DataCorrectnessMetrics analyzeCorrectness(double expected, double actual, 
+                                                   const std::string& operation_type,
+                                                   int meter_id = -1, double threshold = 0.001);
+    static SizeComparisonMetrics analyzeSizes(size_t plaintext_size, size_t encrypted_size,
+                                             size_t plaintext_agg_size, size_t encrypted_agg_size,
+                                             const std::string& algorithm, size_t poly_degree,
+                                             int num_values);
+    static ComplexityAnalysisMetrics analyzeComplexity(const std::string& operation_type,
+                                                      size_t input_size, size_t poly_degree,
+                                                      double execution_time_us, int iteration = 1);
     
 private:
     static void writeCSVHeader(const std::string& filename, const std::string& header);
@@ -108,8 +167,8 @@ private:
     
 public:
     PerformanceTimer(const std::string& operation) : 
-        operation_name_(operation),
-        start_time_(std::chrono::high_resolution_clock::now()) {}
+        start_time_(std::chrono::high_resolution_clock::now()),
+        operation_name_(operation) {}
     
     ~PerformanceTimer() {
         auto end_time = std::chrono::high_resolution_clock::now();

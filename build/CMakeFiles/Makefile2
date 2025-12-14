@@ -69,6 +69,8 @@ all: CMakeFiles/kdc_client.dir/all
 all: CMakeFiles/keygen.dir/all
 all: CMakeFiles/certgen.dir/all
 all: CMakeFiles/kdc.dir/all
+all: CMakeFiles/homomorphic_example.dir/all
+all: CMakeFiles/test_metrics.dir/all
 all: CMakeFiles/client_continuous.dir/all
 all: CMakeFiles/aggregator_continuous.dir/all
 all: CMakeFiles/control_center_continuous.dir/all
@@ -85,6 +87,8 @@ clean: CMakeFiles/kdc_client.dir/clean
 clean: CMakeFiles/keygen.dir/clean
 clean: CMakeFiles/certgen.dir/clean
 clean: CMakeFiles/kdc.dir/clean
+clean: CMakeFiles/homomorphic_example.dir/clean
+clean: CMakeFiles/test_metrics.dir/clean
 clean: CMakeFiles/client_continuous.dir/clean
 clean: CMakeFiles/aggregator_continuous.dir/clean
 clean: CMakeFiles/control_center_continuous.dir/clean
@@ -97,7 +101,7 @@ clean: CMakeFiles/control_center_continuous.dir/clean
 CMakeFiles/network_utils.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_utils.dir/build.make CMakeFiles/network_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=15,16 "Built target network_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=17,18 "Built target network_utils"
 .PHONY : CMakeFiles/network_utils.dir/all
 
 # Build rule for subdir invocation for target.
@@ -123,7 +127,7 @@ CMakeFiles/network_utils.dir/clean:
 CMakeFiles/performance_metrics.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/performance_metrics.dir/build.make CMakeFiles/performance_metrics.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=17,18 "Built target performance_metrics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=19,20 "Built target performance_metrics"
 .PHONY : CMakeFiles/performance_metrics.dir/all
 
 # Build rule for subdir invocation for target.
@@ -149,7 +153,7 @@ CMakeFiles/performance_metrics.dir/clean:
 CMakeFiles/kdc_client.dir/all: CMakeFiles/network_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc_client.dir/build.make CMakeFiles/kdc_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc_client.dir/build.make CMakeFiles/kdc_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=11,12 "Built target kdc_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=13,14 "Built target kdc_client"
 .PHONY : CMakeFiles/kdc_client.dir/all
 
 # Build rule for subdir invocation for target.
@@ -175,7 +179,7 @@ CMakeFiles/kdc_client.dir/clean:
 CMakeFiles/keygen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/keygen.dir/build.make CMakeFiles/keygen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/keygen.dir/build.make CMakeFiles/keygen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=13,14 "Built target keygen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=15,16 "Built target keygen"
 .PHONY : CMakeFiles/keygen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -227,7 +231,7 @@ CMakeFiles/certgen.dir/clean:
 CMakeFiles/kdc.dir/all: CMakeFiles/network_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc.dir/build.make CMakeFiles/kdc.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kdc.dir/build.make CMakeFiles/kdc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=9,10 "Built target kdc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=11,12 "Built target kdc"
 .PHONY : CMakeFiles/kdc.dir/all
 
 # Build rule for subdir invocation for target.
@@ -247,12 +251,64 @@ CMakeFiles/kdc.dir/clean:
 .PHONY : CMakeFiles/kdc.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/homomorphic_example.dir
+
+# All Build rule for target.
+CMakeFiles/homomorphic_example.dir/all: CMakeFiles/performance_metrics.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=9,10 "Built target homomorphic_example"
+.PHONY : CMakeFiles/homomorphic_example.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/homomorphic_example.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/homomorphic_example.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 0
+.PHONY : CMakeFiles/homomorphic_example.dir/rule
+
+# Convenience name for target.
+homomorphic_example: CMakeFiles/homomorphic_example.dir/rule
+.PHONY : homomorphic_example
+
+# clean rule for target.
+CMakeFiles/homomorphic_example.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homomorphic_example.dir/build.make CMakeFiles/homomorphic_example.dir/clean
+.PHONY : CMakeFiles/homomorphic_example.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_metrics.dir
+
+# All Build rule for target.
+CMakeFiles/test_metrics.dir/all: CMakeFiles/performance_metrics.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=21,22 "Built target test_metrics"
+.PHONY : CMakeFiles/test_metrics.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_metrics.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_metrics.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/smart-grid-1/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_metrics.dir/rule
+
+# Convenience name for target.
+test_metrics: CMakeFiles/test_metrics.dir/rule
+.PHONY : test_metrics
+
+# clean rule for target.
+CMakeFiles/test_metrics.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_metrics.dir/build.make CMakeFiles/test_metrics.dir/clean
+.PHONY : CMakeFiles/test_metrics.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/client_continuous.dir
 
 # All Build rule for target.
-CMakeFiles/client_continuous.dir/all: CMakeFiles/kdc_client.dir/all
 CMakeFiles/client_continuous.dir/all: CMakeFiles/network_utils.dir/all
 CMakeFiles/client_continuous.dir/all: CMakeFiles/performance_metrics.dir/all
+CMakeFiles/client_continuous.dir/all: CMakeFiles/kdc_client.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client_continuous.dir/build.make CMakeFiles/client_continuous.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client_continuous.dir/build.make CMakeFiles/client_continuous.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=5,6 "Built target client_continuous"
@@ -278,9 +334,9 @@ CMakeFiles/client_continuous.dir/clean:
 # Target rules for target CMakeFiles/aggregator_continuous.dir
 
 # All Build rule for target.
-CMakeFiles/aggregator_continuous.dir/all: CMakeFiles/kdc_client.dir/all
 CMakeFiles/aggregator_continuous.dir/all: CMakeFiles/network_utils.dir/all
 CMakeFiles/aggregator_continuous.dir/all: CMakeFiles/performance_metrics.dir/all
+CMakeFiles/aggregator_continuous.dir/all: CMakeFiles/kdc_client.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator_continuous.dir/build.make CMakeFiles/aggregator_continuous.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aggregator_continuous.dir/build.make CMakeFiles/aggregator_continuous.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=1,2 "Built target aggregator_continuous"
@@ -306,9 +362,9 @@ CMakeFiles/aggregator_continuous.dir/clean:
 # Target rules for target CMakeFiles/control_center_continuous.dir
 
 # All Build rule for target.
-CMakeFiles/control_center_continuous.dir/all: CMakeFiles/kdc_client.dir/all
 CMakeFiles/control_center_continuous.dir/all: CMakeFiles/network_utils.dir/all
 CMakeFiles/control_center_continuous.dir/all: CMakeFiles/performance_metrics.dir/all
+CMakeFiles/control_center_continuous.dir/all: CMakeFiles/kdc_client.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center_continuous.dir/build.make CMakeFiles/control_center_continuous.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/control_center_continuous.dir/build.make CMakeFiles/control_center_continuous.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspaces/smart-grid-1/build/CMakeFiles --progress-num=7,8 "Built target control_center_continuous"

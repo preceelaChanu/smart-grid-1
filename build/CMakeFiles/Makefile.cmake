@@ -59,6 +59,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/keygen.dir/DependInfo.cmake"
   "CMakeFiles/certgen.dir/DependInfo.cmake"
   "CMakeFiles/kdc.dir/DependInfo.cmake"
+  "CMakeFiles/homomorphic_example.dir/DependInfo.cmake"
+  "CMakeFiles/test_metrics.dir/DependInfo.cmake"
   "CMakeFiles/client_continuous.dir/DependInfo.cmake"
   "CMakeFiles/aggregator_continuous.dir/DependInfo.cmake"
   "CMakeFiles/control_center_continuous.dir/DependInfo.cmake"

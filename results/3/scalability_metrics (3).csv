@@ -1,0 +1,2 @@
+timestamp,num_smart_meters,total_aggregation_time_ms,memory_usage_mb,cpu_usage_percent,parallel_connections,avg_response_time_ms,throughput_ops_per_sec,cycle_number
+2025-12-12 15:15:29.947,500,1765552529947.043,0.000,0.000,500,5.000,0.000,0
